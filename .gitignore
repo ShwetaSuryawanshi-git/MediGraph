@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+ml_pipeline/venv/
+
+# Environment & Secrets
+.env
+.env 2
+ml_pipeline/service-account.json
+
+# Duplicate files (macOS copies)
+**/\* 2.*
+* 2.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/

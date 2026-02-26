@@ -1,0 +1,138 @@
+// File: MediGraph/firestore.rules
+// Path: /Users/shweta/Desktop/major project fy/MediGraph/firestore.rules
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ═══════════════════════════════════════════════════════════════
+    // HELPER FUNCTIONS
+    // ═══════════════════════════════════════════════════════════════
+
+    // Check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Check if user owns this document (by uid)
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    // Check if user has admin role (reads from their user doc)
+    function isAdmin() {
+      return isAuthenticated() &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == "admin";
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // COLLECTION: users
+    // ═══════════════════════════════════════════════════════════════
+    match /users/{userId} {
+      // Read: Users can read their own profile; admins can read all
+      allow read: if isOwner(userId) || isAdmin();
+
+      // Create: User can create their own doc on signup
+      allow create: if isOwner(userId) &&
+        request.resource.data.keys().hasAll(['email', 'role', 'created_at']) &&
+        request.resource.data.role == "researcher";
+
+      // Update: User can update display_name and last_login_at only
+      allow update: if isOwner(userId) &&
+        request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['display_name', 'last_login_at']);
+
+      // Delete: Not allowed
+      allow delete: if false;
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // COLLECTION: drugs
+    // ═══════════════════════════════════════════════════════════════
+    match /drugs/{drugId} {
+      // Read: Any authenticated user
+      allow read: if isAuthenticated();
+
+      // Write: Admin or system only (ML pipeline writes via Admin SDK)
+      allow create, update: if isAdmin();
+      allow delete: if false;
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // COLLECTION: targets
+    // ═══════════════════════════════════════════════════════════════
+    match /targets/{targetId} {
+      // Read: Any authenticated user
+      allow read: if isAuthenticated();
+
+      // Write: Admin or system only
+      allow create, update: if isAdmin();
+      allow delete: if false;
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // COLLECTION: drug_target_interactions
+    // ═══════════════════════════════════════════════════════════════
+    match /drug_target_interactions/{interactionId} {
+      // Read: Any authenticated user
+      allow read: if isAuthenticated();
+
+      // Write: System only (ML predictions via Admin SDK)
+      // Admin SDK bypasses rules, so no client writes allowed
+      allow create, update, delete: if false;
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // COLLECTION: diseases
+    // ═══════════════════════════════════════════════════════════════
+    match /diseases/{diseaseId} {
+      // Read: Any authenticated user
+      allow read: if isAuthenticated();
+
+      // Write: Admin or system only
+      allow create, update: if isAdmin();
+      allow delete: if false;
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // COLLECTION: repurposing_candidates
+    // ═══════════════════════════════════════════════════════════════
+    match /repurposing_candidates/{candidateId} {
+      // Read: Any authenticated user
+      allow read: if isAuthenticated();
+
+      // Create: System only (ML pipeline via Admin SDK)
+      allow create: if false;
+
+      // Update: Admin can update status, reviewed_at, reviewed_by
+      allow update: if isAdmin() &&
+        request.resource.data.diff(resource.data).affectedKeys()
+          .hasOnly(['status', 'reviewed_at', 'reviewed_by', 'rationale']);
+
+      // Delete: Not allowed
+      allow delete: if false;
+    }
+
+    // ═══════════════════════════════════════════════════════════════
+    // COLLECTION: graphs_metadata
+    // ═══════════════════════════════════════════════════════════════
+    match /graphs_metadata/{graphId} {
+      // Read: Owner only (users can only see their own saved graphs)
+      allow read: if isAuthenticated() &&
+        resource.data.user_id == request.auth.uid;
+
+      // Create: Authenticated users can create their own graph metadata
+      allow create: if isAuthenticated() &&
+        request.resource.data.user_id == request.auth.uid;
+
+      // Update: Owner can update their own graph metadata
+      allow update: if isAuthenticated() &&
+        resource.data.user_id == request.auth.uid;
+
+      // Delete: Owner can delete their own graph metadata
+      allow delete: if isAuthenticated() &&
+        resource.data.user_id == request.auth.uid;
+    }
+
+  }
+}
