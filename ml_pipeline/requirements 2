@@ -1,0 +1,22 @@
+# File: MediGraph/ml_pipeline/requirements.txt
+# Path: /Users/shweta/Desktop/major project fy/MediGraph/ml_pipeline/requirements.txt
+
+# ML Pipeline Dependencies for MediGraph
+# Install: pip install -r requirements.txt
+
+# Firebase Admin SDK
+firebase-admin>=6.2.0
+
+# Scientific Computing
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+
+# Machine Learning (Classical ML only - no deep learning)
+scikit-learn>=1.3.0
+
+# Molecular Feature Extraction
+rdkit>=2023.3.0
+
+# Environment variables
+python-dotenv>=1.0.0

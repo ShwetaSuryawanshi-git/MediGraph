@@ -8,19 +8,33 @@
 
 import React from 'react';
 
-const GraphFilters = ({ filters, onUpdateFilters, onReset }) => {
+const GraphFilters = ({ filters, onUpdateFilters, onReset, onSaveGraph, drugsList, diseasesList }) => {
+    const handleAddDisease = (e) => {
+        const id = e.target.value;
+        if (id && !filters.selectedDiseaseIds.includes(id)) {
+            onUpdateFilters({ selectedDiseaseIds: [...filters.selectedDiseaseIds, id] });
+        }
+        e.target.value = ""; // reset select
+    };
+
+    const handleRemoveDisease = (id) => {
+        onUpdateFilters({ selectedDiseaseIds: filters.selectedDiseaseIds.filter(dId => dId !== id) });
+    };
+
+    const handleAddDrug = (e) => {
+        const id = e.target.value;
+        if (id && !filters.selectedDrugIds.includes(id)) {
+            onUpdateFilters({ selectedDrugIds: [...filters.selectedDrugIds, id] });
+        }
+        e.target.value = ""; // reset select
+    };
+
+    const handleRemoveDrug = (id) => {
+        onUpdateFilters({ selectedDrugIds: filters.selectedDrugIds.filter(dId => dId !== id) });
+    };
+
     return (
-        <div
-            className="glass-card"
-            style={{
-                padding: 'var(--spacing-md)',
-                marginBottom: 'var(--spacing-lg)',
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: 'var(--spacing-lg)',
-                alignItems: 'center'
-            }}
-        >
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-md)' }}>
             {/* Confidence Slider */}
             <div style={{ flex: '1', minWidth: '200px' }}>
                 <label className="form-label" style={{ marginBottom: 'var(--spacing-xs)', display: 'block' }}>
@@ -67,10 +81,78 @@ const GraphFilters = ({ filters, onUpdateFilters, onReset }) => {
                 </label>
             </div>
 
-            {/* Reset Button */}
-            <button className="btn btn-secondary" onClick={onReset}>
-                Reset Filters
-            </button>
+            {/* Advanced Filters */}
+            <div style={{ minWidth: '150px' }}>
+                <label className="form-label" style={{ marginBottom: 'var(--spacing-xs)', display: 'block' }}>
+                    Filter by Disease(s)
+                </label>
+                <select
+                    className="form-input"
+                    defaultValue=""
+                    onChange={handleAddDisease}
+                    style={{ padding: 'var(--spacing-xs) var(--spacing-sm)' }}
+                >
+                    <option value="" disabled>Add a Disease...</option>
+                    {diseasesList && diseasesList.filter(d => !filters.selectedDiseaseIds.includes(d.id)).map(d => (
+                        <option key={d.id} value={d.id}>{d.disease_name}</option>
+                    ))}
+                </select>
+                
+                {/* Selected Disease Badges */}
+                {filters.selectedDiseaseIds.length > 0 && (
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: 'var(--spacing-sm)' }}>
+                        {filters.selectedDiseaseIds.map(id => {
+                            const name = diseasesList?.find(d => d.id === id)?.disease_name || id;
+                            return (
+                                <span key={id} className="badge badge-target" style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', backgroundColor: 'rgba(239, 68, 68, 0.1)', color: '#ef4444' }} onClick={() => handleRemoveDisease(id)}>
+                                    {name} <span style={{ fontSize: '0.7rem' }}>✕</span>
+                                </span>
+                            );
+                        })}
+                    </div>
+                )}
+            </div>
+
+            <div style={{ minWidth: '150px' }}>
+                <label className="form-label" style={{ marginBottom: 'var(--spacing-xs)', display: 'block' }}>
+                    Filter by Other Drug(s)
+                </label>
+                <select
+                    className="form-input"
+                    defaultValue=""
+                    onChange={handleAddDrug}
+                    style={{ padding: 'var(--spacing-xs) var(--spacing-sm)' }}
+                >
+                    <option value="" disabled>Add a Drug...</option>
+                    {drugsList && drugsList.filter(d => !filters.selectedDrugIds.includes(d.id)).map(d => (
+                        <option key={d.id} value={d.id}>{d.drug_name}</option>
+                    ))}
+                </select>
+
+                {/* Selected Drug Badges */}
+                {filters.selectedDrugIds.length > 0 && (
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: 'var(--spacing-sm)' }}>
+                        {filters.selectedDrugIds.map(id => {
+                            const name = drugsList?.find(d => d.id === id)?.drug_name || id;
+                            return (
+                                <span key={id} className="badge" style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', backgroundColor: 'var(--color-bg-tertiary)' }} onClick={() => handleRemoveDrug(id)}>
+                                    {name} <span style={{ fontSize: '0.7rem' }}>✕</span>
+                                </span>
+                            );
+                        })}
+                    </div>
+                )}
+            </div>
+
+            {/* Actions */}
+            <div style={{ display: 'flex', gap: 'var(--spacing-sm)', marginTop: 'var(--spacing-sm)' }}>
+                <button className="btn btn-primary" onClick={onSaveGraph} style={{ flex: 1, display: 'flex', justifyContent: 'center', gap: '8px' }}>
+                    <span>💾</span> Save Graph
+                </button>
+                <button className="btn btn-secondary" onClick={onReset} style={{ flex: 1 }}>
+                    Reset
+                </button>
+            </div>
         </div>
     );
 };

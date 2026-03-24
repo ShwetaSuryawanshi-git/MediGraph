@@ -48,7 +48,8 @@ export const useGraphData = () => {
         modelUsed: null, // null = all models
         showDiseases: true,
         selectedDrugIds: [], // empty = all drugs
-        selectedTargetIds: [] // empty = all targets
+        selectedTargetIds: [],
+        selectedDiseaseIds: [] // empty = all diseases
     });
 
     // Derive nodes from drugs, targets, and diseases
@@ -56,14 +57,75 @@ export const useGraphData = () => {
         if (!canRenderGraph) return [];
 
         const nodeList = [];
+        
+        // 1. Calculate Valid Entity Sub-Graphs Based on Filters
+        let validTargetIds = new Set(targets.allIds);
+        let validDrugIds = new Set(drugs.allIds);
+        let validDiseaseIds = new Set(diseases.allIds);
+
+        const hasDiseaseFilter = filters.selectedDiseaseIds.length > 0;
+        const hasDrugFilter = filters.selectedDrugIds.length > 0;
+
+        if (hasDiseaseFilter || hasDrugFilter) {
+            let resultDrugIds = new Set();
+            let resultTargetIds = new Set();
+            let resultDiseaseIds = new Set();
+
+            // 1. Process Drug Filter Expansion (Drug -> Targets -> Diseases)
+            if (hasDrugFilter) {
+                filters.selectedDrugIds.forEach(dId => resultDrugIds.add(dId));
+                
+                // Find all targets interacting with these drugs
+                interactions.allIds.forEach(iid => {
+                    const interaction = interactions.byId[iid];
+                    if (filters.selectedDrugIds.includes(interaction.drug_id) &&
+                        interaction.confidence_score >= filters.minConfidence &&
+                        (!filters.modelUsed || interaction.model_used === filters.modelUsed)) {
+                        resultTargetIds.add(interaction.target_id);
+                    }
+                });
+
+                // Find all diseases mapped to those specific targets
+                Array.from(resultTargetIds).forEach(tid => {
+                    const t = targets.byId[tid];
+                    t?.associated_disease_ids?.forEach(dId => resultDiseaseIds.add(dId));
+                });
+            }
+
+            // 2. Process Disease Filter Expansion (Disease -> Targets -> Drugs)
+            if (hasDiseaseFilter) {
+                let tempDiseaseTargets = new Set();
+                filters.selectedDiseaseIds.forEach(dId => resultDiseaseIds.add(dId));
+
+                // Find all targets mapping to these diseases
+                targets.allIds.forEach(tid => {
+                    const t = targets.byId[tid];
+                    if (t?.associated_disease_ids?.some(dId => filters.selectedDiseaseIds.includes(dId))) {
+                        resultTargetIds.add(tid);
+                        tempDiseaseTargets.add(tid);
+                    }
+                });
+
+                // Find all drugs mapped to those specific targets
+                interactions.allIds.forEach(iid => {
+                    const interaction = interactions.byId[iid];
+                    if (tempDiseaseTargets.has(interaction.target_id) &&
+                        interaction.confidence_score >= filters.minConfidence &&
+                        (!filters.modelUsed || interaction.model_used === filters.modelUsed)) {
+                        resultDrugIds.add(interaction.drug_id);
+                    }
+                });
+            }
+            
+            validTargetIds = resultTargetIds;
+            validDrugIds = resultDrugIds;
+            validDiseaseIds = resultDiseaseIds;
+        }
 
         // Add drug nodes
         drugs.allIds.forEach(drugId => {
+            if (!validDrugIds.has(drugId)) return;
             const drug = drugs.byId[drugId];
-            // Apply drug filter if set
-            if (filters.selectedDrugIds.length > 0 && !filters.selectedDrugIds.includes(drugId)) {
-                return;
-            }
             nodeList.push({
                 id: drugId,
                 type: NODE_TYPES.DRUG,
@@ -74,11 +136,9 @@ export const useGraphData = () => {
 
         // Add target nodes
         targets.allIds.forEach(targetId => {
+            if (!validTargetIds.has(targetId)) return;
+            if (filters.selectedTargetIds.length > 0 && !filters.selectedTargetIds.includes(targetId)) return;
             const target = targets.byId[targetId];
-            // Apply target filter if set
-            if (filters.selectedTargetIds.length > 0 && !filters.selectedTargetIds.includes(targetId)) {
-                return;
-            }
             nodeList.push({
                 id: targetId,
                 type: NODE_TYPES.TARGET,
@@ -90,6 +150,7 @@ export const useGraphData = () => {
         // Add disease nodes if enabled
         if (filters.showDiseases) {
             diseases.allIds.forEach(diseaseId => {
+                if (!validDiseaseIds.has(diseaseId)) return;
                 const disease = diseases.byId[diseaseId];
                 nodeList.push({
                     id: diseaseId,
@@ -101,7 +162,7 @@ export const useGraphData = () => {
         }
 
         return nodeList;
-    }, [drugs, targets, diseases, canRenderGraph, filters]);
+    }, [drugs, targets, interactions, diseases, canRenderGraph, filters]);
 
     // Create a set of node IDs for edge validation
     const nodeIds = useMemo(() => {
@@ -186,7 +247,8 @@ export const useGraphData = () => {
             modelUsed: null,
             showDiseases: true,
             selectedDrugIds: [],
-            selectedTargetIds: []
+            selectedTargetIds: [],
+            selectedDiseaseIds: []
         });
     }, []);
 
@@ -220,7 +282,9 @@ export const useGraphData = () => {
         // Lookup helpers for detail views
         getDrugById,
         getTargetById,
-        getDiseaseById
+        getDiseaseById,
+        rawDrugs: drugs,
+        rawDiseases: diseases
     };
 };
 

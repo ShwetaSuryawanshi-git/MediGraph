@@ -18,11 +18,11 @@
   
   /* Accent Colors for Node Types */
   --color-drug: #ef4444;
-  --color-drug-light: #fca5a5;
+  --color-drug-light: #fef2f2;
   --color-target: #3b82f6;
-  --color-target-light: #93c5fd;
-  --color-disease: #8b5cf6;
-  --color-disease-light: #c4b5fd;
+  --color-target-light: #eff6ff;
+  --color-disease: #10b981;
+  --color-disease-light: #ecfdf5;
   
   /* Status Colors */
   --color-success: #10b981;
@@ -30,25 +30,25 @@
   --color-error: #ef4444;
   --color-info: #06b6d4;
   
-  /* Neutral Colors (Dark Theme) */
-  --color-bg-primary: #0f0f23;
-  --color-bg-secondary: #1a1a2e;
-  --color-bg-tertiary: #16213e;
-  --color-bg-card: rgba(26, 26, 46, 0.8);
+  /* Neutral Colors (Light Theme) */
+  --color-bg-primary: #f8fafc;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f1f5f9;
+  --color-bg-card: rgba(255, 255, 255, 0.9);
   
   /* Text Colors */
-  --color-text-primary: #f1f5f9;
-  --color-text-secondary: #94a3b8;
-  --color-text-muted: #64748b;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94a3b8;
   
   /* Border Colors */
-  --color-border: rgba(255, 255, 255, 0.1);
-  --color-border-hover: rgba(255, 255, 255, 0.2);
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border-hover: rgba(0, 0, 0, 0.2);
   
   /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   
   /* Spacing */
   --spacing-xs: 0.25rem;
@@ -103,8 +103,8 @@ body {
   color: var(--color-text-primary);
   background: var(--color-bg-primary);
   background-image: 
-    radial-gradient(ellipse at top, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    radial-gradient(ellipse at top, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -332,6 +332,8 @@ h6 { font-size: 1rem; }
 
 .flex { display: flex; }
 .flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.w-full { width: 100%; }
 .items-center { align-items: center; }
 .justify-center { justify-content: center; }
 .justify-between { justify-content: space-between; }
@@ -482,4 +484,70 @@ h6 { font-size: 1rem; }
   h2 { font-size: 1.5rem; }
   
   .graph-container { height: 400px; }
+  
+  .flex-col-mobile { flex-direction: column; align-items: flex-start; }
+  .w-full-mobile { width: 100%; }
+  .overflow-x-auto { overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; padding-bottom: 4px; }
+  
+  .graph-controls { position: relative; top: 0; right: 0; margin-bottom: var(--spacing-md); flex-wrap: wrap; width: 100%; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MACOS SEGMENTED CONTROL TABS
+   ═══════════════════════════════════════════════════════════════ */
+
+.macos-tabs {
+  display: flex;
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: var(--spacing-md);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.macos-tab {
+  flex: 1;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.macos-tab:hover:not(.active) {
+  background: rgba(0,0,0,0.03);
+}
+
+.macos-tab.active {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.macos-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 300px;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.macos-empty-state svg {
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--spacing-md);
+  opacity: 0.5;
 }

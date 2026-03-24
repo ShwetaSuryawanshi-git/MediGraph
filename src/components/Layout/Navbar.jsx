@@ -44,49 +44,56 @@ const Navbar = ({ currentView, onNavigate }) => {
                 style={{
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between'
+                    justifyContent: 'space-between',
+                    flexWrap: 'wrap',
+                    gap: 'var(--spacing-md)'
                 }}
             >
-                {/* Logo */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-sm)' }}>
-                    <span style={{ fontSize: '1.5rem' }}>🧬</span>
-                    <span
-                        style={{
-                            fontSize: '1.25rem',
-                            fontWeight: 600,
-                            background: 'linear-gradient(135deg, var(--color-primary), var(--color-disease))',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent'
-                        }}
-                    >
-                        MediGraph
-                    </span>
-                </div>
-
-                {/* Navigation Links */}
-                <div style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
-                    {navItems.map((item) => (
-                        <button
-                            key={item.id}
-                            onClick={() => onNavigate(item.id)}
-                            className={`btn ${currentView === item.id ? 'btn-primary' : 'btn-ghost'}`}
-                            style={{ fontSize: '0.875rem' }}
+                {/* Left Side: Logo and Links */}
+                <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 'var(--spacing-xl)', flex: 1 }}>
+                    
+                    {/* Logo */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-sm)' }}>
+                        <span style={{ fontSize: '1.5rem' }}>🧬</span>
+                        <span
+                            style={{
+                                fontSize: '1.25rem',
+                                fontWeight: 600,
+                                background: 'linear-gradient(135deg, var(--color-primary), var(--color-disease))',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                whiteSpace: 'nowrap'
+                            }}
                         >
-                            <span>{item.icon}</span>
-                            <span>{item.label}</span>
-                        </button>
-                    ))}
+                            MediGraph
+                        </span>
+                    </div>
+
+                    {/* Navigation Links */}
+                    <div className="overflow-x-auto" style={{ display: 'flex', gap: 'var(--spacing-sm)' }}>
+                        {navItems.map((item) => (
+                            <button
+                                key={item.id}
+                                onClick={() => onNavigate(item.id)}
+                                className={`btn ${currentView === item.id ? 'btn-primary' : 'btn-ghost'}`}
+                                style={{ fontSize: '0.875rem', flexShrink: 0 }}
+                            >
+                                <span>{item.icon}</span>
+                                <span>{item.label}</span>
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
-                {/* User Actions */}
+                {/* Right Side: User Actions */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-md)' }}>
-                    <span className="text-secondary" style={{ fontSize: '0.875rem' }}>
+                    <span className="text-secondary" style={{ fontSize: '0.875rem', display: window.innerWidth > 768 ? 'block' : 'none' }}>
                         {user?.email}
                     </span>
                     <button
                         onClick={handleLogout}
                         className="btn btn-secondary"
-                        style={{ fontSize: '0.875rem' }}
+                        style={{ fontSize: '0.875rem', padding: '0.25rem 0.75rem' }}
                     >
                         Logout
                     </button>

@@ -14,7 +14,7 @@ import { NODE_TYPES, EDGE_TYPES } from '../../hooks/useGraphData';
 const NODE_COLORS = {
     [NODE_TYPES.DRUG]: '#ef4444',
     [NODE_TYPES.TARGET]: '#3b82f6',
-    [NODE_TYPES.DISEASE]: '#8b5cf6'
+    [NODE_TYPES.DISEASE]: '#10b981'
 };
 
 // Node shapes
@@ -24,7 +24,7 @@ const NODE_RADIUS = {
     [NODE_TYPES.DISEASE]: 16
 };
 
-const GraphCanvas = ({ nodes, edges, onNodeClick }) => {
+const GraphCanvas = ({ nodes, edges, selectedNodeId, onNodeClick }) => {
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
     const [dimensions, setDimensions] = useState({ width: 800, height: 600 });
@@ -102,11 +102,24 @@ const GraphCanvas = ({ nodes, edges, onNodeClick }) => {
         const ctx = canvas.getContext('2d');
         ctx.clearRect(0, 0, dimensions.width, dimensions.height);
 
+        // Determine connected nodes if one is selected
+        const connectedNodeIds = new Set();
+        if (selectedNodeId) {
+            connectedNodeIds.add(selectedNodeId);
+            edges.forEach(edge => {
+                if (edge.source === selectedNodeId) connectedNodeIds.add(edge.target);
+                if (edge.target === selectedNodeId) connectedNodeIds.add(edge.source);
+            });
+        }
+
         // Draw edges
         edges.forEach(edge => {
             const sourcePos = nodePositions[edge.source];
             const targetPos = nodePositions[edge.target];
             if (!sourcePos || !targetPos) return;
+
+            const isConnectedToSelected = selectedNodeId ? (edge.source === selectedNodeId || edge.target === selectedNodeId) : true;
+            const edgeOpacity = selectedNodeId && !isConnectedToSelected ? 0.05 : 1.0;
 
             ctx.beginPath();
             ctx.moveTo(sourcePos.x, sourcePos.y);
@@ -114,7 +127,7 @@ const GraphCanvas = ({ nodes, edges, onNodeClick }) => {
 
             // Edge styling based on type
             if (edge.type === EDGE_TYPES.INTERACTION) {
-                ctx.strokeStyle = `rgba(99, 102, 241, ${0.3 + edge.opacity * 0.5})`;
+                ctx.strokeStyle = `rgba(99, 102, 241, ${(0.3 + edge.opacity * 0.5) * edgeOpacity})`;
                 ctx.lineWidth = 1 + edge.weight * 2;
                 if (edge.style === 'dashed') {
                     ctx.setLineDash([5, 5]);
@@ -122,7 +135,7 @@ const GraphCanvas = ({ nodes, edges, onNodeClick }) => {
                     ctx.setLineDash([]);
                 }
             } else {
-                ctx.strokeStyle = 'rgba(139, 92, 246, 0.3)';
+                ctx.strokeStyle = `rgba(16, 185, 129, ${0.3 * edgeOpacity})`;
                 ctx.lineWidth = 1;
                 ctx.setLineDash([]);
             }
@@ -139,28 +152,38 @@ const GraphCanvas = ({ nodes, edges, onNodeClick }) => {
             const radius = NODE_RADIUS[node.type];
             const color = NODE_COLORS[node.type];
             const isHovered = hoveredNode === node.id;
+            const isSelected = selectedNodeId === node.id;
+            const isConnected = selectedNodeId ? connectedNodeIds.has(node.id) : true;
+            
+            const nodeOpacity = selectedNodeId && !isConnected ? 0.2 : 1.0;
 
             // Node shadow
-            ctx.shadowColor = color;
-            ctx.shadowBlur = isHovered ? 20 : 10;
+            if (nodeOpacity > 0.5) {
+                ctx.shadowColor = color;
+                ctx.shadowBlur = isHovered || isSelected ? 20 : 10;
+            } else {
+                ctx.shadowBlur = 0;
+            }
 
             // Node circle
             ctx.beginPath();
-            ctx.arc(pos.x, pos.y, radius + (isHovered ? 3 : 0), 0, Math.PI * 2);
+            ctx.arc(pos.x, pos.y, radius + (isHovered || isSelected ? 3 : 0), 0, Math.PI * 2);
             ctx.fillStyle = color;
+            ctx.globalAlpha = nodeOpacity;
             ctx.fill();
 
             // Reset shadow
             ctx.shadowBlur = 0;
 
             // Node border
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
-            ctx.lineWidth = 2;
+            ctx.strokeStyle = `rgba(0, 0, 0, ${0.1 * nodeOpacity})`;
+            ctx.lineWidth = isSelected ? 3 : 2;
             ctx.stroke();
 
             // Node label
-            ctx.fillStyle = '#f1f5f9';
-            ctx.font = '11px Inter, sans-serif';
+            ctx.fillStyle = '#0f172a';
+            ctx.globalAlpha = nodeOpacity;
+            ctx.font = isSelected ? 'bold 12px Inter, sans-serif' : '11px Inter, sans-serif';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'top';
 
@@ -169,8 +192,9 @@ const GraphCanvas = ({ nodes, edges, onNodeClick }) => {
                 ? node.label.substring(0, 10) + '...'
                 : node.label;
             ctx.fillText(label, pos.x, pos.y + radius + 5);
+            ctx.globalAlpha = 1.0; // reset for next operations
         });
-    }, [nodes, edges, nodePositions, dimensions, hoveredNode]);
+    }, [nodes, edges, nodePositions, dimensions, hoveredNode, selectedNodeId]);
 
     // Handle mouse move for hover
     const handleMouseMove = useCallback((e) => {

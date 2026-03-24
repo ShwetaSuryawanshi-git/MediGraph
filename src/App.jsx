@@ -23,6 +23,8 @@ import './styles/index.css';
 const AppContent = () => {
     const { isAuthenticated, loading } = useAuth();
     const [currentView, setCurrentView] = useState('dashboard');
+    const [activeEntity, setActiveEntity] = useState(null);
+    const [savedFilters, setSavedFilters] = useState(null);
 
     // Show loading spinner while checking auth
     if (loading) {
@@ -49,13 +51,20 @@ const AppContent = () => {
     const renderView = () => {
         switch (currentView) {
             case 'dashboard':
-                return <Dashboard />;
+                return <Dashboard onNavigateToGraph={(entity) => { setActiveEntity(entity); setCurrentView('graph'); }} />;
             case 'graph':
-                return <GraphView />;
+                return <GraphView 
+                    initialEntity={activeEntity} 
+                    initialFilters={savedFilters}
+                    onClearInitial={() => { setActiveEntity(null); setSavedFilters(null); }} 
+                />;
             case 'repurposing':
                 return <RepurposingView />;
             case 'saved':
-                return <SavedGraphsView />;
+                return <SavedGraphsView onViewGraph={(graph) => {
+                    if (graph.filters_applied) setSavedFilters(graph.filters_applied);
+                    setCurrentView('graph');
+                }}/>;
             default:
                 return <Dashboard />;
         }
