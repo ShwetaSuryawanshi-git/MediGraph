@@ -11,6 +11,7 @@ import {
     subscribeToDrugs,
     subscribeToTargets,
     subscribeToInteractions,
+    subscribeToDrugDrugInteractions,
     subscribeToDiseases,
     subscribeToRepurposingCandidates,
     subscribeToUserGraphs
@@ -47,6 +48,7 @@ export const DataProvider = ({ children }) => {
         drugs: 'idle',
         targets: 'idle',
         interactions: 'idle',
+        drugDrugInteractions: 'idle',
         diseases: 'idle',
         repurposingCandidates: 'idle',
         graphsMetadata: 'idle'
@@ -59,6 +61,7 @@ export const DataProvider = ({ children }) => {
     const [drugs, setDrugs] = useState({ byId: {}, allIds: [] });
     const [targets, setTargets] = useState({ byId: {}, allIds: [] });
     const [interactions, setInteractions] = useState({ byId: {}, allIds: [] });
+    const [drugDrugInteractions, setDrugDrugInteractions] = useState({ byId: {}, allIds: [] });
     const [diseases, setDiseases] = useState({ byId: {}, allIds: [] });
     const [repurposingCandidates, setRepurposingCandidates] = useState({ byId: {}, allIds: [] });
     const [graphsMetadata, setGraphsMetadata] = useState({ byId: {}, allIds: [] });
@@ -70,6 +73,7 @@ export const DataProvider = ({ children }) => {
             setDrugs({ byId: {}, allIds: [] });
             setTargets({ byId: {}, allIds: [] });
             setInteractions({ byId: {}, allIds: [] });
+            setDrugDrugInteractions({ byId: {}, allIds: [] });
             setDiseases({ byId: {}, allIds: [] });
             setRepurposingCandidates({ byId: {}, allIds: [] });
             setGraphsMetadata({ byId: {}, allIds: [] });
@@ -77,6 +81,7 @@ export const DataProvider = ({ children }) => {
                 drugs: 'idle',
                 targets: 'idle',
                 interactions: 'idle',
+                drugDrugInteractions: 'idle',
                 diseases: 'idle',
                 repurposingCandidates: 'idle',
                 graphsMetadata: 'idle'
@@ -89,6 +94,7 @@ export const DataProvider = ({ children }) => {
             drugs: 'loading',
             targets: 'loading',
             interactions: 'loading',
+            drugDrugInteractions: 'loading',
             diseases: 'loading',
             repurposingCandidates: 'loading',
             graphsMetadata: 'loading'
@@ -135,6 +141,20 @@ export const DataProvider = ({ children }) => {
                 (error) => {
                     setErrors(prev => ({ ...prev, interactions: error.message }));
                     setLoadingState(prev => ({ ...prev, interactions: 'error' }));
+                }
+            )
+        );
+
+        // Subscribe to drug-drug interactions
+        unsubscribers.push(
+            subscribeToDrugDrugInteractions(
+                (data) => {
+                    setDrugDrugInteractions(normalizeData(data));
+                    setLoadingState(prev => ({ ...prev, drugDrugInteractions: 'loaded' }));
+                },
+                (error) => {
+                    setErrors(prev => ({ ...prev, drugDrugInteractions: error.message }));
+                    setLoadingState(prev => ({ ...prev, drugDrugInteractions: 'error' }));
                 }
             )
         );
@@ -194,7 +214,8 @@ export const DataProvider = ({ children }) => {
     const canRenderGraph =
         loadingState.drugs === 'loaded' &&
         loadingState.targets === 'loaded' &&
-        loadingState.interactions === 'loaded';
+        loadingState.interactions === 'loaded' &&
+        loadingState.drugDrugInteractions === 'loaded';
 
     // Check if all data is loaded
     const isFullyLoaded = Object.values(loadingState).every(s => s === 'loaded');
@@ -227,6 +248,7 @@ export const DataProvider = ({ children }) => {
         drugs,
         targets,
         interactions,
+        drugDrugInteractions,
         diseases,
         repurposingCandidates,
         graphsMetadata,

@@ -25,8 +25,10 @@ class Config:
         'drugs': 'drugs',
         'targets': 'targets',
         'interactions': 'drug_target_interactions',
+        'ddi_interactions': 'drug_drug_interactions',
         'diseases': 'diseases',
-        'repurposing': 'repurposing_candidates'
+        'repurposing': 'repurposing_candidates',
+        'explainability': 'explainability'
     }
     
     # Feature Engineering Parameters

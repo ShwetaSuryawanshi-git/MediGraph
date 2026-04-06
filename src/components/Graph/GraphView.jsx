@@ -34,6 +34,8 @@ const GraphView = ({ initialEntity, initialFilters, onClearInitial }) => {
 
     const [selectedNode, setSelectedNode] = useState(null);
     const [activeTab, setActiveTab] = useState('filters');
+    const [aiInference, setAiInference] = useState(null);
+    const [isGeneratingAI, setIsGeneratingAI] = useState(false);
 
     // Watch for activeEntity or savedFilters coming from Dashboard or Saved Graphs
     useEffect(() => {
@@ -61,6 +63,35 @@ const GraphView = ({ initialEntity, initialFilters, onClearInitial }) => {
             onClearInitial(); // clear so we don't infinitely re-run
         }
     }, [initialEntity, initialFilters]);
+
+    // Handle Generate AI Inference
+    const handleGenerateAIInference = async () => {
+        setIsGeneratingAI(true);
+        setAiInference(null);
+        try {
+            // pass mapped lightweight representation
+            const payload = {
+                nodes: nodes.map(n => ({ id: n.id, label: n.label, type: n.type })),
+                edges: edges.map(e => ({ source: e.source, target: e.target }))
+            };
+            const response = await fetch('http://localhost:8000/api/explain-graph', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            const data = await response.json();
+            if (data.rationale) {
+                setAiInference(data.rationale);
+            } else {
+                setAiInference("Failed to generate AI reasoning. Please ensure backend is running.");
+            }
+        } catch (error) {
+            console.error("AI Generation Error: ", error);
+            setAiInference("Error connecting to the local AI backend (http://localhost:8000). Ensure the FastAPI server is running.");
+        } finally {
+            setIsGeneratingAI(false);
+        }
+    };
 
     // Handle node click
     const handleNodeClick = (nodeId, nodeType) => {
@@ -216,6 +247,51 @@ const GraphView = ({ initialEntity, initialFilters, onClearInitial }) => {
                         </p>
                     </div>
                 )}
+                
+                {/* AI RAG INFERENCE BUTTON & DISPLAY */}
+                <div style={{ marginTop: 'var(--spacing-lg)' }}>
+                    <button 
+                        className="btn" 
+                        onClick={handleGenerateAIInference}
+                        disabled={isGeneratingAI}
+                        style={{ 
+                            width: '100%', 
+                            display: 'flex', 
+                            justifyContent: 'center', 
+                            alignItems: 'center', 
+                            gap: '8px',
+                            background: 'var(--color-primary)',
+                            color: 'white',
+                            border: 'none',
+                            padding: 'var(--spacing-sm)',
+                            borderRadius: 'var(--radius-md)',
+                            cursor: isGeneratingAI ? 'not-allowed' : 'pointer',
+                            opacity: isGeneratingAI ? 0.7 : 1,
+                            fontWeight: '500'
+                        }}
+                    >
+                        {isGeneratingAI ? <span>⏳</span> : <span>🤖</span>}
+                        {isGeneratingAI ? 'Retrieving Scientific Literature...' : 'Generate AI Insight (RAG Workflow)'}
+                    </button>
+                    
+                    {aiInference && (
+                        <div className="animate-fade-in" style={{
+                            marginTop: 'var(--spacing-md)',
+                            padding: 'var(--spacing-md)',
+                            background: 'var(--color-bg-primary)',
+                            border: '1px solid var(--color-border)',
+                            borderRadius: 'var(--radius-md)',
+                            fontSize: '0.85rem',
+                            lineHeight: '1.6',
+                            maxHeight: '400px',
+                            overflowY: 'auto',
+                            boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.05)'
+                        }}>
+                            <h4 style={{ margin: '0 0 var(--spacing-sm) 0', color: 'var(--color-primary)' }}>RAG AI Analysis</h4>
+                            <div style={{ whiteSpace: 'pre-wrap' }}>{aiInference}</div>
+                        </div>
+                    )}
+                </div>
                 
                 <div style={{ marginTop: 'var(--spacing-xl)', textAlign: 'center', opacity: 0.6 }}>
                     <div className="empty-state-icon" style={{ fontSize: '2rem', marginBottom: 'var(--spacing-sm)' }}>🖱️</div>

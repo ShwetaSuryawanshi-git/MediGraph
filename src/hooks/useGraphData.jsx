@@ -24,7 +24,8 @@ export const NODE_TYPES = {
 export const EDGE_TYPES = {
     INTERACTION: 'interaction',
     ASSOCIATION: 'association',
-    REPURPOSING: 'repurposing'
+    REPURPOSING: 'repurposing',
+    DDI: 'ddi'
 };
 
 /**
@@ -35,6 +36,7 @@ export const useGraphData = () => {
         drugs,
         targets,
         interactions,
+        drugDrugInteractions,
         diseases,
         canRenderGraph,
         getDrugById,
@@ -82,6 +84,18 @@ export const useGraphData = () => {
                         interaction.confidence_score >= filters.minConfidence &&
                         (!filters.modelUsed || interaction.model_used === filters.modelUsed)) {
                         resultTargetIds.add(interaction.target_id);
+                    }
+                });
+
+                // Find all drugs interacting with these drugs (DDI)
+                drugDrugInteractions?.allIds?.forEach(iid => {
+                    const ddi = drugDrugInteractions.byId[iid];
+                    if (ddi.confidence_score >= filters.minConfidence) {
+                        if (filters.selectedDrugIds.includes(ddi.drug_a_id)) {
+                            resultDrugIds.add(ddi.drug_b_id);
+                        } else if (filters.selectedDrugIds.includes(ddi.drug_b_id)) {
+                            resultDrugIds.add(ddi.drug_a_id);
+                        }
                     }
                 });
 
@@ -206,6 +220,30 @@ export const useGraphData = () => {
             });
         });
 
+        // Add Drug → Drug edges from DDIs
+        drugDrugInteractions?.allIds?.forEach(ddiId => {
+            const ddi = drugDrugInteractions.byId[ddiId];
+
+            if (ddi.confidence_score < filters.minConfidence) {
+                return;
+            }
+
+            if (!nodeIds.has(ddi.drug_a_id) || !nodeIds.has(ddi.drug_b_id)) {
+                return;
+            }
+
+            edgeList.push({
+                id: ddiId,
+                source: ddi.drug_a_id,
+                target: ddi.drug_b_id,
+                type: EDGE_TYPES.DDI,
+                weight: ddi.confidence_score,
+                opacity: ddi.prediction_score,
+                style: 'dashed',
+                data: ddi
+            });
+        });
+
         // Add Target → Disease edges from associations
         if (filters.showDiseases) {
             targets.allIds.forEach(targetId => {
@@ -259,6 +297,7 @@ export const useGraphData = () => {
         const diseaseNodes = nodes.filter(n => n.type === NODE_TYPES.DISEASE).length;
         const interactionEdges = edges.filter(e => e.type === EDGE_TYPES.INTERACTION).length;
         const associationEdges = edges.filter(e => e.type === EDGE_TYPES.ASSOCIATION).length;
+        const ddiEdges = edges.filter(e => e.type === EDGE_TYPES.DDI).length;
 
         return {
             totalNodes: nodes.length,
@@ -267,7 +306,8 @@ export const useGraphData = () => {
             targetNodes,
             diseaseNodes,
             interactionEdges,
-            associationEdges
+            associationEdges,
+            ddiEdges
         };
     }, [nodes, edges]);
 

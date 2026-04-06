@@ -1,0 +1,39 @@
+{
+  "model_type": "random_forest",
+  "roc_auc": 0.905,
+  "avg_precision": 0.95,
+  "cv_roc_auc_mean": 0.96,
+  "cv_roc_auc_std": 0.0491,
+  "n_train": 80,
+  "n_test": 20,
+  "n_features": 2054,
+  "n_positive_test": 10,
+  "n_negative_test": 10,
+  "classification_report": {
+    "No DDI": {
+      "precision": 0.9,
+      "recall": 0.9,
+      "f1-score": 0.9,
+      "support": 10.0
+    },
+    "DDI": {
+      "precision": 0.9,
+      "recall": 0.9,
+      "f1-score": 0.9,
+      "support": 10.0
+    },
+    "accuracy": 0.9,
+    "macro avg": {
+      "precision": 0.9,
+      "recall": 0.9,
+      "f1-score": 0.9,
+      "support": 20.0
+    },
+    "weighted avg": {
+      "precision": 0.9,
+      "recall": 0.9,
+      "f1-score": 0.9,
+      "support": 20.0
+    }
+  }
+}

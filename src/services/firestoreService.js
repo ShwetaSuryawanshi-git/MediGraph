@@ -27,6 +27,7 @@ export const COLLECTIONS = {
     DRUGS: 'drugs',
     TARGETS: 'targets',
     DRUG_TARGET_INTERACTIONS: 'drug_target_interactions',
+    DRUG_DRUG_INTERACTIONS: 'drug_drug_interactions',
     DISEASES: 'diseases',
     REPURPOSING_CANDIDATES: 'repurposing_candidates',
     GRAPHS_METADATA: 'graphs_metadata'
@@ -142,6 +143,37 @@ export const subscribeToAllInteractions = (onData, onError) => {
         },
         (error) => {
             console.error('All interactions listener error:', error);
+            onError(error);
+        }
+    );
+};
+
+// ═══════════════════════════════════════════════════════════════
+// DRUG-DRUG INTERACTIONS LISTENER
+// ═══════════════════════════════════════════════════════════════
+
+/**
+ * Subscribe to drug-drug interactions in real-time
+ * Only fetches interactions where prediction_score > threshold (e.g. 0.5) 
+ * but our python script only writes positive ones anyway.
+ * 
+ * @param {Function} onData - Callback with array of interaction documents
+ * @param {Function} onError - Error callback
+ * @returns {Function} - Unsubscribe function
+ */
+export const subscribeToDrugDrugInteractions = (onData, onError) => {
+    const interactionsRef = collection(db, COLLECTIONS.DRUG_DRUG_INTERACTIONS);
+
+    return onSnapshot(interactionsRef,
+        (snapshot) => {
+            const interactions = snapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+            onData(interactions);
+        },
+        (error) => {
+            console.error('Drug-Drug Interactions listener error:', error);
             onError(error);
         }
     );

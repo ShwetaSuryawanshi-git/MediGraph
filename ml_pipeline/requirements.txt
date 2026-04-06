@@ -20,3 +20,12 @@ rdkit>=2023.3.0
 
 # Environment variables
 python-dotenv>=1.0.0
+
+# Added for ChEMBL integration and Evaluation charts
+requests>=2.31.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Added for Explainability and Gemini LLM
+shap>=0.43.0
+google-genai>=0.1.0

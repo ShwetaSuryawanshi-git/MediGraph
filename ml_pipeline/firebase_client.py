@@ -140,6 +140,29 @@ class FirebaseClient:
         
         return created_ids
     
+    def batch_create_ddi_interactions(self, interactions_list):
+        """Create multiple drug-drug interactions in batches"""
+        created_ids = []
+        batch = self._db.batch()
+        batch_count = 0
+        
+        for interaction in interactions_list:
+            interaction['created_at'] = firestore.SERVER_TIMESTAMP
+            doc_ref = self._db.collection(Config.COLLECTIONS['ddi_interactions']).document()
+            batch.set(doc_ref, interaction)
+            created_ids.append(doc_ref.id)
+            batch_count += 1
+            
+            if batch_count >= Config.FIRESTORE_BATCH_SIZE:
+                batch.commit()
+                batch = self._db.batch()
+                batch_count = 0
+        
+        if batch_count > 0:
+            batch.commit()
+        
+        return created_ids
+    
     def batch_create_repurposing_candidates(self, candidates_list):
         """Create multiple repurposing candidates in batches"""
         created_ids = []
@@ -151,6 +174,36 @@ class FirebaseClient:
             candidate['status'] = 'pending'
             doc_ref = self._db.collection(Config.COLLECTIONS['repurposing']).document()
             batch.set(doc_ref, candidate)
+            created_ids.append(doc_ref.id)
+            batch_count += 1
+            
+            if batch_count >= Config.FIRESTORE_BATCH_SIZE:
+                batch.commit()
+                batch = self._db.batch()
+                batch_count = 0
+        
+        if batch_count > 0:
+            batch.commit()
+        
+        return created_ids
+
+    def batch_create_explanations(self, interactions_list):
+        """Create multiple SHAP explainability summaries in batches"""
+        created_ids = []
+        batch = self._db.batch()
+        batch_count = 0
+        
+        for interaction in interactions_list:
+            interaction['created_at'] = firestore.SERVER_TIMESTAMP
+            
+            # Use the specified interaction_id as the document ID directly if available
+            interaction_id = interaction.get('interaction_id')
+            if interaction_id:
+                doc_ref = self._db.collection(Config.COLLECTIONS['explainability']).document(interaction_id)
+            else:
+                doc_ref = self._db.collection(Config.COLLECTIONS['explainability']).document()
+                
+            batch.set(doc_ref, interaction)
             created_ids.append(doc_ref.id)
             batch_count += 1
             

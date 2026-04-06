@@ -134,6 +134,11 @@ const GraphCanvas = ({ nodes, edges, selectedNodeId, onNodeClick }) => {
                 } else {
                     ctx.setLineDash([]);
                 }
+            } else if (edge.type === EDGE_TYPES.DDI) {
+                // Style DDI as red, dashed line to symbolize conflict/adverse reactions
+                ctx.strokeStyle = `rgba(239, 68, 68, ${(0.4 + edge.opacity * 0.6) * edgeOpacity})`; // Red-500
+                ctx.lineWidth = 2 + edge.weight * 2;
+                ctx.setLineDash([6, 4]); // Different dash pattern to distinguish from interaction
             } else {
                 ctx.strokeStyle = `rgba(16, 185, 129, ${0.3 * edgeOpacity})`;
                 ctx.lineWidth = 1;
