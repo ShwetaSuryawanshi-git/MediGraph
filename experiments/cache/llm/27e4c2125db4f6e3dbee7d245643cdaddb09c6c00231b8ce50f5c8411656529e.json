@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.5-flash",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Vemurafenib', the biological target 'BRAF', and the pathological condition 'BRAF V600E Melanoma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "**Vemurafenib** is a potent, small-molecule inhibitor designed to selectively bind to the ATP-binding pocket of the **BRAF V600E** kinase, a constitutively active monomeric mutant driving over 50% of metastatic melanomas. It achieves high-affinity binding ($IC_{50} \\approx 31\\text{ nM}$) by mimicking the adenine ring of ATP and forming critical hydrogen bonds with the hinge region (specifically Cys532) and hydrophobic interactions within the kinase's active conformation. This targeted binding blocks downstream MEK/ERK mitogen-activated protein kinase (MAPK) signaling, effectively arresting the G1 phase of the cell cycle and inducing apoptosis in BRAF V600E-mutated melanoma cells. Consequently, the clinical therapeutic rationale relies on this oncogene addiction, delivering rapid tumor regression and prolonged progression-free survival in patients harboring this specific somatic mutation, while sparing cells with wild-type BRAF where the drug can paradoxically activate the pathway.",
+  "timestamp": 1791556942.8539891
+}

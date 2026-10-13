@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Permethrin', the biological target 'BTK', and the pathological condition 'Mantle Cell Lymphoma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Permethrin is a synthetic pyrethroid insecticide that acts as a non-competitive inhibitor of Bruton\u2019s Tyrosine Kinase (BTK), a critical signaling node in the B-cell receptor pathway that is constitutively overactive in Mantle Cell Lymphoma (MCL). Molecular docking studies suggest that permethrin binds to the ATP-binding pocket of BTK, disrupting the phosphorylation cascade necessary for malignant B-cell proliferation and survival. While permethrin exhibits micromolar affinity for BTK, its clinical therapeutic rationale in oncology remains experimental, as it is primarily utilized as an ectoparasiticide rather than a targeted kinase inhibitor for MCL.",
+  "timestamp": 1791713753.135911
+}

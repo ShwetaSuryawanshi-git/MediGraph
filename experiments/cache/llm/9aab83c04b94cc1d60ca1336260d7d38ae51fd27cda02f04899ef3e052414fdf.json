@@ -1,0 +1,11 @@
+{
+  "model": "gemini-flash-latest",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Imatinib', the biological target 'ABL1', and the pathological condition 'Chronic Myeloid Leukemia'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "**Chronic Myeloid Leukemia (CML)** is driven by the oncogenic *BCR-ABL1* fusion gene, which encodes a constitutively active tyrosine kinase that triggers uncontrolled myeloid proliferation and evades apoptosis. \n\n**Imatinib** acts as a potent, competitive ATP-binding inhibitor that functions as a classic Type II kinase inhibitor, selectively targeting and stabilizing the inactive, \"DFG-out\" conformation of the **ABL1** kinase domain through precise hydrophobic interactions and hydrogen bonds (notably with residues Thr315 and Glu286). \n\nDisplaying high nanomolar affinity ($IC_{50} \\approx 100\\text{\u2013}600\\text{ nM}$) for BCR-ABL1, the drug blocks downstream phosphorylation cascades\u2014such as STAT5, MAPK/ERK, and PI3K/AKT\u2014halting proliferation and selectively inducing apoptosis in leukemic clones while sparing normal hematopoiesis.",
+  "timestamp": 1791114188.161528
+}

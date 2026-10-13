@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Metformin', the biological target 'KRAS', and the pathological condition 'Pancreatic Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Metformin does not act as a direct small-molecule inhibitor of KRAS; rather, it functions as an indirect modulator by activating AMPK, which subsequently inhibits the mTORC1 pathway and suppresses the downstream signaling cascades (MAPK/ERK) constitutively activated by oncogenic KRAS mutations. By inhibiting mitochondrial Complex I, Metformin induces an energy crisis that reduces the metabolic plasticity required by KRAS-driven pancreatic ductal adenocarcinoma (PDAC) cells to sustain rapid proliferation. Clinical therapeutic rationale centers on Metformin\u2019s ability to mitigate the hyperinsulinemia and hyperglycemia that promote tumor growth, though its efficacy as a monotherapy is limited by the robust compensatory survival mechanisms inherent to KRAS-mutant PDAC.",
+  "timestamp": 1791566848.230044
+}

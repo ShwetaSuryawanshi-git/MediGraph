@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Nilotinib', the biological target 'ABL1', and the pathological condition 'Chronic Myeloid Leukemia'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Nilotinib is a second-generation tyrosine kinase inhibitor designed to bind with high affinity to the inactive conformation of the BCR-ABL1 fusion protein, the constitutively active kinase driving Chronic Myeloid Leukemia (CML). By occupying the ATP-binding pocket of the ABL1 domain, Nilotinib prevents the phosphorylation of downstream signaling substrates, thereby inhibiting the proliferative and anti-apoptotic pathways essential for leukemic cell survival. Its structural optimization\u2014featuring a more rigid, hydrophobic scaffold compared to Imatinib\u2014enhances binding potency and selectivity, allowing it to overcome many Imatinib-resistant mutations and effectively induce apoptosis in BCR-ABL1-positive cells.",
+  "timestamp": 1791564867.343404
+}

@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Pazopanib', the biological target 'KDR', and the pathological condition 'Renal Cell Carcinoma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Pazopanib is a multi-tyrosine kinase inhibitor that functions by competitively binding to the ATP-binding pocket of the **KDR** (VEGFR-2) receptor, effectively blocking the intracellular phosphorylation of tyrosine residues and downstream signaling pathways essential for angiogenesis. In **Renal Cell Carcinoma (RCC)**, which is characterized by the constitutive activation of the VHL-HIF pathway leading to VEGF overexpression, this inhibition suppresses the formation of new tumor vasculature and induces apoptosis in endothelial cells. With a high binding affinity (nanomolar $IC_{50}$), Pazopanib effectively starves the tumor of its blood supply, providing a potent therapeutic rationale for managing advanced RCC.",
+  "timestamp": 1791711594.263061
+}

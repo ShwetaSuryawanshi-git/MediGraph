@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an advanced expert Bioinformatician AI analyzing a candidate drug-target interaction.\n\nTarget Interaction: Drug 'Omeprazole' -> Target 'BRAF' -> Disease 'Colorectal Cancer'\n\n### Scientific Literature Retrieval (PubMed Evidence)\nTitle: A systems biology approach to identify key targets in KRAS/BRAF-mutated colorectal cancer.\nAbstract: KRAS and BRAF mutations are critical oncogenic drivers in colorectal cancer (CRC), with distinct molecular and clinical implications.\n\n### Strict Grounding Requirement\nExplain the biological interaction between 'Omeprazole' and 'BRAF' in 'Colorectal Cancer' STRICTLY and EXCLUSIVELY based on the provided PubMed scientific evidence above.\nEvery factual claim must be verifiable from the text. Do NOT fabricate, speculate, or introduce unverified residues, affinities, or off-target interactions not mentioned in the context.\nBe concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Based on the provided PubMed evidence, there is no information describing an interaction between the drug 'Omeprazole' and the target 'BRAF'. The text identifies KRAS and BRAF mutations as critical oncogenic drivers in colorectal cancer, but it does not mention or evaluate Omeprazole in this context. Therefore, the provided literature does not support a biological interaction between these entities.",
+  "timestamp": 1791567488.363589
+}

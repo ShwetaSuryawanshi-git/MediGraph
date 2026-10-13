@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.6-flash",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Lapatinib', the biological target 'ERBB2', and the pathological condition 'HER2-positive Breast Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Lapatinib is a small-molecule, ATP-competitive dual tyrosine kinase inhibitor that binds reversibly to the intracellular kinase domain of ERBB2 (HER2), selectively stabilizing an inactive conformation of the receptor with a high binding affinity ($K_i \\approx 13 \\text{ nM}$). By occupying the ATP-binding pocket, Lapatinib blocks autophosphorylation and prevents downstream activation of the oncogenic MAPK/ERK and PI3K/Akt signaling pathways that drive cell proliferation and survival. In HER2-positive breast cancer\u2014a subtype characterized by *ERBB2* gene amplification and receptor overexpression\u2014this targeted enzymatic inhibition triggers apoptosis and arrests cell cycle progression. Therapeutically, Lapatinib\u2019s unique ability to cross the blood-brain barrier makes it clinically effective in treating HER2-positive metastatic breast cancer, particularly in patients who have developed brain metastases or resistance to domain-targeting antibody therapies like trastuzumab.",
+  "timestamp": 1791710835.331587
+}

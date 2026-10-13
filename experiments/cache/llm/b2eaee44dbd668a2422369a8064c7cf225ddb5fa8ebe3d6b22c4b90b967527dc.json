@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.6-flash",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Gefitinib', Target: 'EGFR', Disease: 'Non-Small Cell Lung Cancer'.\nProvide a concise, mechanistic biological explanation of why 'Gefitinib' interacts with 'EGFR' in 'Non-Small Cell Lung Cancer' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Gefitinib' and 'EGFR', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Gefitinib is an ATP-competitive epidermal growth factor receptor (EGFR) tyrosine kinase inhibitor that selectively binds to the intracellular catalytic domain of EGFR, preventing its autophosphorylation and downstream signal transduction (such as the RAS/RAF/MEK/ERK and PI3K/AKT pathways). In non-small cell lung cancer (NSCLC), this interaction is particularly potent in tumors harboring activating *EGFR* kinase domain mutations (e.g., exon 19 deletions or the L858R point mutation), which increase the receptor's affinity for gefitinib compared to wild-type EGFR. By blocking these hyperactive survival and proliferation signals, gefitinib effectively inhibits tumor growth and induces apoptosis in EGFR-mutant NSCLC cells.",
+  "timestamp": 1791710744.580914
+}

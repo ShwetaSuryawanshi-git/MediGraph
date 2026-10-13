@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Ibrutinib', the biological target 'BTK', and the pathological condition 'Mantle Cell Lymphoma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Ibrutinib acts as a potent, irreversible inhibitor of Bruton\u2019s tyrosine kinase (BTK) by forming a covalent bond with the cysteine-481 (Cys481) residue in the enzyme's ATP-binding pocket. This specific interaction blocks the downstream B-cell receptor (BCR) signaling pathway, which is constitutively hyperactivated in Mantle Cell Lymphoma (MCL) and essential for malignant B-cell survival and proliferation. By achieving high-affinity, sustained inhibition of BTK, Ibrutinib effectively induces apoptosis and disrupts the tumor microenvironment, providing a targeted therapeutic strategy that significantly improves clinical outcomes in relapsed or refractory MCL patients.",
+  "timestamp": 1791564963.369579
+}

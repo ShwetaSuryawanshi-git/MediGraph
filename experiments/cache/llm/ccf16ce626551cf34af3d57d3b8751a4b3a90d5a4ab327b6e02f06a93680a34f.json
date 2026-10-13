@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Nystatin', Target: 'MAP2K1', Disease: 'Melanoma'.\nProvide a concise, mechanistic biological explanation of why 'Nystatin' interacts with 'MAP2K1' in 'Melanoma' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Nystatin' and 'MAP2K1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is insufficient documented scientific evidence to support a direct biochemical interaction between Nystatin and MAP2K1 (MEK1). Nystatin is a polyene antifungal agent that primarily functions by binding to ergosterol in fungal cell membranes to induce pore formation, and it lacks a characterized role as a kinase inhibitor or modulator of the MAPK/ERK signaling pathway in the context of melanoma.",
+  "timestamp": 1791713826.983509
+}

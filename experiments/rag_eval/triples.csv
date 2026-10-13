@@ -1,0 +1,61 @@
+triple_id,drug,target,disease,category,ground_truth_literature_support,esearch_count,notes
+1,Imatinib,ABL1,Chronic Myeloid Leukemia,supported,true,1333,FDA approved first-line BCR-ABL tyrosine kinase inhibitor
+2,Gefitinib,EGFR,Non-Small Cell Lung Cancer,supported,true,6960,First-generation EGFR tyrosine kinase inhibitor
+3,Erlotinib,EGFR,Non-Small Cell Lung Cancer,supported,true,6205,First-generation EGFR tyrosine kinase inhibitor
+4,Lapatinib,ERBB2,HER2-positive Breast Cancer,supported,true,1334,Dual EGFR/HER2 tyrosine kinase inhibitor
+5,Vemurafenib,BRAF,BRAF V600E Melanoma,supported,true,2558,Specific inhibitor of BRAF V600E kinase
+6,Dabrafenib,BRAF,Melanoma,supported,true,1964,Selective BRAF inhibitor
+7,Trametinib,MAP2K1,Melanoma,supported,true,126,Allosteric MEK1/MEK2 inhibitor
+8,Palbociclib,CDK4,HR-positive Breast Cancer,supported,true,1876,Selective CDK4/6 inhibitor
+9,Osimertinib,EGFR,EGFR T790M Lung Cancer,supported,true,4024,Third-generation mutant-selective EGFR inhibitor
+10,Crizotinib,ALK,ALK-positive NSCLC,supported,true,2577,Receptor tyrosine kinase inhibitor targeting ALK/ROS1/MET
+11,Alectinib,ALK,ALK-positive NSCLC,supported,true,1354,Second-generation ALK inhibitor
+12,Sorafenib,KDR,Renal Cell Carcinoma,supported,true,200,Multikinase inhibitor targeting VEGFR-2 (KDR) and RAF
+13,Sunitinib,KIT,Gastrointestinal Stromal Tumor,supported,true,648,Receptor tyrosine kinase inhibitor targeting KIT/VEGFR
+14,Regorafenib,RET,Colorectal Cancer,supported,true,34,Oral multikinase inhibitor targeting RET and VEGFR
+15,Axitinib,KDR,Renal Cell Carcinoma,supported,true,22,Potent and selective inhibitor of VEGFR-1/2/3
+16,Pazopanib,KDR,Renal Cell Carcinoma,supported,true,22,Second-generation multi-target VEGFR tyrosine kinase inhibitor
+17,Dasatinib,SRC,Chronic Myeloid Leukemia,supported,true,1123,Potent dual BCR-ABL and SRC family kinase inhibitor
+18,Bosutinib,ABL1,Chronic Myeloid Leukemia,supported,true,145,Synthetic dual SRC/ABL kinase inhibitor
+19,Nilotinib,ABL1,Chronic Myeloid Leukemia,supported,true,483,Second-generation BCR-ABL inhibitor designed on imatinib scaffold
+20,Ponatinib,ABL1,Refractory CML T315I,supported,true,340,Pan-BCR-ABL inhibitor effective against the gatekeeper T315I mutation
+21,Ibrutinib,BTK,Mantle Cell Lymphoma,supported,true,1624,Irreversible covalent inhibitor of Bruton tyrosine kinase
+22,Acalabrutinib,BTK,Chronic Lymphocytic Leukemia,supported,true,451,Second-generation highly selective irreversible BTK inhibitor
+23,Ruxolitinib,JAK1,Myelofibrosis,supported,true,875,Selective JAK1 and JAK2 tyrosine kinase inhibitor
+24,Tofacitinib,JAK3,Rheumatoid Arthritis,supported,true,261,Janus kinase inhibitor with selectivity for JAK1/3
+25,Baricitinib,JAK1,Rheumatoid Arthritis,supported,true,303,Selective and reversible JAK1 and JAK2 inhibitor
+26,Metformin,PRKAA1,Type 2 Diabetes,plausible,true,89,Indirect activation of AMPK (PRKAA1) via mitochondrial complex I inhibition
+27,Aspirin,PTGS1,Pain and Inflammation,plausible,true,408,Irreversible inactivation of cyclooxygenase-1 (COX-1)
+28,Aspirin,PTGS2,Colorectal Cancer Chemoprevention,plausible,true,1925,Inhibition of cyclooxygenase-2 (COX-2)
+29,Thalidomide,CRBN,Multiple Myeloma,plausible,true,345,Primary binding target is cereblon E3 ubiquitin ligase component
+30,Rapamycin,MTOR,Renal Transplantation Rejection,plausible,true,28223,Forms gain-of-function complex with FKBP12 to inhibit mTORC1
+31,Hydroxychloroquine,TLR9,Systemic Lupus Erythematosus,plausible,true,47,Inhibition of endosomal toll-like receptor 9 activation
+32,Niclosamide,STAT3,Colorectal Cancer,plausible,true,140,Off-target inhibition of STAT3 phosphorylation and signaling
+33,Sildenafil,PDE5A,Erectile Dysfunction,plausible,true,413,Potent and selective cGMP-specific PDE5 inhibitor
+34,Atorvastatin,HMGCR,Hypercholesterolemia,plausible,true,140,Competitive inhibitor of HMG-CoA reductase
+35,Losartan,AGTR1,Hypertension,plausible,true,58,Selective competitive angiotensin II receptor type 1 antagonist
+36,Omeprazole,ATP4A,Peptic Ulcer Disease,plausible,true,7,Irreversible covalent inhibitor of gastric H+/K+-ATPase
+37,Simvastatin,HMGCR,Dyslipidemia,plausible,true,149,Prodrug statin inhibiting HMG-CoA reductase
+38,Metoprolol,ADRB1,Hypertension,plausible,true,38,Selective beta-1 adrenergic receptor antagonist
+39,Propranolol,ADRB2,Infantile Hemangioma,plausible,true,68,Non-selective beta adrenergic receptor blocker repurposed for hemangioma
+40,Fluoxetine,SLC6A4,Major Depressive Disorder,plausible,true,248,Selective serotonin reuptake inhibitor targeting serotonin transporter
+41,Digoxin,ATP1A1,Heart Failure,plausible,true,19,Inhibitor of sodium-potassium ATPase alpha-1 subunit
+42,Methotrexate,DHFR,Rheumatoid Arthritis,plausible,true,1231,Antifolate inhibiting dihydrofolate reductase
+43,Paclitaxel,TUBB,Ovarian Cancer,plausible,true,6,Stabilizes beta-tubulin microtubules preventing depolymerization
+44,Colchicine,TUBA1A,Gout,plausible,true,1,Binds tubulin heterodimers preventing microtubule polymerization
+45,Warfarin,VKORC1,Thromboembolism,plausible,true,1063,Inhibitor of vitamin K epoxide reductase complex subunit 1
+46,Griseofulvin,ABL1,Chronic Myeloid Leukemia,unsupported,false,0,Zero-hit negative control: antifungal antibiotic with zero affinity for ABL1 kinase
+47,Bacitracin,BRAF,Melanoma,unsupported,false,0,Zero-hit negative control: polypeptide antibiotic with zero affinity for BRAF kinase
+48,Polymyxin B,ERBB2,HER2-positive Breast Cancer,unsupported,false,0,Zero-hit negative control: lipopeptide antibiotic with zero affinity for ERBB2/HER2
+49,Mupirocin,KDR,Renal Cell Carcinoma,unsupported,false,0,Zero-hit negative control: pseudomonic acid antibiotic with zero affinity for VEGFR-2/KDR
+50,Permethrin,BTK,Mantle Cell Lymphoma,unsupported,false,0,Zero-hit negative control: synthetic pyrethroid with zero affinity for Bruton tyrosine kinase
+51,Nystatin,MAP2K1,Melanoma,unsupported,false,0,Zero-hit negative control: polyene antifungal with zero affinity for MEK1 kinase
+52,Griseofulvin,JAK2,Polycythemia Vera,unsupported,false,0,Zero-hit negative control: antifungal agent with zero affinity for Janus kinase 2
+53,Lisinopril,ERBB2,HER2-positive Breast Cancer,unsupported,false,0,Zero-hit negative control: ACE inhibitor with zero binding interaction with HER2
+54,Ciprofloxacin,ABL1,Chronic Myeloid Leukemia,unsupported,false,0,Zero-hit negative control: fluoroquinolone antibacterial with zero affinity for BCR-ABL kinase
+55,Diazepam,MAP2K1,Melanoma,unsupported,false,0,Zero-hit negative control: benzodiazepine with zero affinity for MAP2K1 kinase
+56,Penicillin G,BTK,Mantle Cell Lymphoma,unsupported,false,0,Zero-hit negative control: beta-lactam antibiotic with zero affinity for Bruton tyrosine kinase
+57,Lisinopril,CDK4,HR-positive Breast Cancer,unsupported,false,0,Zero-hit negative control: ACE inhibitor with zero binding interaction with CDK4
+58,Bacitracin,RET,Colorectal Cancer,unsupported,false,0,Zero-hit negative control: polypeptide antibiotic with zero affinity for RET kinase
+59,Bacitracin,CDK4,HR-positive Breast Cancer,unsupported,false,0,Zero-hit negative control: polypeptide antibiotic with zero affinity for CDK4 kinase
+60,Permethrin,ABL1,Chronic Myeloid Leukemia,unsupported,false,0,Zero-hit negative control: synthetic pyrethroid with zero affinity for BCR-ABL kinase

@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an advanced expert Bioinformatician AI analyzing a drug-target-disease interaction.\n\nTarget Interaction: Drug 'Griseofulvin' -> Target 'JAK2' -> Disease 'Polycythemia Vera'\n\n### Scientific Literature Retrieval (PubMed Evidence Context)\nNo specific literature found for this query.\n\n### Task\nProvide a concise, mechanistic biological explanation of why 'Griseofulvin' interacts with 'JAK2' in 'Polycythemia Vera'.\nCite supporting PubMed literature using [PMID: <id>] tags where available.\nIf the literature context explicitly mentions these entities, integrate that evidence.\nIf it does not, rely on general biological principles but note the absence of direct literature.\nBe concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is currently no direct PubMed-indexed literature establishing a functional interaction between Griseofulvin and the JAK2 kinase in the context of Polycythemia Vera. Mechanistically, Griseofulvin is primarily known as an antifungal agent that disrupts microtubule dynamics by binding to tubulin, whereas Polycythemia Vera is driven by the constitutive activation of the JAK2/STAT signaling pathway, most commonly via the JAK2 V617F mutation. While some studies suggest that microtubule-targeting agents can indirectly modulate cytokine receptor signaling, any potential inhibitory effect of Griseofulvin on JAK2 would be speculative and lacks empirical validation in clinical or preclinical models of myeloproliferative neoplasms.",
+  "timestamp": 1791713902.6104908
+}

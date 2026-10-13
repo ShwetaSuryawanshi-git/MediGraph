@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Pazopanib', Target: 'KDR', Disease: 'Renal Cell Carcinoma'.\nProvide a concise, mechanistic biological explanation of why 'Pazopanib' interacts with 'KDR' in 'Renal Cell Carcinoma' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Pazopanib' and 'KDR', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Pazopanib is a potent multi-tyrosine kinase inhibitor that directly binds to the intracellular ATP-binding pocket of KDR (VEGFR-2), effectively inhibiting its autophosphorylation and downstream signaling pathways. In Renal Cell Carcinoma, this interaction blocks VEGF-mediated angiogenesis, thereby depriving the tumor of the blood supply necessary for growth and progression. This mechanism is well-documented and serves as a primary basis for the clinical efficacy of Pazopanib in treating advanced renal cell carcinoma.",
+  "timestamp": 1791711606.692971
+}

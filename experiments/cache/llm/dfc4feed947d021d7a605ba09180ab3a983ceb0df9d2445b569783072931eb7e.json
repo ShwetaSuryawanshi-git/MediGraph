@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.5-flash",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Trametinib', the biological target 'MAP2K1', and the pathological condition 'Melanoma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "**Trametinib** is a highly selective, allosteric, ATP-noncompetitive inhibitor that binds with high affinity ($K_i \\approx 0.92 \\text{ nM}$) to the pocket adjacent to the ATP-binding site of **MAP2K1 (MEK1)**, stabilizing the kinase in an inactive conformation and preventing its RAF-mediated phosphorylation. In **melanoma** driven by hyperactivating *BRAF* mutations (most commonly $V600E/K$), this targeted binding halts the constitutive downstream phosphorylation of ERK1/2, thereby arresting the MAPK signaling cascade responsible for uncontrolled tumor cell proliferation and survival. Clinically, this molecular blockade reverses MAPK-driven oncogenesis, and when combined with BRAF inhibitors (e.g., dabrafenib), it significantly delays the emergence of acquired drug resistance and improves progression-free survival in patients with metastatic melanoma.",
+  "timestamp": 1791557000.5216079
+}

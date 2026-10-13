@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Aspirin', Target: 'PTGS1', Disease: 'Pain and Inflammation'.\nProvide a concise, mechanistic biological explanation of why 'Aspirin' interacts with 'PTGS1' in 'Pain and Inflammation' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Aspirin' and 'PTGS1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Aspirin (acetylsalicylic acid) irreversibly inhibits PTGS1 (COX-1) by covalently acetylating a specific serine residue (Ser530) within the enzyme's active site. This modification sterically hinders the binding of arachidonic acid, thereby preventing the synthesis of pro-inflammatory prostaglandins that mediate pain and inflammation.",
+  "timestamp": 1791712279.310415
+}

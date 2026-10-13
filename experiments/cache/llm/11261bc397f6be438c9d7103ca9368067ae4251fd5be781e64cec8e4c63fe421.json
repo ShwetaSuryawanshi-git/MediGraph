@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Lisinopril', Target: 'CDK4', Disease: 'HR-positive Breast Cancer'.\nProvide a concise, mechanistic biological explanation of why 'Lisinopril' interacts with 'CDK4' in 'HR-positive Breast Cancer' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Lisinopril' and 'CDK4', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is insufficient documented empirical biochemical evidence to support a direct interaction between Lisinopril and CDK4. Lisinopril is a well-characterized angiotensin-converting enzyme (ACE) inhibitor used for hypertension, and it does not possess a known pharmacological mechanism for binding to or inhibiting the CDK4 kinase domain in the context of HR-positive breast cancer.",
+  "timestamp": 1791714189.486114
+}

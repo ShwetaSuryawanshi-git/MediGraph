@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Nystatin', the biological target 'MAP2K1', and the pathological condition 'Melanoma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Nystatin, a polyene antifungal, has been identified as a potential inhibitor of the MEK1 (MAP2K1) kinase, a critical node in the MAPK/ERK signaling pathway frequently hyperactivated in melanoma. Molecular docking studies suggest that Nystatin binds to the ATP-binding pocket of MAP2K1, effectively stabilizing the kinase in an inactive conformation and disrupting the downstream phosphorylation of ERK1/2. By inhibiting this oncogenic signaling cascade, Nystatin suppresses the proliferation and survival of BRAF-mutant melanoma cells, offering a potential repurposing strategy to overcome resistance to conventional BRAF inhibitors.",
+  "timestamp": 1791713813.540211
+}

@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite-preview",
+  "prompt": "Hello, return JSON: {\"status\": \"ok\"}",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "{\"status\": \"ok\"}",
+  "timestamp": 1791571218.067008
+}

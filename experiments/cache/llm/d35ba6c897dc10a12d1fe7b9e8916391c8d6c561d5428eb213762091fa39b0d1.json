@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Colchicine', the biological target 'TUBA1A', and the pathological condition 'Gout'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Colchicine treats gout by binding to a high-affinity site at the interface of $\\alpha$- and $\\beta$-tubulin heterodimers (specifically targeting **TUBA1A**), which inhibits microtubule polymerization and disrupts the intracellular transport of pro-inflammatory vesicles. This molecular blockade prevents the assembly of the NLRP3 inflammasome and inhibits the chemotaxis and phagocytosis of urate crystals by neutrophils. By suppressing this critical inflammatory cascade, colchicine effectively halts the acute recruitment of leukocytes to the joint space, thereby alleviating the intense pain and swelling characteristic of a gout flare.",
+  "timestamp": 1791566473.744661
+}

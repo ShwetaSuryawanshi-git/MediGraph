@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Rapamycin', Target: 'MTOR', Disease: 'Renal Transplantation Rejection'.\nProvide a concise, mechanistic biological explanation of why 'Rapamycin' interacts with 'MTOR' in 'Renal Transplantation Rejection' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Rapamycin' and 'MTOR', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Rapamycin (sirolimus) functions as a potent immunosuppressant by forming a complex with the intracellular protein FKBP12, which then binds to and allosterically inhibits the mechanistic target of rapamycin (mTOR) kinase. By inhibiting the mTORC1 signaling pathway, rapamycin blocks T-cell proliferation and cytokine-driven cell cycle progression, thereby preventing the immune-mediated rejection of transplanted renal tissue.",
+  "timestamp": 1791712456.688185
+}

@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Thalidomide', Target: 'CRBN', Disease: 'Multiple Myeloma'.\nProvide a concise, mechanistic biological explanation of why 'Thalidomide' interacts with 'CRBN' in 'Multiple Myeloma' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Thalidomide' and 'CRBN', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Thalidomide acts as a molecular glue that binds to the Cereblon (CRBN) E3 ubiquitin ligase complex, altering its substrate specificity. This interaction induces the recruitment and subsequent proteasomal degradation of specific transcription factors, such as Ikaros (IKZF1) and Aiolos (IKZF3), which are essential for the survival and proliferation of Multiple Myeloma cells. Consequently, the depletion of these factors leads to the downregulation of IRF4 and c-Myc, triggering apoptosis in the malignant plasma cells.",
+  "timestamp": 1791712399.813591
+}

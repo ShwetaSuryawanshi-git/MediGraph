@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Griseofulvin', Target: 'ABL1', Disease: 'Chronic Myeloid Leukemia'.\nProvide a concise, mechanistic biological explanation of why 'Griseofulvin' interacts with 'ABL1' in 'Chronic Myeloid Leukemia' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Griseofulvin' and 'ABL1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is insufficient documented empirical evidence to support a direct biochemical interaction between Griseofulvin and the ABL1 protein in the context of Chronic Myeloid Leukemia. Griseofulvin is primarily characterized as an antifungal agent that disrupts microtubule dynamics by binding to tubulin, and it is not recognized as a kinase inhibitor or a therapeutic agent for ABL1-driven malignancies.",
+  "timestamp": 1791713502.400424
+}

@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an advanced expert Bioinformatician AI analyzing a drug-target-disease interaction.\n\nTarget Interaction: Drug 'Penicillin G' -> Target 'BTK' -> Disease 'Mantle Cell Lymphoma'\n\n### Scientific Literature Retrieval (PubMed Evidence Context)\nNo specific literature found for this query.\n\n### Task\nProvide a concise, mechanistic biological explanation of why 'Penicillin G' interacts with 'BTK' in 'Mantle Cell Lymphoma'.\nCite supporting PubMed literature using [PMID: <id>] tags where available.\nIf the literature context explicitly mentions these entities, integrate that evidence.\nIf it does not, rely on general biological principles but note the absence of direct literature.\nBe concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is no direct scientific literature supporting a specific interaction between Penicillin G and Bruton\u2019s Tyrosine Kinase (BTK) in the context of Mantle Cell Lymphoma (MCL). Penicillin G is a beta-lactam antibiotic that functions by inhibiting bacterial cell wall synthesis via transpeptidase binding, whereas BTK is a non-receptor tyrosine kinase essential for B-cell receptor signaling and survival in MCL. Given their distinct chemical structures and biological targets, there is no established mechanistic basis for Penicillin G to act as a BTK inhibitor or therapeutic agent in MCL. Any observed clinical correlation would likely be incidental rather than a result of direct molecular interaction.",
+  "timestamp": 1791714143.772959
+}

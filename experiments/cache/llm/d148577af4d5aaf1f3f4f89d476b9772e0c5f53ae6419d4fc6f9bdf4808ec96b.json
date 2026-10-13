@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Atorvastatin', Target: 'HMGCR', Disease: 'Hypercholesterolemia'.\nProvide a concise, mechanistic biological explanation of why 'Atorvastatin' interacts with 'HMGCR' in 'Hypercholesterolemia' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Atorvastatin' and 'HMGCR', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Atorvastatin acts as a potent, competitive inhibitor of HMG-CoA reductase (HMGCR), the rate-limiting enzyme in the mevalonate pathway responsible for endogenous cholesterol biosynthesis. By binding to the active site of HMGCR, atorvastatin prevents the conversion of HMG-CoA to mevalonate, thereby reducing intracellular cholesterol levels and triggering the upregulation of LDL receptors to clear circulating cholesterol. This mechanism is well-documented and serves as the primary therapeutic basis for managing hypercholesterolemia.",
+  "timestamp": 1791712706.3148859
+}

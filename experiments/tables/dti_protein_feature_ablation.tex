@@ -1,0 +1,26 @@
+% IEEE Format Feature Ablation Table
+\begin{table}[t]
+\centering
+\caption{Protein Representation Ablation on DAVIS under Random and Cold-Drug Splits (Mean $\pm$ SD)}
+\label{tab:protein_ablation}
+\small
+\begin{tabular}{llccc}
+\hline
+\textbf{Split} & \textbf{Protein Representation} & \textbf{AUROC} & \textbf{AUPR} & \textbf{MCC} \\
+\hline
+random & AAC (20-dim) & 0.871 $\pm$ 0.008 & 0.396 $\pm$ 0.019 & 0.373 $\pm$ 0.033 \\
+random & All + ESM-2 & 0.907 $\pm$ 0.011 & 0.563 $\pm$ 0.028 & 0.502 $\pm$ 0.026 \\
+random & CTD (147-dim) & 0.904 $\pm$ 0.009 & 0.533 $\pm$ 0.019 & 0.486 $\pm$ 0.026 \\
+random & Combined Classical & 0.901 $\pm$ 0.013 & 0.531 $\pm$ 0.035 & 0.485 $\pm$ 0.038 \\
+random & Dipeptide (400-dim) & 0.901 $\pm$ 0.008 & 0.529 $\pm$ 0.025 & 0.484 $\pm$ 0.015 \\
+random & ESM-2 (320-dim) & 0.915 $\pm$ 0.008 & 0.564 $\pm$ 0.027 & 0.505 $\pm$ 0.018 \\
+\hline
+cold-drug & AAC (20-dim) & 0.707 $\pm$ 0.065 & 0.237 $\pm$ 0.106 & 0.160 $\pm$ 0.062 \\
+cold-drug & All + ESM-2 & 0.733 $\pm$ 0.044 & 0.246 $\pm$ 0.097 & 0.215 $\pm$ 0.063 \\
+cold-drug & CTD (147-dim) & 0.720 $\pm$ 0.046 & 0.241 $\pm$ 0.094 & 0.201 $\pm$ 0.058 \\
+cold-drug & Combined Classical & 0.726 $\pm$ 0.054 & 0.243 $\pm$ 0.083 & 0.208 $\pm$ 0.053 \\
+cold-drug & Dipeptide (400-dim) & 0.716 $\pm$ 0.050 & 0.241 $\pm$ 0.089 & 0.199 $\pm$ 0.039 \\
+cold-drug & ESM-2 (320-dim) & 0.734 $\pm$ 0.061 & 0.255 $\pm$ 0.103 & 0.194 $\pm$ 0.043 \\
+\hline
+\end{tabular}
+\end{table}

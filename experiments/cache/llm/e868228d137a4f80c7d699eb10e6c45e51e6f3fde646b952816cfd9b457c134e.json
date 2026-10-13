@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an advanced expert Bioinformatician AI analyzing a drug-target-disease interaction.\n\nTarget Interaction: Drug 'Polymyxin B' -> Target 'ERBB2' -> Disease 'HER2-positive Breast Cancer'\n\n### Scientific Literature Retrieval (PubMed Evidence Context)\nNo specific literature found for this query.\n\n### Task\nProvide a concise, mechanistic biological explanation of why 'Polymyxin B' interacts with 'ERBB2' in 'HER2-positive Breast Cancer'.\nCite supporting PubMed literature using [PMID: <id>] tags where available.\nIf the literature context explicitly mentions these entities, integrate that evidence.\nIf it does not, rely on general biological principles but note the absence of direct literature.\nBe concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is currently no direct scientific literature establishing a specific pharmacological interaction between Polymyxin B and the ERBB2 (HER2) receptor in the context of breast cancer. Polymyxin B is a cyclic polypeptide antibiotic that primarily functions by disrupting the cell membranes of Gram-negative bacteria through interaction with lipopolysaccharides. While some cationic peptides have been investigated for secondary anti-tumor properties via membrane disruption or interference with intracellular signaling, there is no evidence suggesting that Polymyxin B acts as a targeted inhibitor or modulator of the ERBB2 oncogenic pathway. Consequently, any proposed interaction remains purely speculative and lacks validation in clinical or preclinical oncology models.",
+  "timestamp": 1791713662.172812
+}

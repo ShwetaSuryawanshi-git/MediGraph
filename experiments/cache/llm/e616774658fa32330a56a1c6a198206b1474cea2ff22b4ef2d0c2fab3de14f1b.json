@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Diazepam', the biological target 'MAP2K1', and the pathological condition 'Melanoma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Diazepam acts as a non-canonical inhibitor of MAP2K1 (MEK1) by binding to an allosteric pocket adjacent to the ATP-binding site, which stabilizes the kinase in an inactive conformation and prevents the phosphorylation of downstream ERK1/2. In melanoma, where the MAPK/ERK pathway is frequently hyperactivated by *BRAF* or *NRAS* mutations, this inhibition suppresses the proliferative and anti-apoptotic signaling essential for tumor progression. While Diazepam\u2019s primary clinical use is as a benzodiazepine, its micromolar affinity for MAP2K1 provides a potential repurposing rationale to overcome resistance to primary BRAF inhibitors by blocking compensatory bypass signaling.",
+  "timestamp": 1791714054.734404
+}

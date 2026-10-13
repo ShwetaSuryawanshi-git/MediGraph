@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Tofacitinib', Target: 'JAK3', Disease: 'Rheumatoid Arthritis'.\nProvide a concise, mechanistic biological explanation of why 'Tofacitinib' interacts with 'JAK3' in 'Rheumatoid Arthritis' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Tofacitinib' and 'JAK3', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Tofacitinib is a Janus kinase (JAK) inhibitor that functions as an ATP-competitive antagonist, binding to the catalytic cleft of JAK3. By inhibiting JAK3, Tofacitinib prevents the phosphorylation and subsequent activation of STAT proteins, thereby blocking the intracellular signaling pathways of pro-inflammatory cytokines (such as IL-2, IL-4, and IL-15) that drive the synovial inflammation characteristic of rheumatoid arthritis.",
+  "timestamp": 1791712091.563253
+}

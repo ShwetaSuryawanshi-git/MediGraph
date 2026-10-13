@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Sunitinib', Target: 'KIT', Disease: 'Gastrointestinal Stromal Tumor'.\nProvide a concise, mechanistic biological explanation of why 'Sunitinib' interacts with 'KIT' in 'Gastrointestinal Stromal Tumor' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Sunitinib' and 'KIT', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Sunitinib is a multi-targeted receptor tyrosine kinase inhibitor that functions by binding to the ATP-binding pocket of the KIT receptor, thereby preventing its autophosphorylation and subsequent downstream signaling. In Gastrointestinal Stromal Tumors (GIST), where KIT is frequently constitutively activated by oncogenic mutations, this inhibition effectively blocks the proliferative and survival pathways (such as PI3K/AKT and MAPK) driven by the mutant kinase. This mechanism is well-documented and serves as a standard therapeutic strategy for patients with GIST who are resistant to or intolerant of imatinib.",
+  "timestamp": 1791711429.863345
+}

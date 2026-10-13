@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Ibrutinib', Target: 'BTK', Disease: 'Mantle Cell Lymphoma'.\nProvide a concise, mechanistic biological explanation of why 'Ibrutinib' interacts with 'BTK' in 'Mantle Cell Lymphoma' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Ibrutinib' and 'BTK', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Ibrutinib is a potent, irreversible inhibitor that forms a covalent bond with the cysteine-481 (Cys481) residue in the ATP-binding pocket of Bruton\u2019s tyrosine kinase (BTK). By permanently inactivating BTK, ibrutinib blocks downstream B-cell receptor signaling pathways essential for the survival and proliferation of malignant B-cells in Mantle Cell Lymphoma.",
+  "timestamp": 1791711913.1874712
+}

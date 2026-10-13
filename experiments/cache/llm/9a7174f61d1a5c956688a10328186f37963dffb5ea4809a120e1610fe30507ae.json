@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Warfarin', Target: 'VKORC1', Disease: 'Thromboembolism'.\nProvide a concise, mechanistic biological explanation of why 'Warfarin' interacts with 'VKORC1' in 'Thromboembolism' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Warfarin' and 'VKORC1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Warfarin acts as a potent inhibitor of the enzyme vitamin K epoxide reductase complex subunit 1 (VKORC1). By blocking this enzyme, warfarin prevents the recycling of vitamin K, thereby inhibiting the gamma-carboxylation of vitamin K-dependent clotting factors (II, VII, IX, and X) and reducing the risk of thromboembolism. This interaction is well-documented and serves as the primary pharmacological mechanism for warfarin's anticoagulant effect.",
+  "timestamp": 1791713425.704278
+}

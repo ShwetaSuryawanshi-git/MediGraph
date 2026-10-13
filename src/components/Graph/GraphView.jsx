@@ -33,6 +33,21 @@ const GraphView = ({ initialEntity, initialFilters, onClearInitial }) => {
     } = useGraphData();
 
     const [selectedNode, setSelectedNode] = useState(null);
+    const [focusTooltipVisible, setFocusTooltipVisible] = useState(false);
+    const [hasSeenTooltip, setHasSeenTooltip] = useState(false);
+
+    useEffect(() => {
+        if (selectedNode && !hasSeenTooltip) {
+            setFocusTooltipVisible(true);
+            setHasSeenTooltip(true);
+            const timer = setTimeout(() => {
+                setFocusTooltipVisible(false);
+            }, 6000);
+            return () => clearTimeout(timer);
+        } else if (!selectedNode) {
+            setFocusTooltipVisible(false);
+        }
+    }, [selectedNode, hasSeenTooltip]);
     const [activeTab, setActiveTab] = useState('filters');
     const [aiInference, setAiInference] = useState(null);
     const [isGeneratingAI, setIsGeneratingAI] = useState(false);
@@ -372,7 +387,7 @@ const GraphView = ({ initialEntity, initialFilters, onClearInitial }) => {
                             />
                             
                             {/* Focus Mode Node Clarification Tooltip */}
-                            {selectedNode && (
+                            {focusTooltipVisible && (
                                 <div className="animate-fade-in" style={{ 
                                     position: 'absolute', 
                                     bottom: 'var(--spacing-xl)', 
@@ -392,6 +407,12 @@ const GraphView = ({ initialEntity, initialFilters, onClearInitial }) => {
                                     fontWeight: '500'
                                 }}>
                                     <span>🔦</span> Focus Mode Active: Click on the faded background nodes to reveal their hidden interactions.
+                                    <button 
+                                        onClick={() => setFocusTooltipVisible(false)}
+                                        style={{ background: 'none', border: 'none', cursor: 'pointer', marginLeft: '8px', lineHeight: '1', fontSize: '1.2rem', opacity: 0.6 }}
+                                    >
+                                        &times;
+                                    </button>
                                 </div>
                             )}
 

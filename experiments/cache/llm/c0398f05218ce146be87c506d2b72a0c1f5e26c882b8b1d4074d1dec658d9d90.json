@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Crizotinib', Target: 'ALK', Disease: 'ALK-positive NSCLC'.\nProvide a concise, mechanistic biological explanation of why 'Crizotinib' interacts with 'ALK' in 'ALK-positive NSCLC' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Crizotinib' and 'ALK', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Crizotinib acts as a potent, ATP-competitive small-molecule inhibitor that binds to the intracellular tyrosine kinase domain of the ALK fusion protein. By occupying the ATP-binding pocket, it prevents the phosphorylation of downstream signaling proteins such as STAT3, AKT, and ERK, thereby inhibiting the oncogenic proliferation and survival pathways driven by ALK in NSCLC.",
+  "timestamp": 1791711244.495893
+}

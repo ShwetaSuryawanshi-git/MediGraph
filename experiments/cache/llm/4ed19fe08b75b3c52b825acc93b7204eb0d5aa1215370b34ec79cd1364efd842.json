@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Mupirocin', Target: 'KDR', Disease: 'Renal Cell Carcinoma'.\nProvide a concise, mechanistic biological explanation of why 'Mupirocin' interacts with 'KDR' in 'Renal Cell Carcinoma' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Mupirocin' and 'KDR', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is insufficient documented scientific evidence to support a direct biochemical interaction between Mupirocin and KDR (VEGFR2). Mupirocin functions primarily as an isoleucyl-tRNA synthetase inhibitor in bacteria, and there is no established pharmacological or structural basis for it acting as a KDR inhibitor in the context of Renal Cell Carcinoma.",
+  "timestamp": 1791713706.558828
+}

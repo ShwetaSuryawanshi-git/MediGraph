@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Penicillin G', the biological target 'BTK', and the pathological condition 'Mantle Cell Lymphoma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is **no established biochemical interaction** between Penicillin G and Bruton\u2019s Tyrosine Kinase (BTK); Penicillin G is a $\\beta$-lactam antibiotic targeting bacterial cell wall synthesis, whereas BTK is a non-receptor tyrosine kinase involved in B-cell receptor signaling. In Mantle Cell Lymphoma (MCL), BTK is constitutively active, promoting malignant B-cell proliferation and survival, which is why it is targeted by covalent inhibitors like Ibrutinib, not antibiotics. Consequently, Penicillin G possesses no affinity for the BTK active site (Cys481) and holds no therapeutic rationale for the treatment of MCL.",
+  "timestamp": 1791714115.908472
+}

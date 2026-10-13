@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Ponatinib', the biological target 'ABL1', and the pathological condition 'Refractory CML T315I'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Ponatinib is a multi-targeted tyrosine kinase inhibitor designed with an alkyne linker that allows it to bypass the steric hindrance caused by the **T315I \"gatekeeper\" mutation** in the ABL1 kinase domain. While the T315I mutation replaces a threonine with a bulky isoleucine, preventing the binding of earlier inhibitors like imatinib, ponatinib\u2019s unique structure fits into the ATP-binding pocket without requiring the hydroxyl group typically needed for hydrogen bonding. This high-affinity binding effectively locks the ABL1 kinase in an inactive conformation, thereby suppressing the constitutive BCR-ABL1 signaling that drives **refractory Chronic Myeloid Leukemia (CML)**. Consequently, ponatinib serves as a critical therapeutic intervention for patients whose disease has become resistant to all other available tyrosine kinase inhibitors.",
+  "timestamp": 1791711834.85317
+}

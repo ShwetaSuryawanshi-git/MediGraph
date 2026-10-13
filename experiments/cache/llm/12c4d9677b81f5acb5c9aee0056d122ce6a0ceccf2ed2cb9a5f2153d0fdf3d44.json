@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Nilotinib', Target: 'ABL1', Disease: 'Chronic Myeloid Leukemia'.\nProvide a concise, mechanistic biological explanation of why 'Nilotinib' interacts with 'ABL1' in 'Chronic Myeloid Leukemia' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Nilotinib' and 'ABL1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Nilotinib is a potent, second-generation tyrosine kinase inhibitor that binds with high affinity to the inactive conformation of the ABL1 kinase domain. By occupying the ATP-binding pocket, it prevents the phosphorylation of downstream substrates, thereby inhibiting the constitutive oncogenic signaling of the BCR-ABL1 fusion protein that drives Chronic Myeloid Leukemia. This interaction is well-documented and serves as the primary mechanism for the drug's therapeutic efficacy.",
+  "timestamp": 1791711788.769442
+}

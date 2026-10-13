@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Paclitaxel', the biological target 'TUBB', and the pathological condition 'Ovarian Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Paclitaxel functions as a microtubule-stabilizing agent by binding specifically to the $\\beta$-tubulin subunit (encoded by *TUBB*) at the N-terminal hydrophobic pocket, which prevents the depolymerization necessary for mitotic spindle dynamics. This binding increases the affinity of tubulin dimers for microtubules, effectively \"freezing\" the cytoskeleton and inducing prolonged mitotic arrest at the G2/M phase, which triggers apoptosis in rapidly dividing ovarian cancer cells. In clinical practice, this mechanism is highly effective against ovarian malignancies because it exploits the high proliferative index of tumor cells, serving as a cornerstone chemotherapy regimen often administered in combination with platinum-based agents to overcome chemoresistance.",
+  "timestamp": 1791713277.912492
+}

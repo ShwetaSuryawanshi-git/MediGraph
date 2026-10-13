@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Propranolol', Target: 'ADRB2', Disease: 'Infantile Hemangioma'.\nProvide a concise, mechanistic biological explanation of why 'Propranolol' interacts with 'ADRB2' in 'Infantile Hemangioma' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Propranolol' and 'ADRB2', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Propranolol acts as a non-selective beta-adrenergic receptor antagonist that binds to and inhibits the ADRB2 receptor on hemangioma endothelial cells. This blockade suppresses the downstream cAMP-PKA signaling pathway, which inhibits pro-angiogenic factors like VEGF and induces apoptosis, effectively arresting the rapid proliferation characteristic of infantile hemangioma.",
+  "timestamp": 1791713029.125778
+}

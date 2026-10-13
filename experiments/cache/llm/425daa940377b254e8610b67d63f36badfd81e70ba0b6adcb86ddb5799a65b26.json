@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Bacitracin', the biological target 'RET', and the pathological condition 'Colorectal Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Bacitracin acts as a potent inhibitor of the RET (Rearranged during Transfection) receptor tyrosine kinase by binding to its extracellular domain, thereby disrupting the dimerization and subsequent autophosphorylation required for downstream oncogenic signaling (e.g., MAPK/ERK and PI3K/AKT pathways). In colorectal cancer, where RET overexpression or activating mutations drive uncontrolled cellular proliferation and survival, Bacitracin effectively suppresses these mitogenic signals with moderate binding affinity. By sequestering the receptor and preventing ligand-induced activation, Bacitracin serves as a repurposed therapeutic candidate to attenuate tumor progression and enhance sensitivity to conventional chemotherapeutic agents.",
+  "timestamp": 1791714235.227817
+}

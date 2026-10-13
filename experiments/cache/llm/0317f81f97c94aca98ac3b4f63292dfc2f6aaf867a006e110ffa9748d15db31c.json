@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Diazepam', Target: 'MAP2K1', Disease: 'Melanoma'.\nProvide a concise, mechanistic biological explanation of why 'Diazepam' interacts with 'MAP2K1' in 'Melanoma' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Diazepam' and 'MAP2K1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is insufficient documented empirical biochemical evidence to support a direct interaction between Diazepam and MAP2K1 (MEK1) in the context of melanoma. While Diazepam is a well-characterized benzodiazepine acting on GABA-A receptors, it is not recognized as a pharmacological inhibitor or modulator of the MAPK/ERK signaling pathway.",
+  "timestamp": 1791714068.9134998
+}

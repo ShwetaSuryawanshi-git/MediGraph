@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Aspirin', the biological target 'PTGS2', and the pathological condition 'Colorectal Cancer Chemoprevention'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Aspirin (acetylsalicylic acid) acts as an irreversible inhibitor of PTGS2 (COX-2) by transferring its acetyl group to a specific serine residue (Ser516) within the enzyme's hydrophobic channel, sterically blocking the active site and preventing the conversion of arachidonic acid into pro-inflammatory prostaglandins. In the context of colorectal cancer (CRC), this inhibition suppresses the PGE2-mediated signaling pathways that otherwise promote tumor cell proliferation, angiogenesis, and evasion of apoptosis. The clinical therapeutic rationale for chemoprevention relies on this sustained suppression of the inflammatory microenvironment, which significantly reduces the risk of adenoma recurrence and CRC incidence in high-risk populations.",
+  "timestamp": 1791712326.270668
+}

@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Hydroxychloroquine', Target: 'TLR9', Disease: 'Systemic Lupus Erythematosus'.\nProvide a concise, mechanistic biological explanation of why 'Hydroxychloroquine' interacts with 'TLR9' in 'Systemic Lupus Erythematosus' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Hydroxychloroquine' and 'TLR9', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Hydroxychloroquine (HCQ) is a weak base that accumulates in acidic intracellular organelles, such as endosomes, where it increases the luminal pH. This alkalinization inhibits the proteolytic processing and conformational maturation of Toll-like receptor 9 (TLR9), thereby preventing the receptor from binding to its ligand, self-nucleic acids, and dampening the aberrant interferon-alpha production characteristic of Systemic Lupus Erythematosus.",
+  "timestamp": 1791712519.4186811
+}

@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Warfarin', the biological target 'VKORC1', and the pathological condition 'Thromboembolism'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Warfarin acts as a competitive inhibitor of the enzyme **Vitamin K epoxide reductase complex subunit 1 (VKORC1)**, which is essential for recycling oxidized vitamin K back into its reduced (hydroquinone) form. By blocking this recycling pathway, warfarin prevents the $\\gamma$-carboxylation of glutamate residues on clotting factors II, VII, IX, and X, thereby inhibiting their maturation and reducing the blood's coagulability. This reduction in functional clotting factors effectively prevents the formation and propagation of **thromboemboli** in patients at risk for deep vein thrombosis or pulmonary embolism. The drug exhibits high-affinity binding to the VKORC1 active site, and its therapeutic rationale relies on maintaining a narrow international normalized ratio (INR) to balance the prevention of pathological clotting against the risk of hemorrhage.",
+  "timestamp": 1791713412.899102
+}

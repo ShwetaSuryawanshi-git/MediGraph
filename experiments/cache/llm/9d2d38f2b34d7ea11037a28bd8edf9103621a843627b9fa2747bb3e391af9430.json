@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Simvastatin', Target: 'HMGCR', Disease: 'Dyslipidemia'.\nProvide a concise, mechanistic biological explanation of why 'Simvastatin' interacts with 'HMGCR' in 'Dyslipidemia' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Simvastatin' and 'HMGCR', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Simvastatin is a competitive inhibitor of HMG-CoA reductase (HMGCR), the rate-limiting enzyme in the mevalonate pathway responsible for cholesterol biosynthesis. By binding to the active site of HMGCR, simvastatin prevents the conversion of HMG-CoA to mevalonate, thereby reducing intracellular cholesterol levels and upregulating LDL receptor expression to lower systemic LDL-cholesterol in patients with dyslipidemia.",
+  "timestamp": 1791712888.138945
+}

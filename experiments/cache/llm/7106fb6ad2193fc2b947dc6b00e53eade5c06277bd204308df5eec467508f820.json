@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an advanced expert Bioinformatician AI analyzing a candidate drug-target interaction.\n\nTarget Interaction: Drug 'Ampicillin' -> Target 'JAK2' -> Disease 'Polycythemia Vera'\n\n### Scientific Literature Retrieval (PubMed Evidence)\nTitle: Mechanism of zaogong erteng decoction in the treatment of endometritis and promotion of endometrial repair.\nAbstract: Zaogong Erteng Decoction (ZGETD) is a compound Chinese medicine used for endometritis treatment. It not only alleviates inflammation but also promotes the repair of endometrial damage. Nonetheless, the underlying mechanisms remain unclear.\n\n### Strict Grounding Requirement\nExplain the biological interaction between 'Ampicillin' and 'JAK2' in 'Polycythemia Vera' STRICTLY and EXCLUSIVELY based on the provided PubMed scientific evidence above.\nEvery factual claim must be verifiable from the text. Do NOT fabricate, speculate, or introduce unverified residues, affinities, or off-target interactions not mentioned in the context.\nBe concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "The provided scientific literature does not contain any information regarding the drug 'Ampicillin', the target 'JAK2', or the disease 'Polycythemia Vera'. Consequently, there is no evidence in the provided text to support or explain a biological interaction between these entities. The provided abstract focuses exclusively on the mechanism of Zaogong Erteng Decoction in the treatment of endometritis.",
+  "timestamp": 1791567078.07183
+}

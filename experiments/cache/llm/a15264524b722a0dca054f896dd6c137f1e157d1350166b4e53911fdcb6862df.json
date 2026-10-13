@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Permethrin', Target: 'ABL1', Disease: 'Chronic Myeloid Leukemia'.\nProvide a concise, mechanistic biological explanation of why 'Permethrin' interacts with 'ABL1' in 'Chronic Myeloid Leukemia' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Permethrin' and 'ABL1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is insufficient documented scientific evidence to support a direct biochemical interaction between Permethrin and the ABL1 protein in the context of Chronic Myeloid Leukemia. Permethrin is a synthetic pyrethroid primarily known for its action as a neurotoxin by modulating voltage-gated sodium channels in insects, and it is not recognized as a kinase inhibitor or a therapeutic agent for CML.",
+  "timestamp": 1791714404.72016
+}

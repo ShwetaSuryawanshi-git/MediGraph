@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Digoxin', Target: 'ATP1A1', Disease: 'Heart Failure'.\nProvide a concise, mechanistic biological explanation of why 'Digoxin' interacts with 'ATP1A1' in 'Heart Failure' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Digoxin' and 'ATP1A1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Digoxin acts as a selective inhibitor of the Na+/K+-ATPase (ATP1A1) pump by binding to the extracellular domain of the alpha subunit. This inhibition increases intracellular sodium concentrations, which subsequently reduces the activity of the sodium-calcium exchanger (NCX), leading to elevated intracellular calcium levels and enhanced myocardial contractility (positive inotropy) in heart failure patients.",
+  "timestamp": 1791713168.813038
+}

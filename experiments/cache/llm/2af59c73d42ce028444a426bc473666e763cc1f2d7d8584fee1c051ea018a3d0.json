@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Lisinopril', the biological target 'ERBB2', and the pathological condition 'HER2-positive Breast Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Lisinopril is a competitive inhibitor of Angiotensin-Converting Enzyme (ACE) and does not function as a direct pharmacological ligand for the ERBB2 (HER2) receptor. While some studies suggest that ACE inhibitors may indirectly modulate the tumor microenvironment or interfere with HER2-driven signaling pathways via crosstalk with the EGFR/HER2 axis, there is no established direct binding affinity or molecular docking mechanism between lisinopril and the ERBB2 protein. Consequently, lisinopril is not a therapeutic agent for HER2-positive breast cancer, and its clinical use in this context remains limited to managing hypertension in patients undergoing cardiotoxic chemotherapy (e.g., trastuzumab).",
+  "timestamp": 1791713934.7423968
+}

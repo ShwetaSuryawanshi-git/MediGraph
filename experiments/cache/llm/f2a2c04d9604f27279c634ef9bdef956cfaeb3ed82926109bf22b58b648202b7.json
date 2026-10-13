@@ -1,0 +1,11 @@
+{
+  "model": "gemini-flash-lite-latest",
+  "prompt": "Hello judge",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 10,
+    "system_instruction": ""
+  },
+  "text": "Hello! I am ready.",
+  "timestamp": 1791555547.667785
+}

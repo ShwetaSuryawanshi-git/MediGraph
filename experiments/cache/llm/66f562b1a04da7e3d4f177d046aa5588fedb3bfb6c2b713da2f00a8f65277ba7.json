@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Sorafenib', Target: 'KDR', Disease: 'Renal Cell Carcinoma'.\nProvide a concise, mechanistic biological explanation of why 'Sorafenib' interacts with 'KDR' in 'Renal Cell Carcinoma' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Sorafenib' and 'KDR', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Sorafenib is a multi-kinase inhibitor that functions as a potent antagonist of the KDR (VEGFR-2) receptor tyrosine kinase. By binding to the intracellular ATP-binding pocket of KDR, Sorafenib inhibits autophosphorylation and downstream signaling pathways, thereby suppressing the tumor angiogenesis essential for the progression of Renal Cell Carcinoma. This interaction is well-documented and serves as a primary mechanism for the drug's clinical efficacy in treating this malignancy.",
+  "timestamp": 1791711366.363793
+}

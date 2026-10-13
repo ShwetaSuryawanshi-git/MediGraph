@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Dasatinib', the biological target 'SRC', and the pathological condition 'Chronic Myeloid Leukemia'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Dasatinib is a potent, multi-targeted tyrosine kinase inhibitor that binds to the ATP-binding pocket of the BCR-ABL fusion protein\u2014the constitutively active kinase driving Chronic Myeloid Leukemia (CML)\u2014as well as the SRC family kinases. By stabilizing the inactive conformation of the kinase domain, Dasatinib effectively blocks the transfer of phosphate groups to downstream signaling substrates, thereby inhibiting the proliferative and anti-apoptotic pathways essential for leukemic cell survival. With a binding affinity significantly higher than first-generation inhibitors (IC50 in the sub-nanomolar range), Dasatinib overcomes resistance caused by most BCR-ABL mutations, providing a robust therapeutic rationale for treating patients who are intolerant or resistant to Imatinib.",
+  "timestamp": 1791711653.496028
+}

@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Ruxolitinib', the biological target 'JAK1', and the pathological condition 'Myelofibrosis'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Ruxolitinib acts as a potent, ATP-competitive small-molecule inhibitor that binds to the highly conserved ATP-binding pocket of the JAK1 and JAK2 kinase domains, effectively blocking the phosphorylation of downstream STAT proteins. In Myelofibrosis, the constitutive activation of the JAK-STAT signaling pathway\u2014often driven by *JAK2V617F* mutations or cytokine hypersensitivity\u2014leads to the uncontrolled proliferation of myeloid cells and systemic inflammation. By competitively inhibiting the catalytic activity of JAK1/2, Ruxolitinib suppresses this aberrant signaling, thereby reducing splenomegaly and alleviating the debilitating constitutional symptoms associated with the disease. The drug exhibits high selectivity and nanomolar affinity for the JAK family, providing a targeted therapeutic intervention that modulates the underlying cytokine-driven pathophysiology.",
+  "timestamp": 1791565195.907281
+}

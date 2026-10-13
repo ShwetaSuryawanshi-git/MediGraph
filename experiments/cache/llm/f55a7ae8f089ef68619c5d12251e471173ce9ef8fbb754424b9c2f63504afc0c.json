@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Propranolol', the biological target 'ADRB2', and the pathological condition 'Infantile Hemangioma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Propranolol acts as a non-selective competitive antagonist that binds with high affinity to the **ADRB2** (\u03b22-adrenergic receptor), blocking the binding of endogenous catecholamines like epinephrine and norepinephrine. In **infantile hemangioma**, this blockade inhibits the downstream cAMP/PKA signaling pathway, which suppresses the expression of pro-angiogenic factors (e.g., VEGF, MMPs) and triggers vasoconstriction and apoptosis of proliferating endothelial cells. Clinically, this mechanism effectively halts tumor growth and promotes involution by shifting the vascular microenvironment from a pro-angiogenic state to a quiescent, regressive state.",
+  "timestamp": 1791566184.2035918
+}

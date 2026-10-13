@@ -1,0 +1,46 @@
+{
+  "MediGraph Engine": {
+    "Mean_Rank": 27.9,
+    "Median_Rank": 27.5,
+    "Mean_Percentile_Rank": 73.1,
+    "Hits@1": 0.0,
+    "Hits@3": 0.0,
+    "Hits@5": 0.0,
+    "Hits@10": 0.0
+  },
+  "Target Prior Baseline": {
+    "Mean_Rank": 1.0,
+    "Median_Rank": 1.0,
+    "Mean_Percentile_Rank": 100.0,
+    "Hits@1": 100.0,
+    "Hits@3": 100.0,
+    "Hits@5": 100.0,
+    "Hits@10": 100.0
+  },
+  "Random Baseline (Analytic Expectation)": {
+    "Mean_Rank": 51.0,
+    "Median_Rank": 51.0,
+    "Mean_Percentile_Rank": 50.0,
+    "Hits@1": 0.9900990099009901,
+    "Hits@3": 2.9702970297029703,
+    "Hits@5": 4.9504950495049505,
+    "Hits@10": 9.900990099009901
+  },
+  "Random Baseline (1000 Permutations Mean [95% CI])": {
+    "Mean_Rank": 50.8988,
+    "Mean_Rank_CI": [
+      33.9975,
+      67.3
+    ],
+    "Median_Rank": 51.0,
+    "Mean_Percentile_Rank": 50.1012,
+    "Percentile_CI": [
+      33.7,
+      67.0025
+    ],
+    "Hits@1": 0.96,
+    "Hits@3": 3.04,
+    "Hits@5": 4.92,
+    "Hits@10": 9.63
+  }
+}

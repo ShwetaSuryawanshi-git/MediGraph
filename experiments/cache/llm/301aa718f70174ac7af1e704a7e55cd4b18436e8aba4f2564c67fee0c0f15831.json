@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Dabrafenib', the biological target 'BRAF', and the pathological condition 'Melanoma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Dabrafenib is a potent, selective ATP-competitive inhibitor that binds to the active conformation of the mutated BRAF V600E kinase, preventing the phosphorylation of downstream MEK proteins in the MAPK/ERK signaling pathway. By stabilizing the kinase in an inactive state, it effectively halts the constitutive proliferative signaling that drives uncontrolled cell division in BRAF-mutated melanoma. This high-affinity binding (nanomolar $K_i$) specifically targets the oncogenic driver mutation while sparing wild-type BRAF, thereby providing a targeted therapeutic rationale to induce apoptosis and tumor regression in patients harboring the V600E substitution.",
+  "timestamp": 1791710935.8084962
+}

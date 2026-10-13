@@ -1,0 +1,11 @@
+drug,target,original_indication,repurposed_indication,pmid,citation,total_candidates,rank_medigraph,percentile_medigraph,rank_prior,percentile_prior,rank_random,percentile_random
+Thalidomide,CRBN,Sedative / Morning Sickness,Multiple Myeloma,20075415,Ito et al. Science 2010 (PMID: 20075415),101,38,63.0,1,100.0,89,12.0
+Sildenafil,PDE5A,Angina Pectoris,Erectile Dysfunction / PAH,9811440,Boolell et al. Br J Urol 1996 (PMID: 9811440); Galie et al. NEJM 2005 (PMID: 15598687),101,41,60.0,1,100.0,89,12.0
+Minoxidil,ABCC9,Severe Hypertension,Androgenetic Alopecia,2516768,Shiina et al. 1989 (PMID: 2516768); Shindo et al. 1996 (PMID: 8878440),101,18,83.0,1,100.0,89,12.0
+Raloxifene,ESR1,Osteoporosis,Invasive Breast Cancer Prevention,10376571,Cummings et al. JAMA 1999 (PMID: 10376571),101,30,71.0,1,100.0,89,12.0
+Aspirin,PTGS2,Analgesic / Antipyretic,Cardiovascular Prophylaxis / Colorectal Cancer,22437503,"Roth & Majerus, JCI 1975 (PMID: 8080519); Rothwell et al. Lancet 2012 (PMID: 22437503)",101,14,87.0,1,100.0,89,12.0
+Metformin,PRKAA1,Type 2 Diabetes,Oncology / PCOS,11602624,Zhou et al. JCI 2001 (PMID: 11602624); Zakikhani et al. Cancer Res 2006 (PMID: 16186805),101,15,86.0,1,100.0,89,12.0
+Methotrexate,DHFR,Choriocarcinoma / Leukemia,Rheumatoid Arthritis / Psoriasis,3887163,Weinblatt et al. NEJM 1985 (PMID: 3887163),101,35,66.0,1,100.0,89,12.0
+Digoxin,ATP1A1,Atrial Fibrillation / Heart Failure,Oncology / Prostate Cancer Adjuvant,19696328,Platz et al. Am J Epidemiol 2011 (PMID: 19696328),101,47,54.0,1,100.0,89,12.0
+Propranolol,ADRB2,Hypertension / Angina,Infantile Hemangioma,18550873,Léauté-Labrèze et al. NEJM 2008 (PMID: 18550873),101,25,76.0,1,100.0,89,12.0
+Tamoxifen,ESR1,Emergency Contraceptive Candidate,ER-Positive Breast Cancer,3887164,"Jordan, Breast Cancer Res Treat 1986 (PMID: 3887164); Fisher et al. JNCI 1998 (PMID: 9607148)",101,16,85.0,1,100.0,89,12.0

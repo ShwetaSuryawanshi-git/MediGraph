@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Ampicillin', the biological target 'JAK2', and the pathological condition 'Polycythemia Vera'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "There is **no established biochemical interaction** between Ampicillin and JAK2; Ampicillin is a $\\beta$-lactam antibiotic targeting bacterial cell wall synthesis, whereas Polycythemia Vera (PV) is a myeloproliferative neoplasm driven by the gain-of-function mutation *JAK2* V617F. While some computational docking studies have explored repurposing existing drugs to inhibit the JAK2 kinase domain, Ampicillin lacks the structural pharmacophore required to bind the ATP-binding pocket of JAK2 with any clinically relevant affinity. Consequently, there is no therapeutic rationale for using Ampicillin to treat PV, as it does not modulate the constitutive activation of the JAK-STAT signaling pathway that characterizes the disease.",
+  "timestamp": 1791567055.643209
+}

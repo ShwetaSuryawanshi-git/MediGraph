@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Digoxin', the biological target 'ATP1A1', and the pathological condition 'Heart Failure'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Digoxin acts as a selective inhibitor of the **Na\u207a/K\u207a-ATPase (ATP1A1)** by binding to the extracellular domain of the \u03b1-subunit, specifically stabilizing the E2-P conformational state and preventing ion transport. This inhibition increases intracellular Na\u207a concentration, which subsequently reduces the activity of the Na\u207a/Ca\u00b2\u207a exchanger (NCX), leading to elevated intracellular Ca\u00b2\u207a levels and enhanced myocardial contractility (positive inotropy). In the context of **heart failure**, this mechanism improves cardiac output and hemodynamics, while the drug's high affinity for the enzyme also modulates vagal tone to slow the heart rate. Consequently, Digoxin serves as a therapeutic agent to manage symptoms and improve clinical stability in patients with reduced ejection fraction and atrial fibrillation.",
+  "timestamp": 1791566323.577006
+}

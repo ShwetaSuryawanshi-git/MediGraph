@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Palbociclib', Target: 'CDK4', Disease: 'HR-positive Breast Cancer'.\nProvide a concise, mechanistic biological explanation of why 'Palbociclib' interacts with 'CDK4' in 'HR-positive Breast Cancer' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Palbociclib' and 'CDK4', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Palbociclib is a highly selective, reversible inhibitor of cyclin-dependent kinases 4 and 6 (CDK4/6). In HR-positive breast cancer, it binds to the ATP-binding pocket of CDK4, preventing the phosphorylation of the retinoblastoma (Rb) protein and thereby arresting the cell cycle at the G1-to-S phase transition. This mechanism effectively halts the uncontrolled proliferation characteristic of hormone receptor-positive malignant cells.",
+  "timestamp": 1791711081.795944
+}

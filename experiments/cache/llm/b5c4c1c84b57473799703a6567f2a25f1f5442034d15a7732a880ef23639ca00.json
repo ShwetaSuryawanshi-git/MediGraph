@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Sildenafil', Target: 'PDE5A', Disease: 'Erectile Dysfunction'.\nProvide a concise, mechanistic biological explanation of why 'Sildenafil' interacts with 'PDE5A' in 'Erectile Dysfunction' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Sildenafil' and 'PDE5A', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Sildenafil acts as a potent and selective competitive inhibitor of the cGMP-specific phosphodiesterase type 5 (PDE5A) enzyme. By blocking the catalytic site of PDE5A, sildenafil prevents the degradation of cyclic guanosine monophosphate (cGMP) in the corpus cavernosum, thereby sustaining the smooth muscle relaxation and vasodilation required for an erection.",
+  "timestamp": 1791712642.4461749
+}

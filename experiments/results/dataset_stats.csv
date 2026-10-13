@@ -1,0 +1,9 @@
+dataset,split,n_unique_drugs,n_unique_targets,n_total_pairs,n_train_pairs,n_val_pairs,n_test_pairs,global_pos_count,global_pos_rate_pct,test_pos_count,test_pos_rate_pct,chance_auroc,chance_aupr
+DAVIS,random,68,379,25772,20617,2577,2578,1845,7.16,185,7.18,0.5,0.0718
+DAVIS,cold_drug,68,379,25772,20466,2274,3032,1845,7.16,212,6.99,0.5,0.0699
+DAVIS,cold_target,68,379,25772,20604,2516,2652,1845,7.16,197,7.43,0.5,0.0743
+DAVIS,cold_both,68,379,25772,16362,222,312,1845,7.16,17,5.45,0.5,0.0545
+KIBA,random,2068,229,20000,16000,2000,2000,4203,20.96,420,21.0,0.5,0.21
+KIBA,cold_drug,2068,229,20000,15759,2094,2147,4203,20.96,398,18.54,0.5,0.1854
+KIBA,cold_target,2068,229,20000,16313,1637,2050,4203,20.96,406,19.8,0.5,0.198
+KIBA,cold_both,2068,229,20000,12694,202,228,2886,20.96,38,16.67,0.5,0.1667

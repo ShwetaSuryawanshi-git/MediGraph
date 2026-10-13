@@ -1,6 +1,7 @@
 # Dependencies
 node_modules/
 ml_pipeline/venv/
+experiments/venv/
 
 # Environment & Secrets
 .env
@@ -22,3 +23,11 @@ build/
 # IDE
 .vscode/
 .idea/
+
+# Large data files
+*.tab
+*.zip
+
+# Python cache
+__pycache__/
+*.pyc

@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Atorvastatin', the biological target 'ABL1', and the pathological condition 'Leukemia'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Atorvastatin acts as an allosteric inhibitor of the ABL1 tyrosine kinase by binding to the myristoyl-binding pocket, which stabilizes the inactive conformation of the kinase domain and prevents the oncogenic signaling that drives Chronic Myeloid Leukemia (CML). This interaction exhibits micromolar affinity, effectively disrupting the BCR-ABL1 fusion protein's ability to phosphorylate downstream substrates like STAT5 and CrkL, thereby inducing apoptosis in leukemic cells. Clinically, while Atorvastatin is primarily a statin, its repurposing rationale lies in its ability to synergize with traditional tyrosine kinase inhibitors (TKIs) like Imatinib, potentially overcoming resistance mechanisms and reducing the required dosage of primary chemotherapeutics.",
+  "timestamp": 1791567291.416575
+}

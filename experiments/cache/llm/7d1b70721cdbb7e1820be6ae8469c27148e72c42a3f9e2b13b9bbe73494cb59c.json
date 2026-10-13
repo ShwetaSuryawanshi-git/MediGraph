@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Metformin', the biological target 'PRKAA1', and the pathological condition 'Type 2 Diabetes'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Metformin acts as an indirect activator of **PRKAA1** (the catalytic subunit of AMPK) by inhibiting Complex I of the mitochondrial electron transport chain, which increases the intracellular AMP:ATP ratio. This rise in AMP triggers the phosphorylation of PRKAA1 at Thr172 by the upstream kinase LKB1, shifting the cell into a catabolic state that suppresses hepatic gluconeogenesis and enhances peripheral insulin sensitivity. In **Type 2 Diabetes**, this mechanism effectively lowers blood glucose levels by reducing excessive glucose production in the liver and improving systemic metabolic homeostasis. While Metformin does not bind PRKAA1 directly, its modulation of the cellular energy charge serves as a potent allosteric and regulatory trigger for the kinase, providing a robust therapeutic rationale for glycemic control.",
+  "timestamp": 1791712202.16492
+}

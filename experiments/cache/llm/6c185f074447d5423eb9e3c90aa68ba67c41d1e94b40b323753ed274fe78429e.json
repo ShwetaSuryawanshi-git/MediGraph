@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Osimertinib', Target: 'EGFR', Disease: 'EGFR T790M Lung Cancer'.\nProvide a concise, mechanistic biological explanation of why 'Osimertinib' interacts with 'EGFR' in 'EGFR T790M Lung Cancer' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Osimertinib' and 'EGFR', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Osimertinib is a third-generation, irreversible tyrosine kinase inhibitor that selectively targets both EGFR-sensitizing mutations and the T790M resistance mutation. It functions by forming a covalent bond with the Cysteine-797 residue in the ATP-binding pocket of the EGFR kinase domain, effectively inhibiting downstream signaling pathways and tumor cell proliferation in T790M-positive non-small cell lung cancer.",
+  "timestamp": 1791711163.614312
+}

@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Hydroxychloroquine', the biological target 'TLR9', and the pathological condition 'Systemic Lupus Erythematosus'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Hydroxychloroquine (HCQ) acts as a lysosomotropic weak base that accumulates within acidic endolysosomal compartments, where it elevates intralysosomal pH and disrupts the conformational maturation of Toll-like receptor 9 (TLR9). By interfering with the proteolytic cleavage required for TLR9 activation, HCQ prevents the receptor from binding to self-nucleic acid-IgG immune complexes, thereby inhibiting the downstream signaling cascade (MyD88-IRF7) that drives the excessive production of Type I interferons. In Systemic Lupus Erythematosus (SLE), this blockade effectively dampens the chronic innate immune activation and autoantibody production characteristic of the disease, providing a foundational therapeutic strategy to reduce flares and improve long-term survival.",
+  "timestamp": 1791565688.3963509
+}

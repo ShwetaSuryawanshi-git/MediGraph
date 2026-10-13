@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an advanced expert Bioinformatician AI analyzing a drug-target-disease interaction.\n\nTarget Interaction: Drug 'Nystatin' -> Target 'MAP2K1' -> Disease 'Melanoma'\n\n### Scientific Literature Retrieval (PubMed Evidence Context)\nNo specific literature found for this query.\n\n### Task\nProvide a concise, mechanistic biological explanation of why 'Nystatin' interacts with 'MAP2K1' in 'Melanoma'.\nCite supporting PubMed literature using [PMID: <id>] tags where available.\nIf the literature context explicitly mentions these entities, integrate that evidence.\nIf it does not, rely on general biological principles but note the absence of direct literature.\nBe concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is currently no direct evidence in PubMed linking Nystatin, a polyene antifungal, to the modulation of MAP2K1 (MEK1) in the context of melanoma. Mechanistically, Nystatin primarily functions by binding to ergosterol in fungal cell membranes to induce pore formation, whereas MAP2K1 is a central kinase in the MAPK/ERK signaling pathway frequently hyperactivated in melanoma. While some polyenes have been investigated for off-target effects on mammalian cholesterol-rich lipid rafts\u2014which can serve as signaling platforms for receptor tyrosine kinases\u2014any potential interaction with MAP2K1 would likely be an indirect consequence of altered membrane dynamics rather than a direct pharmacological inhibition. Consequently, this interaction remains speculative and lacks validation in current oncological literature.",
+  "timestamp": 1791713842.198879
+}

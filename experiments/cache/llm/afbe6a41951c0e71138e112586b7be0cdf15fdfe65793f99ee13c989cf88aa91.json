@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Dasatinib', Target: 'SRC', Disease: 'Chronic Myeloid Leukemia'.\nProvide a concise, mechanistic biological explanation of why 'Dasatinib' interacts with 'SRC' in 'Chronic Myeloid Leukemia' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Dasatinib' and 'SRC', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Dasatinib is a potent, multi-targeted tyrosine kinase inhibitor that binds to the ATP-binding pocket of the SRC family kinases in their inactive conformation. By competitively inhibiting ATP binding, Dasatinib prevents the phosphorylation of downstream signaling substrates, thereby suppressing the oncogenic SRC-mediated pathways that contribute to the proliferation and survival of leukemic cells in Chronic Myeloid Leukemia.",
+  "timestamp": 1791711668.6057432
+}

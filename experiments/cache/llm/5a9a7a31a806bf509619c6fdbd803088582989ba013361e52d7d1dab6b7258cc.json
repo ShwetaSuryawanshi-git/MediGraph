@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.6-flash",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Erlotinib', Target: 'EGFR', Disease: 'Non-Small Cell Lung Cancer'.\nProvide a concise, mechanistic biological explanation of why 'Erlotinib' interacts with 'EGFR' in 'Non-Small Cell Lung Cancer' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Erlotinib' and 'EGFR', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Erlotinib is a potent, small-molecule adenosine triphosphate (ATP)-competitive tyrosine kinase inhibitor that selectively binds to the intracellular catalytic domain of the Epidermal Growth Factor Receptor (EGFR). By blocking ATP binding, erlotinib prevents EGFR autophosphorylation and inhibits downstream signaling pathways (such as RAS/RAF/MEK/ERK and PI3K/AKT) critical for cell proliferation and survival. This mechanism is particularly effective in Non-Small Cell Lung Cancer (NSCLC) tumors harboring activating *EGFR* mutations (e.g., exon 19 deletions or L858R), where cancer growth is oncogenically addicted to hyperactive EGFR signaling.",
+  "timestamp": 1791710797.573343
+}

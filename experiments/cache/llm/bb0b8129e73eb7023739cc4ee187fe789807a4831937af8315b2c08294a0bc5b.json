@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Griseofulvin', the biological target 'ABL1', and the pathological condition 'Chronic Myeloid Leukemia'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Griseofulvin acts as a non-ATP-competitive inhibitor of the BCR-ABL1 fusion protein, the constitutively active tyrosine kinase driving Chronic Myeloid Leukemia (CML). It binds to the myristoyl-binding pocket of the ABL1 kinase domain, stabilizing the inactive conformation of the enzyme and effectively suppressing its oncogenic signaling pathways. This allosteric inhibition provides a therapeutic rationale for overcoming resistance to traditional ATP-competitive inhibitors (like imatinib) by targeting a distinct regulatory site, thereby reducing the proliferation of BCR-ABL1-positive leukemic cells.",
+  "timestamp": 1791713474.6444988
+}

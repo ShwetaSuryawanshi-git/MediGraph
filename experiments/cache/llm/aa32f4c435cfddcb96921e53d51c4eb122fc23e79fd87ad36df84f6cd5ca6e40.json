@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Polymyxin B', the biological target 'ERBB2', and the pathological condition 'HER2-positive Breast Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Polymyxin B, traditionally a cationic polypeptide antibiotic, has been identified as a potential inhibitor of the HER2 (ERBB2) receptor by binding to its extracellular domain, thereby disrupting the receptor's dimerization and subsequent downstream signaling pathways (PI3K/Akt and MAPK). The mechanism involves the electrostatic interaction between the positively charged residues of Polymyxin B and the negatively charged surface patches of the HER2 extracellular domain, which sterically hinders ligand-independent activation. In HER2-positive breast cancer, this inhibition effectively suppresses the oncogenic proliferative signaling driven by HER2 overexpression. While its clinical utility is currently limited by systemic toxicity, Polymyxin B serves as a structural scaffold for developing novel, less toxic small-molecule inhibitors that target the HER2 extracellular interface.",
+  "timestamp": 1791713633.067821
+}

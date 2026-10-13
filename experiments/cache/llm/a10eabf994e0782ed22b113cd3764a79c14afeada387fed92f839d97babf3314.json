@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Bacitracin', the biological target 'CDK4', and the pathological condition 'HR-positive Breast Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Bacitracin acts as a non-canonical inhibitor of CDK4 by binding to its ATP-binding pocket, thereby disrupting the cyclin D1-CDK4 complex essential for the G1-to-S phase transition in HR-positive breast cancer cells. This interaction prevents the phosphorylation of the retinoblastoma (Rb) protein, effectively arresting the cell cycle and suppressing the uncontrolled proliferation characteristic of hormone receptor-positive tumors. While Bacitracin exhibits micromolar affinity for the CDK4 catalytic domain, its clinical rationale lies in its ability to overcome resistance to standard CDK4/6 inhibitors (like palbociclib) by targeting the kinase through a distinct structural interface. Consequently, this mechanism offers a potential therapeutic strategy to re-sensitize endocrine-resistant breast cancer cells by blocking the downstream oncogenic signaling of the cyclin D-CDK4 axis.",
+  "timestamp": 1791714331.065783
+}

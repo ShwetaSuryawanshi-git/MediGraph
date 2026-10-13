@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Losartan', Target: 'AGTR1', Disease: 'Hypertension'.\nProvide a concise, mechanistic biological explanation of why 'Losartan' interacts with 'AGTR1' in 'Hypertension' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Losartan' and 'AGTR1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Losartan is a potent, selective, competitive antagonist of the angiotensin II type 1 (AT1) receptor (AGTR1). By binding to AGTR1, it blocks the vasoconstrictive and aldosterone-secreting effects of angiotensin II, thereby reducing systemic vascular resistance and lowering blood pressure in patients with hypertension.",
+  "timestamp": 1791712767.23068
+}

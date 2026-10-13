@@ -1,0 +1,6 @@
+condition,tier,count,empty_rate
+C1_Strict_RAG,Total Queries,60,26.666666666666668
+C2_Staged_RAG,Tier 1: Drug+Target+Disease,44,0.0
+C2_Staged_RAG,Tier 2: Drug+Target,1,0.0
+C2_Staged_RAG,Tier 3: Secondary Disease,15,0.0
+C2_Staged_RAG,Abstention: Zero Literature,0,0.0

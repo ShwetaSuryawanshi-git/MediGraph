@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.6-flash",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Sorafenib', the biological target 'KDR', and the pathological condition 'Renal Cell Carcinoma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Sorafenib acts as a potent, ATP-competitive multikinase inhibitor that directly binds the intracellular kinase domain of KDR (VEGFR-2)\u2014a receptor tyrosine kinase overexpressed in Renal Cell Carcinoma (RCC)\u2014with nanomolar affinity ($IC_{50} \\approx 90\\text{ nM}$). Structurally, its biaryl urea motif stabilizes the inactive \"DFG-out\" conformation (Type II inhibition), effectively blocking downstream Ras/Raf/MEK/ERK and PI3K/Akt signaling cascades that drive endothelial cell proliferation and migration. In RCC, hyperactivation of KDR is typically induced by VHL gene inactivation, which causes hypoxia-inducible factor (HIF) accumulation and subsequent VEGF overexpression. By disrupting this autocrine and paracrine VEGF/KDR axis, Sorafenib starves the highly vascularized RCC tumor microenvironment of its blood supply, inhibiting tumor angiogenesis and inducing apoptosis to arrest disease progression.",
+  "timestamp": 1791564460.894052
+}

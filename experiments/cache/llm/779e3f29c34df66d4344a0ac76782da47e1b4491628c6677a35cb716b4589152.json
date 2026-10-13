@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Trametinib', Target: 'MAP2K1', Disease: 'Melanoma'.\nProvide a concise, mechanistic biological explanation of why 'Trametinib' interacts with 'MAP2K1' in 'Melanoma' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Trametinib' and 'MAP2K1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Trametinib is a highly selective, allosteric inhibitor of MEK1 (MAP2K1) and MEK2. It binds to a hydrophobic pocket adjacent to the ATP-binding site, stabilizing the inactive conformation of the kinase and preventing the phosphorylation and subsequent activation of downstream ERK1/2. In melanoma, this mechanism effectively blocks the hyperactive MAPK/ERK signaling pathway, which is frequently driven by *BRAF* mutations, thereby inhibiting tumor cell proliferation and survival.",
+  "timestamp": 1791711021.863851
+}

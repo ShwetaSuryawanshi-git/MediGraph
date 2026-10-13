@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Losartan', the biological target 'AGTR1', and the pathological condition 'Hypertension'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Losartan acts as a selective, competitive antagonist of the **Angiotensin II Type 1 (AT1) receptor (AGTR1)**, a G-protein-coupled receptor that mediates the potent vasoconstrictive and aldosterone-secreting effects of Angiotensin II. By binding with high affinity to the transmembrane pocket of AGTR1, Losartan sterically hinders the conformational changes required for G-protein activation, thereby inhibiting the downstream phospholipase C/inositol triphosphate signaling cascade. This blockade prevents systemic vasoconstriction and sodium retention, effectively lowering peripheral vascular resistance and blood pressure in patients with **hypertension**. Consequently, Losartan provides a therapeutic advantage by interrupting the renin-angiotensin-aldosterone system (RAAS) without the bradykinin-related side effects associated with ACE inhibitors.",
+  "timestamp": 1791712753.466294
+}

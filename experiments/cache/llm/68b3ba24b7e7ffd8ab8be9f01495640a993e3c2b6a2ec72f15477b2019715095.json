@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Baricitinib', Target: 'JAK1', Disease: 'Rheumatoid Arthritis'.\nProvide a concise, mechanistic biological explanation of why 'Baricitinib' interacts with 'JAK1' in 'Rheumatoid Arthritis' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Baricitinib' and 'JAK1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Baricitinib is a potent, selective, and reversible inhibitor of the Janus kinase (JAK) family, with documented empirical evidence demonstrating its high affinity for the ATP-binding site of JAK1. By competitively inhibiting JAK1, baricitinib prevents the phosphorylation and activation of signal transducers and activators of transcription (STATs), thereby blocking the intracellular signaling pathways of pro-inflammatory cytokines implicated in the pathogenesis of rheumatoid arthritis.",
+  "timestamp": 1791712153.05318
+}

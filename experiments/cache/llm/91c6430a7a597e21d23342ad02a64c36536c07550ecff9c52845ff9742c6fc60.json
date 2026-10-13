@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.6-flash",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Vemurafenib', Target: 'BRAF', Disease: 'BRAF V600E Melanoma'.\nProvide a concise, mechanistic biological explanation of why 'Vemurafenib' interacts with 'BRAF' in 'BRAF V600E Melanoma' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Vemurafenib' and 'BRAF', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Vemurafenib is a potent, ATP-competitive small-molecule inhibitor specifically designed to target the oncogenic BRAF V600E mutant kinase. The V600E substitution destabilizes the inactive conformation of the BRAF kinase domain, locking it into a constitutively active monomeric state that hyperactivates the downstream MEK/ERK signaling pathway to drive melanoma cell proliferation. Vemurafenib selectively binds to the active ATP-binding pocket of BRAF V600E, inhibiting its kinase activity, suppressing ERK phosphorylation, and triggering apoptosis in BRAF V600E-mutant melanoma cells.",
+  "timestamp": 1791710889.240574
+}

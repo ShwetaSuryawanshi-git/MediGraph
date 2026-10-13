@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Rapamycin', the biological target 'MTOR', and the pathological condition 'Renal Transplantation Rejection'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Rapamycin (sirolimus) functions as a potent immunosuppressant by first binding to the intracellular immunophilin FKBP12, forming a complex that specifically docks into the FRB (FKBP-rapamycin binding) domain of the mTOR protein. This binding allosterically inhibits the mTORC1 complex, thereby blocking the downstream phosphorylation of p70S6K and 4E-BP1, which effectively arrests T-cell proliferation and cytokine-driven immune activation. In the context of renal transplantation, this mechanism prevents the clonal expansion of alloreactive T-cells, thereby mitigating the cellular and humoral immune responses that lead to graft rejection. The high affinity of the rapamycin-FKBP12 complex for mTOR provides a targeted therapeutic window to maintain graft survival while minimizing the nephrotoxicity often associated with calcineurin inhibitors.",
+  "timestamp": 1791712445.075443
+}

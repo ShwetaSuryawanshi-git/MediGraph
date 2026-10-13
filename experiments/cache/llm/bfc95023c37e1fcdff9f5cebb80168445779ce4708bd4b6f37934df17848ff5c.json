@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Paracetamol', the biological target 'ERBB2', and the pathological condition 'Breast Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Paracetamol (acetaminophen) is not a clinically recognized inhibitor of ERBB2 (HER2); rather, it is a non-selective COX inhibitor primarily used for analgesia and antipyresis. While some *in silico* docking studies have proposed potential low-affinity binding of paracetamol to the ATP-binding pocket of the ERBB2 kinase domain, these interactions lack the structural specificity and high binding affinity required to effectively disrupt the oncogenic signaling pathways (e.g., PI3K/Akt, MAPK) that drive HER2-positive breast cancer. Consequently, there is no established clinical therapeutic rationale for using paracetamol as an ERBB2-targeted therapy, as it fails to achieve the potent, selective inhibition necessary to suppress tumor cell proliferation or induce apoptosis in this pathological context.",
+  "timestamp": 1791566705.276235
+}

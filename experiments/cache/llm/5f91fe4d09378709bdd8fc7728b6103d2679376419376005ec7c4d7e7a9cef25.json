@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Lisinopril', the biological target 'CDK4', and the pathological condition 'HR-positive Breast Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Lisinopril is a competitive inhibitor of Angiotensin-Converting Enzyme (ACE) and is not a direct pharmacological inhibitor of CDK4; however, emerging research suggests that ACE inhibition can indirectly suppress the CDK4/6-cyclin D1 pathway by modulating the renin-angiotensin system (RAS) signaling in the tumor microenvironment. By reducing intratumoral Angiotensin II levels, Lisinopril attenuates downstream PI3K/Akt/mTOR signaling, which normally promotes the expression of Cyclin D1, thereby reducing the activation of CDK4 and inducing G1-phase cell cycle arrest in HR-positive breast cancer cells. While Lisinopril lacks high-affinity direct binding to the CDK4 ATP-binding pocket, its clinical therapeutic rationale lies in its potential to act as a chemosensitizer that enhances the efficacy of standard CDK4/6 inhibitors (e.g., palbociclib) by mitigating compensatory survival signaling pathways.",
+  "timestamp": 1791714177.347838
+}

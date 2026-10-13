@@ -1,0 +1,16 @@
+% IEEE Format Attribution Stability Table (Training Bootstrap Resampling)
+\begin{table}[t]
+\centering
+\caption{Attribution Stability Under Training Data Bootstrap Resampling ($B=5$)}
+\label{tab:shap_stability}
+\small
+\begin{tabular}{lc}
+\hline
+\textbf{Metric} & \textbf{Mean $\pm$ SD across Resample Pairs} \\
+\hline
+Jaccard Overlap (Top-20 Features) & 0.497 $\pm$ 0.077 \\
+Jaccard Overlap (Top-50 Features) & 0.512 $\pm$ 0.042 \\
+Spearman Rank Correlation (Top-100 Non-Zero Features) & 0.439 $\pm$ 0.038 \\
+\hline
+\end{tabular}
+\end{table}

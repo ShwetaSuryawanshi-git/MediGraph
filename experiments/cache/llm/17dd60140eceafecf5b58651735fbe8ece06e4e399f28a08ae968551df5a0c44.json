@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Ciprofloxacin', Target: 'ABL1', Disease: 'Chronic Myeloid Leukemia'.\nProvide a concise, mechanistic biological explanation of why 'Ciprofloxacin' interacts with 'ABL1' in 'Chronic Myeloid Leukemia' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Ciprofloxacin' and 'ABL1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is insufficient empirical biochemical evidence to support a direct, clinically relevant interaction between Ciprofloxacin and the ABL1 kinase in the context of Chronic Myeloid Leukemia. While Ciprofloxacin is a well-characterized fluoroquinolone antibiotic that targets bacterial DNA gyrase and topoisomerase IV, it is not recognized as a pharmacological inhibitor or modulator of the ABL1 protein.",
+  "timestamp": 1791714009.164564
+}

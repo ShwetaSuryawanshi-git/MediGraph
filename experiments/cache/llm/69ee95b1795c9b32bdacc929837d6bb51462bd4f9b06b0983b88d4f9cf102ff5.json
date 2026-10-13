@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Paclitaxel', Target: 'TUBB', Disease: 'Ovarian Cancer'.\nProvide a concise, mechanistic biological explanation of why 'Paclitaxel' interacts with 'TUBB' in 'Ovarian Cancer' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Paclitaxel' and 'TUBB', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Paclitaxel binds directly to the $\\beta$-tubulin subunit (encoded by *TUBB*) of microtubules, stabilizing them against depolymerization. This interaction prevents the normal reorganization of the microtubule network required for mitosis, leading to cell cycle arrest at the G2/M phase and subsequent apoptosis in ovarian cancer cells.",
+  "timestamp": 1791713291.628313
+}

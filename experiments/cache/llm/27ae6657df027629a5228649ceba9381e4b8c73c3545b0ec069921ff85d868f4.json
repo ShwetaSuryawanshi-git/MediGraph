@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Fluoxetine', the biological target 'SLC6A4', and the pathological condition 'Major Depressive Disorder'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Fluoxetine acts as a selective serotonin reuptake inhibitor (SSRI) by binding with high affinity to the central substrate-binding site of the serotonin transporter (SLC6A4), a transmembrane protein responsible for the reuptake of serotonin from the synaptic cleft. By physically occluding the binding pocket, fluoxetine prevents the translocation of serotonin into the presynaptic neuron, thereby increasing the extracellular concentration and duration of serotonergic signaling. In the context of Major Depressive Disorder, this sustained elevation of synaptic serotonin facilitates adaptive neuroplasticity and enhances downstream signaling pathways, which helps to correct the monoaminergic imbalances and impaired neural connectivity associated with the pathology.",
+  "timestamp": 1791566265.318003
+}

@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Omeprazole', the biological target 'BRAF', and the pathological condition 'Colorectal Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Omeprazole acts as a repurposed inhibitor of the BRAF V600E mutant protein, a key oncogenic driver in a subset of colorectal cancers (CRC) that activates the MAPK/ERK signaling pathway to promote uncontrolled cell proliferation. Molecular docking studies indicate that omeprazole binds to the ATP-binding pocket of the BRAF kinase domain, effectively stabilizing the inactive conformation and disrupting downstream phosphorylation of MEK. While its binding affinity is lower than that of dedicated BRAF inhibitors like vemurafenib, omeprazole\u2019s ability to inhibit BRAF-mutant CRC cell growth suggests a potential therapeutic rationale for combination therapy to overcome resistance or reduce the dosage of more toxic targeted agents.",
+  "timestamp": 1791567469.0830688
+}

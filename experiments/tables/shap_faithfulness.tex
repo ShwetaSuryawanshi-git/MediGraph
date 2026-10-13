@@ -1,0 +1,16 @@
+% IEEE Format SHAP Progressive Masking Faithfulness Table (Cold-Drug Split)
+\begin{table}[t]
+\centering
+\caption{Progressive Feature Masking on TDC DAVIS Cold-Drug Split (Mean $\pm$ SD across 5 Seeds)}
+\label{tab:shap_faithfulness}
+\small
+\begin{tabular}{lcccc}
+\hline
+\textbf{Method} & \textbf{$k=0$ (Baseline)} & \textbf{$k=5$} & \textbf{$k=20$} & \textbf{$k=50$} \\
+\hline
+\textbf{SHAP (MediGraph)} & 0.243 $\pm$ 0.083 & 0.275 $\pm$ 0.053 & 0.278 $\pm$ 0.059 & 0.262 $\pm$ 0.062 \\
+MDI (Gini) & 0.243 $\pm$ 0.083 & 0.286 $\pm$ 0.054 & 0.283 $\pm$ 0.077 & 0.248 $\pm$ 0.071 \\
+Random Baseline & 0.243 $\pm$ 0.083 & 0.283 $\pm$ 0.062 & 0.286 $\pm$ 0.062 & 0.285 $\pm$ 0.071 \\
+\hline
+\end{tabular}
+\end{table}

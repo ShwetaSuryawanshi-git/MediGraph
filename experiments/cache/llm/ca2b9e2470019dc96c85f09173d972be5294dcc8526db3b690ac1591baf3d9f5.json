@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Bacitracin', the biological target 'BRAF', and the pathological condition 'Melanoma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Bacitracin acts as a non-competitive inhibitor of the BRAF kinase by binding to an allosteric site, which stabilizes the inactive conformation of the protein and prevents the downstream activation of the MAPK/ERK signaling pathway. In melanoma, where the V600E mutation leads to constitutive BRAF activation and uncontrolled cell proliferation, this inhibition effectively suppresses oncogenic signaling and induces apoptosis in malignant cells. While Bacitracin exhibits micromolar affinity for the BRAF kinase domain, its clinical utility is limited by poor systemic bioavailability and high nephrotoxicity, relegating its current role primarily to topical applications or experimental investigation rather than systemic melanoma therapy.",
+  "timestamp": 1791713549.7036932
+}

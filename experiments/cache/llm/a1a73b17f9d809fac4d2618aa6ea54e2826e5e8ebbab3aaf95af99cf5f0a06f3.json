@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Metformin', Target: 'PRKAA1', Disease: 'Type 2 Diabetes'.\nProvide a concise, mechanistic biological explanation of why 'Metformin' interacts with 'PRKAA1' in 'Type 2 Diabetes' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Metformin' and 'PRKAA1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Metformin is a well-documented indirect activator of PRKAA1 (the catalytic subunit of AMPK). It inhibits mitochondrial Complex I, leading to an increase in the cellular AMP:ATP ratio, which triggers the allosteric activation and subsequent phosphorylation of PRKAA1 by upstream kinases like LKB1. This activation restores energy homeostasis in Type 2 Diabetes by suppressing hepatic gluconeogenesis and enhancing peripheral glucose uptake.",
+  "timestamp": 1791712215.702692
+}

@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Sunitinib', the biological target 'KIT', and the pathological condition 'Gastrointestinal Stromal Tumor'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Sunitinib is a multi-targeted receptor tyrosine kinase inhibitor that binds to the ATP-binding pocket of the KIT receptor, stabilizing it in an inactive conformation and preventing the phosphorylation of downstream signaling pathways (e.g., PI3K/AKT, MAPK) essential for tumor cell proliferation. In Gastrointestinal Stromal Tumors (GIST), oncogenic mutations\u2014most commonly in the juxtamembrane domain (exon 11)\u2014lead to constitutive, ligand-independent activation of KIT; Sunitinib effectively competes with ATP for the catalytic site, exhibiting high binding affinity ($K_d$ in the low nanomolar range) to inhibit these mutant kinases. Clinically, Sunitinib serves as a critical second-line therapy for patients who develop resistance to Imatinib, as its broader inhibitory profile targets a wider spectrum of secondary KIT mutations that render earlier treatments ineffective.",
+  "timestamp": 1791564520.040224
+}

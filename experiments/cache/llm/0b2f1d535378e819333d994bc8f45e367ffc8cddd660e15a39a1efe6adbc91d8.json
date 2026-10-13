@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.5-flash",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Erlotinib', the biological target 'EGFR', and the pathological condition 'Non-Small Cell Lung Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Erlotinib is a small-molecule, reversible tyrosine kinase inhibitor (TKI) that competitively binds to the adenosine triphosphate (ATP)-binding pocket within the intracellular kinase domain of the Epidermal Growth Factor Receptor (EGFR), specifically exhibiting high affinity ($K_d \\approx 5 \\text{ nM}$) for activating mutations such as exon 19 deletions and the L858R point mutation. By blocking ATP binding, erlotinib prevents EGFR autophosphorylation and halts the downstream activation of the pro-survival MAPK/ERK and PI3K/Akt signaling pathways. In Non-Small Cell Lung Cancer (NSCLC) harboring these sensitizing *EGFR* mutations, this molecular blockade effectively arrests the cell cycle and induces apoptosis, providing a targeted therapeutic rationale that significantly improves progression-free survival compared to standard chemotherapy.",
+  "timestamp": 1791556883.836875
+}

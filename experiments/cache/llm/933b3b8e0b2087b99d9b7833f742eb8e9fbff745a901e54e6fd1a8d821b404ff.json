@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.6-flash",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Osimertinib', the biological target 'EGFR', and the pathological condition 'EGFR T790M Lung Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Osimertinib is a third-generation, irreversible, ATP-competitive tyrosine kinase inhibitor (TKI) that selectively targets the EGFR T790M resistance mutation in non-small cell lung cancer (NSCLC). Mechanistically, it forms a covalent bond with the Cys797 residue in the ATP-binding pocket of the EGFR kinase domain, effectively locking the receptor in an inactive conformation and abolishing downstream oncogenic signaling (RAS-RAF-MEK-ERK and PI3K-AKT pathways). Unlike first- and second-generation TKIs, Osimertinib exhibits a high binding affinity and potency for both sensitizing EGFR mutations (ex19del, L858R) and the T790M resistance gatekeeper mutation, while displaying low affinity for wild-type EGFR. Clinically, this high mutant selectivity provides a robust therapeutic window, markedly suppressing tumor growth in T790M-driven NSCLC while minimizing dose-limiting off-target toxicities (e.g., severe rash and diarrhea) associated with wild-type EGFR inhibition.",
+  "timestamp": 1791564353.138784
+}

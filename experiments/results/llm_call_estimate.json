@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-10-09 22:14:53",
+  "total_triples": 60,
+  "estimated_generation_calls": 180,
+  "estimated_judge_calls": 180,
+  "total_estimated_api_calls": 360,
+  "daily_free_tier_quota_limit": 1500,
+  "quota_utilization_pct": 24.0,
+  "generator_model": "gemini-3.6-flash",
+  "judge_model": "gemini-3.1-flash-lite-preview"
+}

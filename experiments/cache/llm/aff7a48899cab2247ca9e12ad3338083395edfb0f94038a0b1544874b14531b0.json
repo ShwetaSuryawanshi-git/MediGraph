@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Regorafenib', the biological target 'RET', and the pathological condition 'Colorectal Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Regorafenib is a multi-kinase inhibitor that functions as a competitive antagonist by binding to the ATP-binding pocket of the RET (Rearranged during Transfection) receptor tyrosine kinase, effectively stabilizing the protein in an inactive conformation and blocking downstream oncogenic signaling pathways like RAS/RAF/MEK/ERK. In colorectal cancer (CRC), while RET mutations are rare, Regorafenib\u2019s high-affinity inhibition of RET\u2014alongside other targets like VEGFR and TIE2\u2014exerts a potent anti-angiogenic and anti-proliferative effect that disrupts the tumor microenvironment and suppresses metastatic progression. By inhibiting these kinases at nanomolar concentrations, Regorafenib effectively starves the tumor of its blood supply and halts aberrant intracellular signaling, providing a critical therapeutic option for patients with refractory metastatic CRC.",
+  "timestamp": 1791711476.156103
+}

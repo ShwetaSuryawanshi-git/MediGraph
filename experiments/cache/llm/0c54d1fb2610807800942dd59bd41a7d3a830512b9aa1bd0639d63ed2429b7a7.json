@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an advanced expert Bioinformatician AI analyzing a drug-target-disease interaction.\n\nTarget Interaction: Drug 'Colchicine' -> Target 'TUBA1A' -> Disease 'Gout'\n\n### Scientific Literature Retrieval (RAG Context)\nThe following abstracts were dynamically retrieved from PubMed based on the query:\nNo specific literature found for this query.\n\n### Task\nProvide a concise, mechanistic biological explanation of why 'Colchicine' binds to or interacts with 'TUBA1A' in the context of 'Gout'.\nIf the RAG Context explicitly mentions these drugs/targets/diseases, integrate that evidence.\nIf it doesn't, rely on fundamental biological principles but state that direct literature was not pulled.\nBe concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "As no specific literature was retrieved for this query, this explanation relies on established pharmacological and cell biological principles. Colchicine functions as a potent anti-mitotic agent by binding specifically to the interface between $\\alpha$- and $\\beta$-tubulin heterodimers, including the **TUBA1A** isoform, thereby inhibiting microtubule polymerization. In the context of **Gout**, this interaction prevents the formation of the microtubule network required for the chemotaxis, motility, and phagocytosis of neutrophils toward urate crystals in the joint. By disrupting these cytoskeletal-dependent inflammatory processes, Colchicine effectively suppresses the recruitment of leukocytes and the subsequent release of pro-inflammatory cytokines, thereby alleviating the acute gouty flare.",
+  "timestamp": 1791566495.7350662
+}

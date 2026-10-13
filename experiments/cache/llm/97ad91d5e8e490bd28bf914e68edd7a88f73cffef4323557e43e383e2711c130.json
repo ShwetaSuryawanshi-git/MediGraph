@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Sildenafil', the biological target 'PDE5A', and the pathological condition 'Erectile Dysfunction'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Sildenafil acts as a potent, selective competitive inhibitor of the enzyme **phosphodiesterase type 5 (PDE5A)**, which is responsible for the hydrolytic degradation of cyclic guanosine monophosphate (cGMP) in the corpus cavernosum. By binding to the catalytic site of PDE5A with high affinity\u2014mimicking the purine ring of cGMP\u2014sildenafil prevents the breakdown of cGMP, thereby sustaining elevated intracellular levels of this secondary messenger. This accumulation of cGMP promotes prolonged smooth muscle relaxation and vasodilation via the nitric oxide-cGMP signaling pathway, which is the fundamental physiological requirement for achieving and maintaining an erection. Consequently, sildenafil therapeutically restores erectile function by pharmacologically amplifying the natural physiological response to sexual stimulation.",
+  "timestamp": 1791565797.723306
+}

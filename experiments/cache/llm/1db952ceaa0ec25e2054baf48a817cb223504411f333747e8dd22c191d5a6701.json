@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.6-flash",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Crizotinib', the biological target 'ALK', and the pathological condition 'ALK-positive NSCLC'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Crizotinib is an ATP-competitive, small-molecule tyrosine kinase inhibitor that selectively binds the intracellular kinase domain of the Anaplastic Lymphoma Kinase (ALK) protein with high affinity (low nanomolar $K_i$), blocking autophosphorylation and downstream oncogenic signaling (e.g., STAT3, AKT, ERK pathways). In ALK-positive Non-Small Cell Lung Cancer (NSCLC), chromosomal rearrangements\u2014most commonly the *EML4-ALK* fusion\u2014generate a constitutively active, ligand-independent chimeric tyrosine kinase that drives aberrant cellular proliferation and survival. By occupying the ATP-binding pocket, Crizotinib locks the ALK kinase domain in an inactive conformation, directly counteracting the driver mutation's oncogenic activity. Clinically, this target-specific inhibition selectively induces apoptosis in *ALK*-rearranged tumor cells while sparing wild-type tissues, resulting in significant tumor regression and superior progression-free survival compared to conventional chemotherapy.",
+  "timestamp": 1791564388.75084
+}

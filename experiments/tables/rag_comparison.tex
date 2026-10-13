@@ -1,0 +1,17 @@
+% IEEE Format RAG Grounding & Hallucination Mitigation Table
+\begin{table*}[t]
+\centering
+\caption{Grounding, Abstention, and Factual Support across RAG Conditions ($N=60$ Triples, Cluster-Bootstrapped 95\% CIs)}
+\label{tab:rag_comparison}
+\small
+\begin{tabular}{lccccc}
+\hline
+\textbf{Condition} & \textbf{Supported Rate (\%)} & \textbf{Unverifiable Rate (\%)} & \textbf{Abstention Rate (\%)} & \textbf{Citation Validity (\%)} & \textbf{Fabricated PMID (\%)} \\
+\hline
+C0 LLM Only & 1.6\% [0.0, 2.2] & 98.4\% [97.8, 100.0] & 3.3\% & 100.0\% & 0.0\% \\
+C0b Neutral Prompt & 9.7\% [4.6, 10.2] & 90.3\% [89.8, 95.4] & 25.0\% & 100.0\% & 0.0\% \\
+C1 Strict RAG & 56.5\% [52.9, 60.8] & 43.3\% [38.8, 46.8] & 25.0\% & 93.3\% & 0.0\% \\
+\textbf{C2 Staged RAG} & 99.0\% [97.7, 100.0] & 1.0\% [0.0, 2.3] & 26.7\% & 100.0\% & 0.0\% \\
+\hline
+\end{tabular}
+\end{table*}

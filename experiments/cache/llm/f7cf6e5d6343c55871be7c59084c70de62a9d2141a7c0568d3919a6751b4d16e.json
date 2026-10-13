@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Gentamicin', the biological target 'KDR', and the pathological condition 'Angiogenesis'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Gentamicin, an aminoglycoside antibiotic, acts as a non-canonical inhibitor of **KDR** (Kinase Insert Domain Receptor, or VEGFR-2) by binding to its extracellular immunoglobulin-like domains, thereby sterically hindering the binding of Vascular Endothelial Growth Factor (VEGF). This interaction disrupts the receptor dimerization and subsequent autophosphorylation of the intracellular tyrosine kinase domain, effectively blocking the downstream signaling cascades (e.g., PI3K/Akt and MAPK/ERK) essential for endothelial cell proliferation and migration. By suppressing this pathway, Gentamicin inhibits **angiogenesis**, offering a potential therapeutic rationale for repurposing the drug to treat neovascular-dependent pathologies such as diabetic retinopathy or tumor growth, where it acts to normalize or regress pathological vessel formation.",
+  "timestamp": 1791567157.08852
+}

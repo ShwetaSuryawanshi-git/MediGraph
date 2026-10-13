@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Acalabrutinib', Target: 'BTK', Disease: 'Chronic Lymphocytic Leukemia'.\nProvide a concise, mechanistic biological explanation of why 'Acalabrutinib' interacts with 'BTK' in 'Chronic Lymphocytic Leukemia' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Acalabrutinib' and 'BTK', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Acalabrutinib is a potent, highly selective, covalent inhibitor of Bruton\u2019s tyrosine kinase (BTK). It functions by forming an irreversible bond with the cysteine-481 residue in the BTK active site, thereby blocking the B-cell receptor signaling pathway essential for the survival and proliferation of malignant B-cells in Chronic Lymphocytic Leukemia.",
+  "timestamp": 1791711972.628385
+}

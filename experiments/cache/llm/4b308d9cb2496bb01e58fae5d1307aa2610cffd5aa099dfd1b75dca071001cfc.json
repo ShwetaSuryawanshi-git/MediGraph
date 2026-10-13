@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Griseofulvin', Target: 'JAK2', Disease: 'Polycythemia Vera'.\nProvide a concise, mechanistic biological explanation of why 'Griseofulvin' interacts with 'JAK2' in 'Polycythemia Vera' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Griseofulvin' and 'JAK2', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is insufficient documented scientific evidence to support a direct biochemical interaction between Griseofulvin and the JAK2 protein. While Griseofulvin is known to interfere with microtubule dynamics by binding to tubulin, it is not established as a JAK2 inhibitor, and there is no empirical data linking it to the treatment of Polycythemia Vera via this pathway.",
+  "timestamp": 1791713888.344301
+}

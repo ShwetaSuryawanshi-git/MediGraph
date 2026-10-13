@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Acalabrutinib', the biological target 'BTK', and the pathological condition 'Chronic Lymphocytic Leukemia'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Acalabrutinib is a highly selective, second-generation covalent inhibitor that targets the **Bruton\u2019s tyrosine kinase (BTK)** by forming an irreversible bond with the **Cys481** residue in the enzyme's ATP-binding pocket. By occupying this site, Acalabrutinib potently inhibits BTK autophosphorylation and downstream signaling through the B-cell receptor (BCR) pathway, which is constitutively active and essential for the survival and proliferation of malignant B-cells in **Chronic Lymphocytic Leukemia (CLL)**. This targeted blockade induces apoptosis and disrupts the microenvironmental homing signals required for CLL cell maintenance, offering superior clinical efficacy and a more favorable safety profile compared to first-generation inhibitors due to reduced off-target activity against kinases like EGFR and ITK.",
+  "timestamp": 1791711958.591297
+}

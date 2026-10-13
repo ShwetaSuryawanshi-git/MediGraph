@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Niclosamide', Target: 'STAT3', Disease: 'Colorectal Cancer'.\nProvide a concise, mechanistic biological explanation of why 'Niclosamide' interacts with 'STAT3' in 'Colorectal Cancer' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Niclosamide' and 'STAT3', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is documented empirical evidence that Niclosamide inhibits the STAT3 signaling pathway in colorectal cancer cells. Mechanistically, Niclosamide suppresses STAT3 activity by inhibiting its phosphorylation at Tyr705, thereby preventing its dimerization, nuclear translocation, and subsequent transcriptional activation of oncogenic target genes involved in cell proliferation and survival.",
+  "timestamp": 1791712582.599919
+}

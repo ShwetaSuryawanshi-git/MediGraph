@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Dabrafenib', Target: 'BRAF', Disease: 'Melanoma'.\nProvide a concise, mechanistic biological explanation of why 'Dabrafenib' interacts with 'BRAF' in 'Melanoma' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Dabrafenib' and 'BRAF', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Dabrafenib is a potent, selective ATP-competitive inhibitor that binds to the active conformation of the BRAF kinase, specifically targeting the V600E mutation prevalent in melanoma. By occupying the ATP-binding pocket, it prevents the phosphorylation of downstream MEK proteins, thereby effectively blocking the hyperactive MAPK/ERK signaling pathway that drives uncontrolled cell proliferation in these tumors.",
+  "timestamp": 1791710963.572139
+}

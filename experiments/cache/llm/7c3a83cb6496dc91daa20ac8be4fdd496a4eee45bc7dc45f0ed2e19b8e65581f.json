@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Mupirocin', the biological target 'KDR', and the pathological condition 'Renal Cell Carcinoma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Mupirocin, traditionally an isoleucyl-tRNA synthetase inhibitor, has been identified through computational drug repurposing as a potential antagonist of the **KDR (VEGFR-2)** receptor, a critical driver of angiogenesis in **Renal Cell Carcinoma (RCC)**. The drug binds to the ATP-binding pocket of the KDR kinase domain via hydrogen bonding and hydrophobic interactions, effectively inhibiting the receptor's autophosphorylation and downstream signaling pathways (e.g., PI3K/Akt and MAPK) essential for tumor vascularization. By suppressing KDR-mediated endothelial cell proliferation, Mupirocin disrupts the tumor microenvironment's blood supply, offering a therapeutic rationale for limiting RCC progression and metastasis. While its binding affinity is generally lower than specialized tyrosine kinase inhibitors, its established safety profile makes it a candidate for combination therapies targeting tumor angiogenesis.",
+  "timestamp": 1791713692.293364
+}

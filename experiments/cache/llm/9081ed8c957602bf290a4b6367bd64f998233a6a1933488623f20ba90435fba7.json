@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Fluoxetine', Target: 'SLC6A4', Disease: 'Major Depressive Disorder'.\nProvide a concise, mechanistic biological explanation of why 'Fluoxetine' interacts with 'SLC6A4' in 'Major Depressive Disorder' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Fluoxetine' and 'SLC6A4', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Fluoxetine is a well-documented selective serotonin reuptake inhibitor (SSRI) that functions by binding to the central binding site of the serotonin transporter (SLC6A4). This interaction competitively inhibits the reuptake of serotonin into the presynaptic neuron, thereby increasing the concentration of serotonin in the synaptic cleft to enhance neurotransmission and alleviate symptoms of Major Depressive Disorder.",
+  "timestamp": 1791713089.980743
+}

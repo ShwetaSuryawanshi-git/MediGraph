@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Ciprofloxacin', the biological target 'MTOR', and the pathological condition 'Tuberous Sclerosis'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Ciprofloxacin acts as a non-canonical inhibitor of the mTOR pathway by disrupting the assembly of the mTORC1 complex, rather than binding directly to the ATP-binding pocket of the mTOR kinase domain. By interfering with the interaction between mTOR and its essential scaffolding protein Raptor, Ciprofloxacin effectively suppresses downstream phosphorylation of S6K1 and 4E-BP1, which are hyperactivated in Tuberous Sclerosis (TSC) due to the loss of the TSC1/TSC2 inhibitory complex. This mechanism provides a therapeutic rationale for repurposing Ciprofloxacin to mitigate the mTOR-driven cellular proliferation and tumor growth characteristic of TSC, offering a potential alternative or adjunct to traditional rapalogs. While its binding affinity is lower than that of ATP-competitive inhibitors, its ability to modulate the complex's structural integrity provides a unique pharmacological approach to downregulating the constitutive mTOR signaling found in TSC patients.",
+  "timestamp": 1791567110.417366
+}

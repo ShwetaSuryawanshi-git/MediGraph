@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Thalidomide', the biological target 'CRBN', and the pathological condition 'Multiple Myeloma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Thalidomide acts as a molecular glue that binds to the **Cereblon (CRBN)** E3 ubiquitin ligase complex, altering its substrate specificity to recruit and promote the polyubiquitination and proteasomal degradation of the transcription factors **IKZF1 and IKZF3**. In Multiple Myeloma, these transcription factors are essential for the expression of IRF4 and MYC, which drive malignant plasma cell survival; their targeted degradation leads to cell cycle arrest and apoptosis. The drug binds with high affinity to a hydrophobic pocket within the CRBN thalidomide-binding domain, effectively hijacking the cell's protein homeostasis machinery to eliminate oncogenic drivers.",
+  "timestamp": 1791565581.999995
+}

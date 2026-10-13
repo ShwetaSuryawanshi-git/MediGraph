@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Ruxolitinib', Target: 'JAK1', Disease: 'Myelofibrosis'.\nProvide a concise, mechanistic biological explanation of why 'Ruxolitinib' interacts with 'JAK1' in 'Myelofibrosis' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Ruxolitinib' and 'JAK1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Ruxolitinib is a potent, ATP-competitive inhibitor that binds to the kinase domain of JAK1, preventing the phosphorylation and subsequent activation of downstream STAT proteins. In myelofibrosis, this inhibition effectively suppresses the dysregulated JAK-STAT signaling pathway, thereby reducing the excessive inflammatory cytokine production and abnormal myeloproliferation characteristic of the disease.",
+  "timestamp": 1791712031.4246101
+}

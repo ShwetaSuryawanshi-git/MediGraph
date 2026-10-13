@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Regorafenib', Target: 'RET', Disease: 'Colorectal Cancer'.\nProvide a concise, mechanistic biological explanation of why 'Regorafenib' interacts with 'RET' in 'Colorectal Cancer' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Regorafenib' and 'RET', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Regorafenib is a multi-kinase inhibitor that demonstrates documented biochemical activity against the RET (Rearranged during Transfection) receptor tyrosine kinase. In the context of colorectal cancer, Regorafenib inhibits RET signaling by binding to the intracellular ATP-binding pocket, thereby preventing the autophosphorylation and downstream activation of oncogenic pathways that promote tumor cell proliferation and survival.",
+  "timestamp": 1791711490.8452108
+}

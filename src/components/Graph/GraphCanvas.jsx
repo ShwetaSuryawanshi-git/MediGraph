@@ -38,7 +38,7 @@ const GraphCanvas = ({ nodes, edges, selectedNodeId, onNodeClick }) => {
         const positions = {};
         const centerX = dimensions.width / 2;
         const centerY = dimensions.height / 2;
-        const radius = Math.min(dimensions.width, dimensions.height) * 0.35;
+        const radius = Math.min(dimensions.width, dimensions.height) * 0.40;
 
         // Group nodes by type
         const drugNodes = nodes.filter(n => n.type === NODE_TYPES.DRUG);
@@ -49,8 +49,8 @@ const GraphCanvas = ({ nodes, edges, selectedNodeId, onNodeClick }) => {
         drugNodes.forEach((node, i) => {
             const angle = (-Math.PI / 2) + (Math.PI * (i / Math.max(drugNodes.length - 1, 1)));
             positions[node.id] = {
-                x: centerX - radius * 0.6 + Math.cos(angle) * radius * 0.4,
-                y: centerY + Math.sin(angle) * radius * 0.8
+                x: centerX - radius * 0.8 + Math.cos(angle) * radius * 0.5,
+                y: centerY + Math.sin(angle) * radius * 1.0
             };
         });
 
@@ -59,7 +59,7 @@ const GraphCanvas = ({ nodes, edges, selectedNodeId, onNodeClick }) => {
             const cols = Math.ceil(Math.sqrt(targetNodes.length));
             const row = Math.floor(i / cols);
             const col = i % cols;
-            const spacing = 60;
+            const spacing = 100;
             positions[node.id] = {
                 x: centerX + (col - cols / 2) * spacing,
                 y: centerY + (row - Math.ceil(targetNodes.length / cols) / 2) * spacing
@@ -70,8 +70,8 @@ const GraphCanvas = ({ nodes, edges, selectedNodeId, onNodeClick }) => {
         diseaseNodes.forEach((node, i) => {
             const angle = (-Math.PI / 2) + (Math.PI * (i / Math.max(diseaseNodes.length - 1, 1)));
             positions[node.id] = {
-                x: centerX + radius * 0.6 + Math.cos(angle) * radius * 0.4,
-                y: centerY + Math.sin(angle) * radius * 0.8
+                x: centerX + radius * 0.8 + Math.cos(angle) * radius * 0.5,
+                y: centerY + Math.sin(angle) * radius * 1.0
             };
         });
 
@@ -188,15 +188,15 @@ const GraphCanvas = ({ nodes, edges, selectedNodeId, onNodeClick }) => {
             // Node label
             ctx.fillStyle = '#0f172a';
             ctx.globalAlpha = nodeOpacity;
-            ctx.font = isSelected ? 'bold 12px Inter, sans-serif' : '11px Inter, sans-serif';
+            ctx.font = isSelected ? 'bold 13px Inter, sans-serif' : '12px Inter, sans-serif';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'top';
 
             // Truncate label if too long
-            const label = node.label.length > 12
-                ? node.label.substring(0, 10) + '...'
+            const label = node.label.length > 25
+                ? node.label.substring(0, 23) + '...'
                 : node.label;
-            ctx.fillText(label, pos.x, pos.y + radius + 5);
+            ctx.fillText(label, pos.x, pos.y + radius + 8);
             ctx.globalAlpha = 1.0; // reset for next operations
         });
     }, [nodes, edges, nodePositions, dimensions, hoveredNode, selectedNodeId]);

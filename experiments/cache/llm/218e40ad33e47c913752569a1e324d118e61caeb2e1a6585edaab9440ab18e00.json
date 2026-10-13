@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.6-flash",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Imatinib', Target: 'ABL1', Disease: 'Chronic Myeloid Leukemia'.\nProvide a concise, mechanistic biological explanation of why 'Imatinib' interacts with 'ABL1' in 'Chronic Myeloid Leukemia' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Imatinib' and 'ABL1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Imatinib is a small-molecule tyrosine kinase inhibitor that selectively binds to the ATP-binding pocket of the inactive conformation of the BCR-ABL1 fusion protein, the primary driver of Chronic Myeloid Leukemia (CML). By competitively blocking ATP binding, imatinib prevents the autophosphorylation and activation of the ABL1 kinase domain, effectively halting downstream oncogenic signaling pathways such as RAS/RAF/MEK/ERK and PI3K/AKT. This inhibition induces apoptosis and arrests proliferation in CML leukemic cells harboring the Philadelphia chromosome.",
+  "timestamp": 1791710709.8977861
+}

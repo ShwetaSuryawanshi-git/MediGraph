@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Bacitracin', Target: 'RET', Disease: 'Colorectal Cancer'.\nProvide a concise, mechanistic biological explanation of why 'Bacitracin' interacts with 'RET' in 'Colorectal Cancer' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Bacitracin' and 'RET', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is insufficient documented scientific evidence to support a direct biochemical interaction between Bacitracin and the RET receptor tyrosine kinase in the context of colorectal cancer. Bacitracin is primarily characterized as a cyclic polypeptide antibiotic that inhibits bacterial cell wall synthesis by interfering with the dephosphorylation of undecaprenyl pyrophosphate, and it has no established role as a modulator of RET signaling pathways.",
+  "timestamp": 1791714249.673464
+}

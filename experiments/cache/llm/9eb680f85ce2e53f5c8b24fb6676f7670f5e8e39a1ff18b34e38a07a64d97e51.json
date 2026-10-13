@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Ponatinib', Target: 'ABL1', Disease: 'Refractory CML T315I'.\nProvide a concise, mechanistic biological explanation of why 'Ponatinib' interacts with 'ABL1' in 'Refractory CML T315I' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Ponatinib' and 'ABL1', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Ponatinib is a potent multi-targeted tyrosine kinase inhibitor specifically engineered with an alkyne linker to overcome the \"gatekeeper\" T315I mutation in ABL1. Unlike earlier inhibitors, its structure lacks the bulky side chain that causes steric hindrance with the mutated threonine-to-isoleucine substitution, allowing it to bind effectively to the ATP-binding pocket of the BCR-ABL1 T315I mutant. This binding stabilizes the kinase in an inactive conformation, thereby inhibiting the constitutive signaling that drives refractory chronic myeloid leukemia (CML).",
+  "timestamp": 1791711849.840171
+}

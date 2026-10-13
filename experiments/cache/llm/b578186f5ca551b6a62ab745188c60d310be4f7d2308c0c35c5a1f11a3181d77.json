@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Metformin', the biological target 'ERBB2', and the pathological condition 'Breast Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Metformin exerts an indirect anti-tumor effect on ERBB2-positive breast cancer by activating AMPK, which subsequently inhibits the mTOR signaling pathway and suppresses the downstream transcriptional activity of ERBB2. While Metformin does not act as a direct small-molecule inhibitor of the ERBB2 receptor tyrosine kinase, it disrupts the metabolic reprogramming (Warburg effect) that ERBB2-overexpressing cells rely on for rapid proliferation. Clinically, this metabolic modulation sensitizes ERBB2-positive cells to standard targeted therapies like trastuzumab, offering a therapeutic rationale for combination regimens to overcome acquired resistance and reduce tumor progression.",
+  "timestamp": 1791567352.183014
+}

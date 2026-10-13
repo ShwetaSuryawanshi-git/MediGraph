@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Atorvastatin', the biological target 'HMGCR', and the pathological condition 'Hypercholesterolemia'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Atorvastatin acts as a competitive inhibitor of **HMG-CoA reductase (HMGCR)**, the rate-limiting enzyme in the mevalonate pathway, by mimicking the HMG-CoA substrate and binding to the enzyme's active site with high affinity (nanomolar $K_i$). This binding stabilizes the enzyme in a closed conformation, preventing the conversion of HMG-CoA to mevalonate, which is the essential precursor for cholesterol biosynthesis. By depleting intracellular cholesterol levels, the drug triggers the upregulation of hepatic LDL receptors, thereby increasing the clearance of circulating LDL-cholesterol from the bloodstream. This mechanism effectively addresses **hypercholesterolemia** by reducing systemic lipid burden and mitigating the risk of atherosclerotic cardiovascular disease.",
+  "timestamp": 1791565846.312104
+}

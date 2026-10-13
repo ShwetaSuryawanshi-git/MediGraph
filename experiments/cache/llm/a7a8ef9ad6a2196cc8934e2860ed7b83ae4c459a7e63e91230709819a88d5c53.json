@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Methotrexate', Target: 'DHFR', Disease: 'Rheumatoid Arthritis'.\nProvide a concise, mechanistic biological explanation of why 'Methotrexate' interacts with 'DHFR' in 'Rheumatoid Arthritis' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Methotrexate' and 'DHFR', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Methotrexate acts as a potent competitive inhibitor of dihydrofolate reductase (DHFR), binding to its active site with high affinity and preventing the reduction of dihydrofolate to tetrahydrofolate. This inhibition depletes the intracellular pool of tetrahydrofolate, which is essential for de novo purine and thymidylate synthesis, thereby suppressing the rapid proliferation of inflammatory cells involved in rheumatoid arthritis.",
+  "timestamp": 1791713231.795391
+}

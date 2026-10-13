@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Amoxicillin', the biological target 'EGFR', and the pathological condition 'Lung Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Amoxicillin is a $\\beta$-lactam antibiotic that functions by inhibiting bacterial cell wall synthesis and does not possess a canonical binding affinity for the human Epidermal Growth Factor Receptor (EGFR). While some computational docking studies have explored the potential for repurposing antibiotics as EGFR tyrosine kinase inhibitors (TKIs) to treat non-small cell lung cancer (NSCLC), there is no established clinical evidence that amoxicillin effectively binds the EGFR ATP-binding pocket or inhibits its oncogenic signaling. Consequently, there is no validated molecular mechanism or therapeutic rationale for using amoxicillin to treat lung cancer, as its pharmacological profile is strictly limited to targeting bacterial penicillin-binding proteins.",
+  "timestamp": 1791566652.4279628
+}

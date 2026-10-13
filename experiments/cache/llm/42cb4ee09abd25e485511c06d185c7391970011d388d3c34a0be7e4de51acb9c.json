@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Metoprolol', the biological target 'ADRB1', and the pathological condition 'Hypertension'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Metoprolol acts as a selective, competitive antagonist of the **$\\beta_1$-adrenergic receptor (ADRB1)**, primarily located in the myocardium and juxtaglomerular apparatus. By binding to the orthosteric site of ADRB1 with high affinity, it sterically hinders endogenous catecholamines (epinephrine/norepinephrine) from activating the Gs-protein-coupled signaling cascade, thereby inhibiting adenylyl cyclase activity and reducing intracellular cAMP levels. This molecular blockade decreases heart rate and myocardial contractility while suppressing renin release from the kidneys, which collectively lowers systemic vascular resistance and cardiac output to alleviate **hypertension**. Consequently, metoprolol effectively resets the sympathetic-mediated hemodynamic overload characteristic of hypertensive pathology.",
+  "timestamp": 1791712935.015786
+}

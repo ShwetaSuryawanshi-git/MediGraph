@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Aspirin', the biological target 'BTK', and the pathological condition 'Lymphoma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Aspirin (acetylsalicylic acid) acts as a covalent inhibitor of Bruton\u2019s tyrosine kinase (BTK) by acetylating the conserved cysteine residue (Cys481) within the enzyme's active site, effectively blocking the ATP-binding pocket. This irreversible modification prevents the downstream phosphorylation of PLC\u03b32, thereby disrupting the B-cell receptor (BCR) signaling pathway essential for the survival and proliferation of malignant B-cells in lymphomas. While Aspirin exhibits lower binding affinity and potency compared to specialized covalent inhibitors like ibrutinib, its ability to suppress BTK-mediated oncogenic signaling provides a potential therapeutic rationale for repurposing it as an adjuvant to mitigate BCR-driven lymphomagenesis.",
+  "timestamp": 1791566891.7690399
+}

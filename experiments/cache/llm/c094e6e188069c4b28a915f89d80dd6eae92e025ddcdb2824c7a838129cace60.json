@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Bosutinib', the biological target 'ABL1', and the pathological condition 'Chronic Myeloid Leukemia'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Bosutinib is a potent, dual Src/Abl tyrosine kinase inhibitor that binds to the inactive conformation of the ABL1 kinase domain, effectively stabilizing it in a \"closed\" state and preventing the ATP-binding required for BCR-ABL1 autophosphorylation. In Chronic Myeloid Leukemia (CML), the BCR-ABL1 fusion protein acts as a constitutively active oncogenic driver; by competitively inhibiting the ATP-binding pocket with high affinity (low nanomolar $IC_{50}$), bosutinib blocks downstream signaling pathways (e.g., STAT5, CRKL) essential for leukemic cell proliferation and survival. This targeted inhibition is clinically therapeutic because it selectively induces apoptosis in BCR-ABL1-positive cells while overcoming resistance mutations associated with earlier-generation inhibitors, thereby restoring normal hematopoiesis in patients.",
+  "timestamp": 1791564824.666966
+}

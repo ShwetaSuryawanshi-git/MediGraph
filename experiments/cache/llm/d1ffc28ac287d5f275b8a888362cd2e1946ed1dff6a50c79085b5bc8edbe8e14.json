@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Aspirin', the biological target 'PTGS1', and the pathological condition 'Pain and Inflammation'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Aspirin (acetylsalicylic acid) functions as an irreversible inhibitor of PTGS1 (COX-1) by covalently acetylating a specific serine residue (Ser530) within the enzyme's hydrophobic channel. This acetylation sterically hinders the access of arachidonic acid to the catalytic site, thereby preventing the conversion of arachidonic acid into pro-inflammatory prostaglandins and thromboxanes. By suppressing the synthesis of these lipid mediators, aspirin effectively reduces the sensitization of nociceptors and the recruitment of inflammatory cells, providing its characteristic analgesic and anti-inflammatory therapeutic effects.",
+  "timestamp": 1791565460.5731049
+}

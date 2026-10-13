@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an advanced expert Bioinformatician AI analyzing a drug-target-disease interaction.\n\nTarget Interaction: Drug 'Permethrin' -> Target 'BTK' -> Disease 'Mantle Cell Lymphoma'\n\n### Scientific Literature Retrieval (PubMed Evidence Context)\nNo specific literature found for this query.\n\n### Task\nProvide a concise, mechanistic biological explanation of why 'Permethrin' interacts with 'BTK' in 'Mantle Cell Lymphoma'.\nCite supporting PubMed literature using [PMID: <id>] tags where available.\nIf the literature context explicitly mentions these entities, integrate that evidence.\nIf it does not, rely on general biological principles but note the absence of direct literature.\nBe concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is currently no direct scientific literature establishing a functional interaction between the pyrethroid insecticide Permethrin and Bruton\u2019s Tyrosine Kinase (BTK) in the context of Mantle Cell Lymphoma (MCL). Mechanistically, Permethrin primarily acts as a neurotoxin by modulating voltage-gated sodium channels in insects, and there is no established evidence suggesting it acts as a kinase inhibitor or modulator of the B-cell receptor signaling pathway central to MCL pathogenesis. Consequently, any proposed interaction between these entities remains speculative and lacks empirical validation in clinical or molecular oncology research.",
+  "timestamp": 1791713781.785772
+}

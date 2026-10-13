@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Lisinopril', Target: 'ERBB2', Disease: 'HER2-positive Breast Cancer'.\nProvide a concise, mechanistic biological explanation of why 'Lisinopril' interacts with 'ERBB2' in 'HER2-positive Breast Cancer' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Lisinopril' and 'ERBB2', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is insufficient documented empirical biochemical evidence to support a direct interaction between Lisinopril and the ERBB2 (HER2) protein. While Lisinopril is an established ACE inhibitor used for hypertension, it is not recognized as a therapeutic agent for HER2-positive breast cancer, and no validated mechanism exists for it targeting the ERBB2 receptor.",
+  "timestamp": 1791713948.705499
+}

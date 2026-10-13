@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Methotrexate', the biological target 'DHFR', and the pathological condition 'Rheumatoid Arthritis'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Methotrexate (MTX) acts as a potent competitive inhibitor of dihydrofolate reductase (DHFR), binding to the enzyme's active site with an affinity approximately 1,000 times greater than the natural substrate, dihydrofolate. By blocking DHFR, MTX prevents the reduction of dihydrofolate to tetrahydrofolate, thereby depleting the intracellular pool of reduced folates essential for *de novo* purine and thymidylate synthesis. In rheumatoid arthritis, this inhibition suppresses the rapid proliferation of inflammatory synovial fibroblasts and lymphocytes, while simultaneously promoting the extracellular release of adenosine, a potent endogenous anti-inflammatory mediator. This dual mechanism effectively halts the hyperproliferative autoimmune response and mitigates joint inflammation.",
+  "timestamp": 1791713218.5218098
+}

@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Penicillin G', Target: 'BTK', Disease: 'Mantle Cell Lymphoma'.\nProvide a concise, mechanistic biological explanation of why 'Penicillin G' interacts with 'BTK' in 'Mantle Cell Lymphoma' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Penicillin G' and 'BTK', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "There is insufficient scientific evidence to support a direct biochemical interaction between Penicillin G and Bruton's tyrosine kinase (BTK). Penicillin G is a beta-lactam antibiotic that functions by inhibiting bacterial cell wall synthesis, and it is not documented to act as a kinase inhibitor or therapeutic agent for Mantle Cell Lymphoma.",
+  "timestamp": 1791714129.075265
+}

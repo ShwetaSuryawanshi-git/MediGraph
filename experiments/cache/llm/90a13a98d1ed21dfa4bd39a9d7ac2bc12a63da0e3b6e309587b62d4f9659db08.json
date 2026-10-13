@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Penicillin G', the biological target 'ABL1', and the pathological condition 'Leukemia'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Penicillin G is a $\\beta$-lactam antibiotic that functions by inhibiting bacterial cell wall synthesis and does not possess a clinically relevant binding affinity for the ABL1 tyrosine kinase, which is the primary oncogenic driver in Chronic Myeloid Leukemia (CML). While some studies have explored the repurposing of $\\beta$-lactam structures for potential anti-cancer activity, Penicillin G lacks the specific pharmacophore required to occupy the ATP-binding pocket of the BCR-ABL1 fusion protein, unlike targeted tyrosine kinase inhibitors (TKIs) such as imatinib. Consequently, there is no established molecular mechanism or therapeutic rationale for using Penicillin G to treat leukemia, as it cannot inhibit the constitutive kinase activity that drives the uncontrolled proliferation of leukemic cells.",
+  "timestamp": 1791566581.7698078
+}

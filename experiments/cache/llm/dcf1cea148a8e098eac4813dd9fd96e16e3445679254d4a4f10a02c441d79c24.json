@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Palbociclib', the biological target 'CDK4', and the pathological condition 'HR-positive Breast Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Palbociclib is a highly selective, reversible inhibitor that binds to the ATP-binding pocket of the **CDK4/6-cyclin D complex**, preventing the phosphorylation of the retinoblastoma (Rb) protein. By inhibiting this kinase activity, the drug arrests the cell cycle at the G1-to-S phase transition, effectively halting the uncontrolled proliferation characteristic of **HR-positive/HER2-negative breast cancer**. This therapeutic rationale exploits the dependency of these tumors on the CDK4/6-cyclin D pathway for oncogenic growth, with Palbociclib demonstrating high binding affinity (nanomolar $IC_{50}$) to stabilize the inactive conformation of the kinase. Consequently, this blockade induces cellular senescence and suppresses tumor progression, providing a potent synergistic effect when combined with endocrine therapies.",
+  "timestamp": 1791711068.306304
+}

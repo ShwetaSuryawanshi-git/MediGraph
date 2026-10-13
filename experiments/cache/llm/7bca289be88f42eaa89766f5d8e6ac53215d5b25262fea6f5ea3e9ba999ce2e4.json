@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Amlodipine', the biological target 'CDK4', and the pathological condition 'Melanoma'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Amlodipine, a dihydropyridine calcium channel blocker, has been identified as a repurposed inhibitor of CDK4, a key kinase that promotes the G1-S phase transition in the cell cycle. Molecular docking studies suggest that amlodipine binds to the ATP-binding pocket of CDK4, effectively competing with ATP and inhibiting the phosphorylation of the retinoblastoma protein (pRb), which halts the uncontrolled proliferation characteristic of melanoma cells. This interaction exhibits micromolar affinity, and the therapeutic rationale lies in its ability to induce cell cycle arrest and apoptosis in BRAF-mutant and wild-type melanoma lines, potentially overcoming resistance to standard MAPK-pathway inhibitors.",
+  "timestamp": 1791567243.646687
+}

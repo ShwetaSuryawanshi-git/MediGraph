@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Omeprazole', Target: 'ATP4A', Disease: 'Peptic Ulcer Disease'.\nProvide a concise, mechanistic biological explanation of why 'Omeprazole' interacts with 'ATP4A' in 'Peptic Ulcer Disease' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Omeprazole' and 'ATP4A', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Omeprazole is a proton pump inhibitor that acts as a covalent inhibitor of the gastric H+/K+-ATPase, which is encoded by the *ATP4A* gene. By forming disulfide bonds with cysteine residues on the alpha subunit of the enzyme, omeprazole irreversibly blocks the final step of gastric acid secretion, thereby reducing acidity and facilitating the healing of peptic ulcers.",
+  "timestamp": 1791712824.585493
+}

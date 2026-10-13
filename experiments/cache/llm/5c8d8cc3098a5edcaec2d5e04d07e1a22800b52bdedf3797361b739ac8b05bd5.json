@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.6-flash",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Alectinib', the biological target 'ALK', and the pathological condition 'ALK-positive NSCLC'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Alectinib is a highly potent, second-generation ATP-competitive tyrosine kinase inhibitor that selectively binds to the kinase domain of the Anaplastic Lymphoma Kinase (ALK) protein with nanomolar affinity (IC50 = 1.9 nM). Pathologically, *ALK* chromosomal rearrangements (e.g., *EML4-ALK*) drive non-small cell lung cancer (NSCLC) by creating a constitutively active chimeric fusion protein that triggers oncogenic downstream signaling via the RAS/MAPK, PI3K/Akt, and JAK/STAT pathways. Alectinib inhibits the autophosphorylation of ALK, effectively shutting down these survival and proliferative cascades to induce apoptosis in ALK-dependent tumor cells. Clinically, its exceptional selectivity, high binding affinity, ability to overcome crizotinib-resistance mutations (e.g., L1196M), and superior blood-brain barrier penetration provide a robust therapeutic rationale for its use as a first-line treatment in ALK-positive advanced NSCLC.",
+  "timestamp": 1791564424.397985
+}

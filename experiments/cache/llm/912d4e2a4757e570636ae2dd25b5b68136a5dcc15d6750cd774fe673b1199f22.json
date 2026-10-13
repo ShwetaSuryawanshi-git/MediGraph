@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.6-flash",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Lapatinib', Target: 'ERBB2', Disease: 'HER2-positive Breast Cancer'.\nProvide a concise, mechanistic biological explanation of why 'Lapatinib' interacts with 'ERBB2' in 'HER2-positive Breast Cancer' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Lapatinib' and 'ERBB2', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Lapatinib is an FDA-approved, small-molecule ATP-competitive tyrosine kinase inhibitor that directly binds to the intracellular kinase domain of ERBB2 (HER2), stabilizing the receptor in an inactive conformation. In HER2-positive breast cancer, amplification or overexpression of ERBB2 leads to constitutive receptor dimerization and hyperactivation of downstream oncogenic signaling pathways, primarily MAPK/ERK and PI3K/AKT. By blocking ERBB2 autophosphorylation, lapatinib effectively halts these signal transduction cascades, resulting in inhibited tumor cell proliferation and the induction of apoptosis.",
+  "timestamp": 1791710843.8419561
+}

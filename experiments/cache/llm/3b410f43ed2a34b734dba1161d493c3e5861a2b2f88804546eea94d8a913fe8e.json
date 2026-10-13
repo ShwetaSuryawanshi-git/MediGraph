@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.5-flash",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Gefitinib', the biological target 'EGFR', and the pathological condition 'Non-Small Cell Lung Cancer'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Gefitinib is a small-molecule, reversible tyrosine kinase inhibitor (TKI) that competitively binds to the adenosine triphosphate (ATP)-binding pocket within the intracellular kinase domain of the Epidermal Growth Factor Receptor (EGFR), specifically exhibiting nanomolar affinity ($IC_{50} \\approx 2-3 \\text{ nM}$) for sensitizing somatic mutations such as exon 19 deletions or the L858R point mutation. By blocking ATP binding, Gefitinib prevents autophosphorylation of the EGFR tyrosine residues, thereby shutting down downstream oncogenic signaling cascades\u2014primarily the PI3K/Akt/mTOR and RAS/RAF/MEK/ERK pathways\u2014which drive cell proliferation and survival. In Non-Small Cell Lung Cancer (NSCLC) harboring these EGFR-activating mutations, this targeted inhibition disrupts oncogene addiction, selectively arresting the cell cycle and inducing apoptosis in tumor cells while sparing wild-type tissues, providing a highly effective, personalized clinical therapeutic rationale.",
+  "timestamp": 1791556831.054667
+}

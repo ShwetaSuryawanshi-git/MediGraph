@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Omeprazole', the biological target 'ATP4A', and the pathological condition 'Peptic Ulcer Disease'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 1024,
+    "system_instruction": ""
+  },
+  "text": "Omeprazole is a prodrug that undergoes acid-catalyzed conversion in the acidic secretory canaliculi of gastric parietal cells into a reactive sulfenamide derivative. This active metabolite forms stable covalent disulfide bonds with cysteine residues (specifically Cys813) on the luminal surface of the **ATP4A** subunit of the H+/K+-ATPase pump, irreversibly inhibiting its ion-exchange activity. By blocking the final step of gastric acid secretion, omeprazole effectively raises intragastric pH, which is the clinical therapeutic rationale for facilitating the healing of **peptic ulcer disease** and preventing acid-mediated mucosal erosion. This mechanism provides high-affinity, long-lasting inhibition that persists until new pump proteins are synthesized, offering superior efficacy compared to reversible H2-receptor antagonists.",
+  "timestamp": 1791566033.347716
+}

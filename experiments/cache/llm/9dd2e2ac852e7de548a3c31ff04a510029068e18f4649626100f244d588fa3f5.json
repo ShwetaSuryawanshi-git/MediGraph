@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician.\nExplain the biochemical interaction and molecular mechanism between the drug 'Baricitinib', the biological target 'JAK1', and the pathological condition 'Rheumatoid Arthritis'.\nDetail the specific binding mechanism, affinity, and clinical therapeutic rationale.\nBe specific and concise (3-5 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Baricitinib acts as a selective, reversible inhibitor of Janus kinase 1 (JAK1) and JAK2 by competing with ATP for the conserved binding pocket within the kinase domain, effectively blocking the phosphorylation and subsequent activation of Signal Transducers and Activators of Transcription (STATs). By inhibiting this JAK-STAT signaling pathway, the drug prevents the intracellular transduction of pro-inflammatory cytokine signals (such as IL-6, IFN-\u03b3, and GM-CSF) that drive the chronic synovial inflammation and joint destruction characteristic of Rheumatoid Arthritis. With a high binding affinity (IC50 values in the low nanomolar range), Baricitinib effectively modulates the immune response, reducing the production of inflammatory mediators and mitigating the systemic autoimmune pathology of the disease.",
+  "timestamp": 1791712138.9516559
+}

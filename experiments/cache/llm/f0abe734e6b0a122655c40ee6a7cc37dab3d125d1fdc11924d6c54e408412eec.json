@@ -1,0 +1,11 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "prompt": "You are an expert bioinformatician analyzing a candidate drug-target interaction.\nDrug: 'Colchicine', Target: 'TUBA1A', Disease: 'Gout'.\nProvide a concise, mechanistic biological explanation of why 'Colchicine' interacts with 'TUBA1A' in 'Gout' IF there is documented empirical biochemical evidence for this interaction.\nIf there is insufficient or no documented scientific evidence for an interaction between 'Colchicine' and 'TUBA1A', explicitly state that there is insufficient evidence rather than hypothesizing an unverified mechanism.\nBe concise (2-4 sentences).",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 512,
+    "system_instruction": ""
+  },
+  "text": "Colchicine binds with high affinity to the $\\beta$-tubulin subunit of TUBA1A/TUBB heterodimers, inhibiting microtubule polymerization by preventing the addition of new tubulin dimers to the plus end. In the context of gout, this interaction disrupts the formation of the microtubule network required for neutrophil chemotaxis, phagocytosis, and the subsequent release of pro-inflammatory cytokines, thereby suppressing the acute inflammatory response to monosodium urate crystals.",
+  "timestamp": 1791713354.592335
+}

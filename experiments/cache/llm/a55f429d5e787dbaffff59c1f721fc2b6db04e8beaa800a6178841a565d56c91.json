@@ -1,0 +1,11 @@
+{
+  "model": "gemini-flash-latest",
+  "prompt": "Hello generator",
+  "settings": {
+    "temperature": 0.0,
+    "max_output_tokens": 10,
+    "system_instruction": ""
+  },
+  "text": "Hello! I'm ready",
+  "timestamp": 1791555547.040388
+}
