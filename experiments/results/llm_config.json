@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-11 14:54:58",
+  "date": "2026-10-17 16:00:46",
   "generator_model": "gemini-3.6-flash",
   "judge_model": "gemini-3.1-flash-lite-preview",
   "judge_type": "distinct_model",
@@ -33,5 +33,5 @@
     "gemini-2.5-flash-native-audio-preview-12-2025",
     "gemini-3.1-flash-live-preview"
   ],
-  "rate_limit_min_interval_seconds": 4.5
+  "rate_limit_min_interval_seconds": 5.0
 }

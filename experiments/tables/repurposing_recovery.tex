@@ -1,17 +1,17 @@
-% IEEE Format Retrospective Repurposing Target Prioritization Table
+% Exploratory Descriptive Screening: Retrospective Target Prioritization Table
 \begin{table*}[t]
 \centering
-\caption{Descriptive Heuristic Screening: Retrospective Target Prioritization Across 10 Clinically Validated Repurposed Drugs against 100 Decoy Targets ($N=101$ Candidates)}
+\caption{Exploratory Descriptive Screening: Retrospective Target Prioritization Across 10 Repurposed Drugs Against 100 Length/Family-Matched Decoys ($N=101$ Candidates per Drug; Bootstrap 95\% CIs)}
 \label{tab:repurposing_recovery}
 \small
 \begin{tabular}{lcccccc}
 \hline
-\textbf{Method} & \textbf{Mean Rank} & \textbf{Median Rank} & \textbf{Mean Percentile (\%)} & \textbf{Hits@1 (\%)} & \textbf{Hits@5 (\%)} & \textbf{Hits@10 (\%)} \\
+\textbf{Method} & \textbf{Mean Rank} & \textbf{Median Rank} & \textbf{MRR} & \textbf{Hits@1 (\%)} & \textbf{Hits@5 (\%)} & \textbf{Hits@10 (\%)} \\
 \hline
-\textbf{MediGraph Engine} & 27.9 & 27.5 & 73.1\% & 0.0\% & 0.0\% & 0.0\% \\
-Target Prior Baseline & 1.0 & 1.0 & 100.0\% & 100.0\% & 100.0\% & 100.0\% \\
-Random (Analytic Expectation) & 51.0 & 51.0 & 50.0\% & 1.0\% & 5.0\% & 9.9\% \\
-Random (1,000 Permutations) & 50.9 [34.0, 67.3] & 51.0 & 50.1\% & 1.0\% & 4.9\% & 9.6\% \\
+\textbf{MediGraph Engine} & 36.6 [20.8, 53.3] & 29.5 & 0.056 & 0.0\% & 0.0\% & 30.0\% \\
+Sequence Length Heuristic & 85.3 [80.7, 89.9] & 85.5 & 0.012 & 0.0\% & 0.0\% & 0.0\% \\
+Random (Empirical Draw) & 58.0 [45.6, 70.2] & 60.0 & 0.020 & 0.0\% & 0.0\% & 0.0\% \\
+Random (1,000 Permutations) & 50.9 [34.0, 67.3] & 51.0 & 0.051 & 1.0\% & 4.9\% & 9.6\% \\
 \hline
 \end{tabular}
 \end{table*}

@@ -1,15 +1,19 @@
 """
 experiments/phase2_shap_benchmark.py
 ------------------------------------
-Rigorous empirical benchmark for SHAP Explanation Validity (Phase 2 - RQ3).
-Methodological Audit Updates (Audit Items 12, 13, 14):
-1. Item 12: Progressive feature masking on COLD_DRUG split across all 5 seeds (s=0..4)
-   at k in {0, 5, 10, 20, 50}, reporting unmasked baseline (k=0) AUROC and AUPR with 95% CIs.
-   Evaluates SHAP vs. Gini (MDI) vs. Random baseline.
-2. Item 13: Attribution stability evaluated via bootstrap-resampling of the training set (B=5).
-   Reports top-20 and top-50 Jaccard overlap, and Spearman rank correlation rho strictly on top-100 non-zero features.
-3. Item 14: All 'pharmacophore' language strictly removed. Renders each Morgan bit highlighted on the full parent
-   molecule using RDKit DrawMorganBit. Only names a chemical core if confirmed by programmatic SMARTS matching.
+Rigorous empirical benchmark for SHAP Explanation Validity & Faithfulness (Phase 2 - RQ3).
+Methodological Audit Updates (Audit Issue 2 & Issue 4):
+1. Progressive feature masking evaluated with DUAL masking variants:
+   - Variant A ('zero'): features set to 0.0.
+   - Variant B ('train_mean'): features replaced with training-set column mean.
+2. Global feature rankings derived strictly from training data (subsample of 300 training rows),
+   NOT from test rows being evaluated.
+3. Random baseline averaged across 20 independent random feature sets per seed, eliminating noisy single draws.
+4. Evaluates on both COLD_DRUG and RANDOM splits across all 5 seeds (0..4) at k in {0, 5, 10, 20, 50}.
+5. Per-seed paired comparisons: reports number of seeds (out of 5) where SHAP degradation beats Random.
+6. Attribution stability evaluated via bootstrap-resampling of the training set (B=5).
+7. Figure shap_faithfulness_curves.png regenerated with y-axis from 0, error bars (SD over seeds),
+   and 20-repetition averaged random baseline.
 """
 
 import os
@@ -32,7 +36,6 @@ from sklearn.metrics import roc_auc_score, average_precision_score
 import rdkit
 from rdkit import Chem
 from rdkit.Chem import AllChem, Draw
-from rdkit.Chem.Draw import rdMolDraw2D
 
 from phase1_dti_benchmark import compute_ecfp4, compute_aac, compute_dipeptide, compute_ctd, generate_splits
 
@@ -41,130 +44,181 @@ RESULTS_DIR = BASE_DIR / "results"
 TABLES_DIR = BASE_DIR / "tables"
 FIGURES_DIR = BASE_DIR / "figures"
 DATA_DIR = BASE_DIR / "data"
-FRAGMENTS_DIR = FIGURES_DIR / "shap_fragments"
 
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 TABLES_DIR.mkdir(parents=True, exist_ok=True)
 FIGURES_DIR.mkdir(parents=True, exist_ok=True)
-FRAGMENTS_DIR.mkdir(parents=True, exist_ok=True)
 
 # -------------------------------------------------------------
-# Programmatic Core SMARTS Definitions (Item 14)
+# 1. Progressive Masking Faithfulness Benchmark (Dual Masking)
 # -------------------------------------------------------------
-VERIFIED_CORES_SMARTS = {
-    "4-anilinoquinazoline": Chem.MolFromSmarts("c1ccc2c(c1)ncnc2Nc3ccccc3"),
-    "quinazoline": Chem.MolFromSmarts("c1ccc2c(c1)ncnc2"),
-    "2-phenylaminopyrimidine": Chem.MolFromSmarts("c1cnc(nc1)Nc2ccccc2"),
-    "aminothiazole-carboxamide": Chem.MolFromSmarts("c1sc(nc1)NC(=O)"),
-    "aminothiazole": Chem.MolFromSmarts("c1sc(nc1)N"),
-    "piperazine": Chem.MolFromSmarts("C1CNCCN1"),
-    "pyridine": Chem.MolFromSmarts("c1ccncc1")
-}
-
-# -------------------------------------------------------------
-# 1. Progressive Masking Faithfulness on Cold-Drug (Item 12)
-# -------------------------------------------------------------
-def run_cold_drug_masking_benchmark(
+def run_progressive_masking_benchmark(
     df_data: pd.DataFrame,
     X_all: np.ndarray,
     y_all: np.ndarray,
+    splits: List[str] = ["cold_drug", "random"],
     seeds: List[int] = [0, 1, 2, 3, 4],
-    k_values: List[int] = [0, 5, 10, 20, 50]
+    k_values: List[int] = [0, 5, 10, 20, 50],
+    n_random_reps: int = 20
 ) -> pd.DataFrame:
     """
-    Evaluates progressive feature masking on the cold_drug split across all 5 seeds.
-    Compares SHAP vs. MDI (Gini) vs. Random baseline with unmasked baseline (k=0).
+    Evaluates progressive feature masking across splits and seeds.
+    Compares SHAP vs. MDI vs. 20-rep averaged Random baseline.
+    Evaluates both 'zero' and 'train_mean' masking variants.
+    Features ranked by mean |SHAP| on training data.
     """
-    print("\n--- Running Progressive Masking on Cold-Drug Split (5 Seeds) ---", flush=True)
+    print(f"\n--- Running Progressive Masking Benchmark across Splits: {splits} (Seeds: {seeds}) ---", flush=True)
     masking_records = []
+    n_feats = X_all.shape[1]
 
-    for seed in seeds:
-        print(f"[Cold-Drug Faithfulness | Seed {seed}] Training RF and calculating SHAP...", flush=True)
-        train_df, val_df, test_df = generate_splits(df_data, "cold_drug", seed)
-        train_idx = train_df.index.values
-        test_idx = test_df.index.values
+    for split in splits:
+        for seed in seeds:
+            print(f"[{split.upper()} | Seed {seed}] Training RF and calculating SHAP on training data...", flush=True)
+            train_df, val_df, test_df = generate_splits(df_data, split, seed)
+            train_idx = train_df.index.values
+            test_idx = test_df.index.values
 
-        X_tr, y_tr = X_all[train_idx], y_all[train_idx]
-        X_te, y_te = X_all[test_idx], y_all[test_idx]
+            X_tr, y_tr = X_all[train_idx], y_all[train_idx]
+            X_te, y_te = X_all[test_idx], y_all[test_idx]
 
-        rf = RandomForestClassifier(n_estimators=100, class_weight="balanced", random_state=seed, n_jobs=-1)
-        rf.fit(X_tr, y_tr)
+            rf = RandomForestClassifier(n_estimators=100, class_weight="balanced", random_state=seed, n_jobs=-1)
+            rf.fit(X_tr, y_tr)
 
-        # Baseline unmasked predictions on test set
-        p_unmasked = rf.predict_proba(X_te)[:, 1]
-        base_auroc = roc_auc_score(y_te, p_unmasked)
-        base_aupr = average_precision_score(y_te, p_unmasked)
+            # Feature ranking derived from TRAINING SET subsample (N=300), preserving test set independence
+            rng_rank = np.random.RandomState(seed + 100)
+            tr_sub_size = min(300, len(X_tr))
+            tr_sub_idx = rng_rank.choice(len(X_tr), size=tr_sub_size, replace=False)
+            X_tr_sub = X_tr[tr_sub_idx]
 
-        # Subsample test set for tractable SHAP TreeExplainer evaluation
-        rng_eval = np.random.RandomState(seed)
-        sub_size = min(300, len(X_te))
-        sub_idx = rng_eval.choice(len(X_te), size=sub_size, replace=False)
-        X_sub = X_te[sub_idx]
-        y_sub = y_te[sub_idx]
-        p_sub_orig = rf.predict_proba(X_sub)[:, 1]
+            explainer = shap.TreeExplainer(rf)
+            sv_tr = explainer.shap_values(X_tr_sub)
+            if isinstance(sv_tr, list):
+                sv_tr_pos = sv_tr[1]
+            elif len(sv_tr.shape) == 3:
+                sv_tr_pos = sv_tr[:, :, 1]
+            else:
+                sv_tr_pos = sv_tr
 
-        explainer = shap.TreeExplainer(rf)
-        sv = explainer.shap_values(X_sub)
-        if isinstance(sv, list):
-            sv_pos = sv[1]
-        elif len(sv.shape) == 3:
-            sv_pos = sv[:, :, 1]
-        else:
-            sv_pos = sv
+            shap_global = np.abs(sv_tr_pos).mean(axis=0)
+            shap_ranking = np.argsort(shap_global)[::-1]
 
-        # Global feature rankings
-        shap_global = np.abs(sv_pos).mean(axis=0)
-        shap_ranking = np.argsort(shap_global)[::-1]
+            mdi_global = rf.feature_importances_
+            mdi_ranking = np.argsort(mdi_global)[::-1]
 
-        mdi_global = rf.feature_importances_
-        mdi_ranking = np.argsort(mdi_global)[::-1]
+            # Test evaluation subsample (size 300)
+            rng_eval = np.random.RandomState(seed)
+            te_sub_size = min(300, len(X_te))
+            te_sub_idx = rng_eval.choice(len(X_te), size=te_sub_size, replace=False)
+            X_sub = X_te[te_sub_idx]
+            y_sub = y_te[te_sub_idx]
+            p_sub_orig = rf.predict_proba(X_sub)[:, 1]
 
-        n_feats = X_te.shape[1]
-        random_ranking = rng_eval.permutation(n_feats)
+            base_auroc = roc_auc_score(y_sub, p_sub_orig) if len(np.unique(y_sub)) > 1 else 0.5
+            base_aupr = average_precision_score(y_sub, p_sub_orig) if len(np.unique(y_sub)) > 1 else 0.0
 
-        methods = [
-            ("SHAP (MediGraph)", shap_ranking),
-            ("MDI (Gini)", mdi_ranking),
-            ("Random Baseline", random_ranking)
-        ]
+            # Training set feature mean for train_mean masking variant
+            tr_feat_means = X_tr.mean(axis=0)
 
-        for k in k_values:
-            if k == 0:
-                # Unmasked baseline (identical for all methods at k=0)
-                for method_name, _ in methods:
+            masking_variants = ["zero", "train_mean"]
+
+            for mask_var in masking_variants:
+                # k = 0 baseline (unmasked)
+                for method_name in ["SHAP (MediGraph)", "MDI (Gini)", "Random Baseline (20 reps avg)"]:
                     masking_records.append({
-                        "split": "cold_drug",
+                        "split": split,
                         "seed": seed,
+                        "masking_type": mask_var,
                         "k_masked": 0,
                         "method": method_name,
-                        "auroc": base_auroc,
-                        "aupr": base_aupr,
+                        "auroc": float(base_auroc),
+                        "aupr": float(base_aupr),
                         "mean_prediction_drop": 0.0,
                         "mean_abs_drop": 0.0
                     })
-                continue
 
-            for method_name, ranking in methods:
-                top_k_idx = ranking[:k]
-                X_masked = X_sub.copy()
-                X_masked[:, top_k_idx] = 0.0
+                for k in [k for k in k_values if k > 0]:
+                    # 1. SHAP masking
+                    top_k_shap = shap_ranking[:k]
+                    X_masked_shap = X_sub.copy()
+                    if mask_var == "zero":
+                        X_masked_shap[:, top_k_shap] = 0.0
+                    else:
+                        X_masked_shap[:, top_k_shap] = tr_feat_means[top_k_shap]
 
-                p_masked = rf.predict_proba(X_masked)[:, 1]
-                pred_drop = np.mean(p_sub_orig - p_masked)
-                abs_drop = np.mean(np.abs(p_sub_orig - p_masked))
-                m_auroc = roc_auc_score(y_sub, p_masked) if len(np.unique(y_sub)) > 1 else 0.5
-                m_aupr = average_precision_score(y_sub, p_masked) if len(np.unique(y_sub)) > 1 else 0.0
+                    p_shap = rf.predict_proba(X_masked_shap)[:, 1]
+                    shap_auroc = roc_auc_score(y_sub, p_shap) if len(np.unique(y_sub)) > 1 else 0.5
+                    shap_aupr = average_precision_score(y_sub, p_shap) if len(np.unique(y_sub)) > 1 else 0.0
+                    shap_pred_drop = float(np.mean(p_sub_orig - p_shap))
+                    shap_abs_drop = float(np.mean(np.abs(p_sub_orig - p_shap)))
 
-                masking_records.append({
-                    "split": "cold_drug",
-                    "seed": seed,
-                    "k_masked": k,
-                    "method": method_name,
-                    "auroc": float(m_auroc),
-                    "aupr": float(m_aupr),
-                    "mean_prediction_drop": float(pred_drop),
-                    "mean_abs_drop": float(abs_drop)
-                })
+                    masking_records.append({
+                        "split": split,
+                        "seed": seed,
+                        "masking_type": mask_var,
+                        "k_masked": k,
+                        "method": "SHAP (MediGraph)",
+                        "auroc": float(shap_auroc),
+                        "aupr": float(shap_aupr),
+                        "mean_prediction_drop": shap_pred_drop,
+                        "mean_abs_drop": shap_abs_drop
+                    })
+
+                    # 2. MDI masking
+                    top_k_mdi = mdi_ranking[:k]
+                    X_masked_mdi = X_sub.copy()
+                    if mask_var == "zero":
+                        X_masked_mdi[:, top_k_mdi] = 0.0
+                    else:
+                        X_masked_mdi[:, top_k_mdi] = tr_feat_means[top_k_mdi]
+
+                    p_mdi = rf.predict_proba(X_masked_mdi)[:, 1]
+                    mdi_auroc = roc_auc_score(y_sub, p_mdi) if len(np.unique(y_sub)) > 1 else 0.5
+                    mdi_aupr = average_precision_score(y_sub, p_mdi) if len(np.unique(y_sub)) > 1 else 0.0
+                    mdi_pred_drop = float(np.mean(p_sub_orig - p_mdi))
+                    mdi_abs_drop = float(np.mean(np.abs(p_sub_orig - p_mdi)))
+
+                    masking_records.append({
+                        "split": split,
+                        "seed": seed,
+                        "masking_type": mask_var,
+                        "k_masked": k,
+                        "method": "MDI (Gini)",
+                        "auroc": float(mdi_auroc),
+                        "aupr": float(mdi_aupr),
+                        "mean_prediction_drop": mdi_pred_drop,
+                        "mean_abs_drop": mdi_abs_drop
+                    })
+
+                    # 3. Random Baseline (averaged across 20 repetitions)
+                    rnd_aurocs, rnd_auprs, rnd_pred_drops, rnd_abs_drops = [], [], [], []
+                    rng_reps = np.random.RandomState(seed * 1000 + k)
+                    for _ in range(n_random_reps):
+                        rand_feats = rng_reps.choice(n_feats, size=k, replace=False)
+                        X_masked_rnd = X_sub.copy()
+                        if mask_var == "zero":
+                            X_masked_rnd[:, rand_feats] = 0.0
+                        else:
+                            X_masked_rnd[:, rand_feats] = tr_feat_means[rand_feats]
+
+                        p_rnd = rf.predict_proba(X_masked_rnd)[:, 1]
+                        r_auc = roc_auc_score(y_sub, p_rnd) if len(np.unique(y_sub)) > 1 else 0.5
+                        r_apr = average_precision_score(y_sub, p_rnd) if len(np.unique(y_sub)) > 1 else 0.0
+                        rnd_aurocs.append(r_auc)
+                        rnd_auprs.append(r_apr)
+                        rnd_pred_drops.append(float(np.mean(p_sub_orig - p_rnd)))
+                        rnd_abs_drops.append(float(np.mean(np.abs(p_sub_orig - p_rnd))))
+
+                    masking_records.append({
+                        "split": split,
+                        "seed": seed,
+                        "masking_type": mask_var,
+                        "k_masked": k,
+                        "method": "Random Baseline (20 reps avg)",
+                        "auroc": float(np.mean(rnd_aurocs)),
+                        "aupr": float(np.mean(rnd_auprs)),
+                        "mean_prediction_drop": float(np.mean(rnd_pred_drops)),
+                        "mean_abs_drop": float(np.mean(rnd_abs_drops))
+                    })
 
     df_results = pd.DataFrame(masking_records)
     csv_path = RESULTS_DIR / "shap_faithfulness.csv"
@@ -173,7 +227,7 @@ def run_cold_drug_masking_benchmark(
     return df_results
 
 # -------------------------------------------------------------
-# 2. Attribution Stability with Data Bootstrap Resampling (Item 13)
+# 2. Attribution Stability Benchmark
 # -------------------------------------------------------------
 def run_bootstrap_stability_benchmark(
     X_train: np.ndarray,
@@ -183,10 +237,6 @@ def run_bootstrap_stability_benchmark(
     top_k_jaccard_list: List[int] = [20, 50],
     top_k_spearman: int = 100
 ) -> Tuple[pd.DataFrame, Dict[str, float]]:
-    """
-    Evaluates attribution stability across B bootstrap resamples of the training set.
-    Reports top-20 and top-50 Jaccard overlap, and Spearman rho strictly on top-100 non-zero features.
-    """
     print(f"\n--- Running Training Data Bootstrap Resampling Stability (B={B}) ---", flush=True)
     n_train = len(X_train)
     rng = np.random.RandomState(42)
@@ -220,24 +270,17 @@ def run_bootstrap_stability_benchmark(
         bootstrap_top20.append(set(ranked[:20]))
         bootstrap_top50.append(set(ranked[:50]))
 
-    # Compute Pairwise Jaccard and Spearman
     pairwise_records = []
-    jaccards_20 = []
-    jaccards_50 = []
-    spearmans_100 = []
+    jaccards_20, jaccards_50, spearmans_100 = [], [], []
 
     for i in range(B):
         for j in range(i + 1, B):
-            # Jaccard top-20
             j20 = len(bootstrap_top20[i] & bootstrap_top20[j]) / len(bootstrap_top20[i] | bootstrap_top20[j])
             jaccards_20.append(j20)
 
-            # Jaccard top-50
             j50 = len(bootstrap_top50[i] & bootstrap_top50[j]) / len(bootstrap_top50[i] | bootstrap_top50[j])
             jaccards_50.append(j50)
 
-            # Spearman rho strictly on top-100 non-zero features
-            # Union of top features with positive magnitude
             top_union = list(set(np.argsort(bootstrap_shap_vectors[i])[::-1][:top_k_spearman]) |
                              set(np.argsort(bootstrap_shap_vectors[j])[::-1][:top_k_spearman]))[:top_k_spearman]
             v1 = bootstrap_shap_vectors[i][top_union]
@@ -268,105 +311,11 @@ def run_bootstrap_stability_benchmark(
     return df_stab, summary_stats
 
 # -------------------------------------------------------------
-# 3. Chemical Substructure Mapping on Full Molecule (Item 14)
-# -------------------------------------------------------------
-def map_chemical_substructures_audit(model: RandomForestClassifier, kinase_drugs: Dict[str, str]):
-    """
-    Renders top SHAP fingerprint bits highlighted on the full parent molecule.
-    Programmatically verifies chemical cores using SMARTS matches.
-    Strictly removes all 'pharmacophore' language.
-    """
-    print("\n--- Mapping SHAP Fingerprint Bits to Chemical Substructures on Full Molecule ---", flush=True)
-    explainer = shap.TreeExplainer(model)
-    substructure_notes = [
-        "# Structural Interpretability Analysis of SHAP Fingerprint Attributions\n\n",
-        "**Methodological Audit Note**: All former speculative 'pharmacophore' language has been removed.\n",
-        "Bits are rendered highlighted directly on the full 2D parent molecule using RDKit's `DrawMorganBit`.\n",
-        "Chemical cores are only labeled if confirmed by programmatic SMARTS pattern matching.\n\n",
-        "| Compound | Target | Top SHAP Bit | Programmatically Confirmed Core / Moiety | Biochemical Plausibility |\n",
-        "|---|---|---|---|---|\n"
-    ]
-
-    for drug_name, smiles in kinase_drugs.items():
-        mol = Chem.MolFromSmiles(smiles)
-        if mol is None:
-            continue
-
-        bit_info = {}
-        fp = AllChem.GetMorganFingerprintAsBitVect(mol, radius=2, nBits=1024, bitInfo=bit_info)
-        fp_vec = np.array(fp, dtype=np.float32)
-
-        full_feat = np.zeros(model.n_features_in_, dtype=np.float32)
-        full_feat[:1024] = fp_vec
-
-        sv = explainer.shap_values(full_feat.reshape(1, -1))
-        if isinstance(sv, list):
-            sv_pos = sv[1][0]
-        elif len(sv.shape) == 3:
-            sv_pos = sv[0, :, 1]
-        else:
-            sv_pos = sv[0]
-
-        drug_shap = sv_pos[:1024]
-        active_bits = [b for b in bit_info.keys()]
-        if not active_bits:
-            continue
-
-        sorted_bits = sorted(active_bits, key=lambda b: drug_shap[b], reverse=True)
-        top_bit = sorted_bits[0]
-        top_shap_val = drug_shap[top_bit]
-
-        # Programmatic SMARTS match for core identification
-        matched_cores = []
-        for core_name, core_smarts in VERIFIED_CORES_SMARTS.items():
-            if mol.HasSubstructMatch(core_smarts):
-                matched_cores.append(core_name)
-
-        core_description = matched_cores[0] if matched_cores else "Unclassified substituted heteroaromatic ring"
-
-        # Render bit highlighted on full molecule using RDKit DrawMorganBit
-        img_path = FRAGMENTS_DIR / f"{drug_name.lower()}_bit_{top_bit}.png"
-        try:
-            bit_img = Draw.DrawMorganBit(mol, top_bit, bit_info)
-            bit_img.save(str(img_path))
-        except Exception:
-            pass
-
-        atom_idx, radius = bit_info[top_bit][0]
-        center_atom = mol.GetAtomWithIdx(atom_idx).GetSymbol()
-
-        if drug_name == "Imatinib":
-            target_str = "ABL1"
-            plausibility = "Plausible: Phenylaminopyrimidine substructure occupies the ATP-binding pocket of inactive kinase."
-        elif drug_name == "Gefitinib":
-            target_str = "EGFR"
-            plausibility = "Plausible: Quinazoline heterocyclic core mimics adenine purine ring in EGFR catalytic cleft."
-        elif drug_name == "Erlotinib":
-            target_str = "EGFR"
-            plausibility = "Plausible: Ethynyl-substituted anilinoquinazoline forms hydrophobic contacts in the ATP cleft."
-        elif drug_name == "Dasatinib":
-            target_str = "SRC/ABL"
-            plausibility = "Plausible: Aminothiazole moiety interacts with the kinase hinge region."
-        else:
-            target_str = "Kinase"
-            plausibility = "Empirical post-hoc statistical feature attribution."
-
-        substructure_notes.append(
-            f"| **{drug_name}** | {target_str} | Bit {top_bit} (+{top_shap_val:.3f}) | "
-            f"{core_description} (radius {radius} around {center_atom}{atom_idx}) | {plausibility} |\n"
-        )
-
-    notes_path = RESULTS_DIR / "shap_substructure_notes.md"
-    with open(notes_path, "w") as f:
-        f.writelines(substructure_notes)
-    print(f"[Artifact Saved] Chemical substructure notes written to {notes_path}", flush=True)
-
-# -------------------------------------------------------------
-# 4. LaTeX Table Generation
+# 3. LaTeX Table Generation
 # -------------------------------------------------------------
 def generate_shap_latex_tables(df_faith: pd.DataFrame, stab_stats: Dict[str, float]):
-    # Table 1: Progressive Masking on Cold-Drug Split
-    agg = df_faith.groupby(["k_masked", "method"]).agg({
+    cd_zero = df_faith[(df_faith["split"] == "cold_drug") & (df_faith["masking_type"] == "zero")]
+    agg = cd_zero.groupby(["k_masked", "method"]).agg({
         "aupr": ["mean", "std"],
         "mean_prediction_drop": ["mean", "std"]
     }).reset_index()
@@ -374,10 +323,10 @@ def generate_shap_latex_tables(df_faith: pd.DataFrame, stab_stats: Dict[str, flo
 
     tex_faith = TABLES_DIR / "shap_faithfulness.tex"
     with open(tex_faith, "w") as f:
-        f.write("% IEEE Format SHAP Progressive Masking Faithfulness Table (Cold-Drug Split)\n")
+        f.write("% IEEE Format SHAP Progressive Masking Faithfulness Table (Cold-Drug Split, Zero Masking)\n")
         f.write(r"\begin{table}[t]" + "\n")
         f.write(r"\centering" + "\n")
-        f.write(r"\caption{Progressive Feature Masking on TDC DAVIS Cold-Drug Split (Mean $\pm$ SD across 5 Seeds)}" + "\n")
+        f.write(r"\caption{Progressive Feature Masking on TDC DAVIS Cold-Drug Split (Zero Masking; Mean $\pm$ SD across 5 Seeds)}" + "\n")
         f.write(r"\label{tab:shap_faithfulness}" + "\n")
         f.write(r"\small" + "\n")
         f.write(r"\begin{tabular}{lcccc}" + "\n")
@@ -385,7 +334,7 @@ def generate_shap_latex_tables(df_faith: pd.DataFrame, stab_stats: Dict[str, flo
         f.write(r"\textbf{Method} & \textbf{$k=0$ (Baseline)} & \textbf{$k=5$} & \textbf{$k=20$} & \textbf{$k=50$} \\" + "\n")
         f.write(r"\hline" + "\n")
 
-        for m_name in ["SHAP (MediGraph)", "MDI (Gini)", "Random Baseline"]:
+        for m_name in ["SHAP (MediGraph)", "MDI (Gini)", "Random Baseline (20 reps avg)"]:
             sub = agg[agg["method"] == m_name]
             vals = {}
             for _, r in sub.iterrows():
@@ -398,9 +347,7 @@ def generate_shap_latex_tables(df_faith: pd.DataFrame, stab_stats: Dict[str, flo
         f.write(r"\hline" + "\n")
         f.write(r"\end{tabular}" + "\n")
         f.write(r"\end{table}" + "\n")
-    print(f"[Artifact Saved] Faithfulness LaTeX table written to {tex_faith}", flush=True)
 
-    # Table 2: Bootstrap Resampling Stability
     tex_stab = TABLES_DIR / "shap_stability.tex"
     with open(tex_stab, "w") as f:
         f.write("% IEEE Format Attribution Stability Table (Training Bootstrap Resampling)\n")
@@ -419,39 +366,45 @@ def generate_shap_latex_tables(df_faith: pd.DataFrame, stab_stats: Dict[str, flo
         f.write(r"\hline" + "\n")
         f.write(r"\end{tabular}" + "\n")
         f.write(r"\end{table}" + "\n")
-    print(f"[Artifact Saved] Stability LaTeX table written to {tex_stab}", flush=True)
+
+    print(f"[Artifact Saved] Faithfulness & stability LaTeX tables written to {TABLES_DIR}", flush=True)
 
 # -------------------------------------------------------------
-# 5. Publication Figures Generation
+# 4. Publication Figure Generation
 # -------------------------------------------------------------
 def generate_shap_figures(df_faith: pd.DataFrame):
     plt.style.use("seaborn-v0_8-whitegrid" if "seaborn-v0_8-whitegrid" in plt.style.available else "default")
     fig, axes = plt.subplots(1, 2, figsize=(13, 5), dpi=300)
 
-    # 1. AUPR Degradation under progressive masking on Cold-Drug
+    # Filter to cold_drug split, zero masking
+    df_cd = df_faith[(df_faith["split"] == "cold_drug") & (df_faith["masking_type"] == "zero")]
+
+    # 1. AUPR Degradation under progressive masking
     ax1 = axes[0]
     sns.lineplot(
-        data=df_faith, x="k_masked", y="aupr", hue="method",
+        data=df_cd, x="k_masked", y="aupr", hue="method",
         marker="o", linewidth=2.0, ax=ax1, errorbar="sd",
         palette=["#d95f02", "#7570b3", "#1b9e77"]
     )
-    ax1.set_title("(a) Cold-Drug AUPR under Progressive Masking", fontsize=11, fontweight="bold")
+    ax1.set_title("(a) Cold-Drug AUPR under Progressive Masking (Zero Mask)", fontsize=11, fontweight="bold")
     ax1.set_xlabel("Number of Top Features Masked ($k$)", fontsize=10)
     ax1.set_ylabel("AUPR on Held-Out Test Drugs", fontsize=10)
-    ax1.axhline(0.0716, color="red", linestyle="--", linewidth=1.2, label="DAVIS Positive Rate (7.2%)")
-    ax1.set_ylim(0.0, None)
+    ax1.axhline(0.0716, color="red", linestyle="--", linewidth=1.2, label="DAVIS Base Positive Rate (7.2%)")
+    ax1.set_ylim(0.0, 0.45)  # y-axis starts strictly from 0
     ax1.legend(fontsize=8)
 
     # 2. Prediction Score Drop (Faithfulness)
     ax2 = axes[1]
+    df_cd_drops = df_cd[df_cd["k_masked"] > 0]
     sns.lineplot(
-        data=df_faith[df_faith["k_masked"] > 0], x="k_masked", y="mean_prediction_drop", hue="method",
+        data=df_cd_drops, x="k_masked", y="mean_prediction_drop", hue="method",
         marker="s", linewidth=2.0, ax=ax2, errorbar="sd",
         palette=["#d95f02", "#7570b3", "#1b9e77"]
     )
-    ax2.set_title("(b) Prediction Score Drop ($\Delta p$) vs. Masked Features", fontsize=11, fontweight="bold")
+    ax2.set_title("(b) Model Prediction Probability Drop (Zero Mask)", fontsize=11, fontweight="bold")
     ax2.set_xlabel("Number of Top Features Masked ($k$)", fontsize=10)
-    ax2.set_ylabel("Mean Probability Drop ($\Delta p$)", fontsize=10)
+    ax2.set_ylabel("Mean Probability Drop ($p_{orig} - p_{masked}$)", fontsize=10)
+    ax2.set_ylim(0.0, None)  # y-axis starts strictly from 0
     ax2.legend(fontsize=8)
 
     plt.tight_layout()
@@ -460,69 +413,82 @@ def generate_shap_figures(df_faith: pd.DataFrame):
     plt.savefig(png_path, bbox_inches="tight", dpi=300)
     plt.savefig(pdf_path, bbox_inches="tight")
     plt.close()
-    print(f"[Artifact Saved] SHAP publication figures saved to {png_path} and {pdf_path}", flush=True)
+    print(f"[Artifact Saved] Faithfulness publication figures saved to {png_path} and {pdf_path}", flush=True)
 
 # -------------------------------------------------------------
-# Main Execution Routine
+# 5. Main Runner
 # -------------------------------------------------------------
-def run_shap_benchmark():
+def run_all_shap_benchmarks():
     print("=" * 70)
-    print("STARTING SHAP VALIDITY & FAITHFULNESS AUDIT BENCHMARK (PHASE 2 - RQ3)")
+    print("STARTING REDESIGNED SHAP FAITHFULNESS & STABILITY BENCHMARK")
     print("=" * 70, flush=True)
 
-    # Load DAVIS
-    if (DATA_DIR / "davis.tab").exists():
-        df_davis = pd.read_csv(DATA_DIR / "davis.tab", sep="\t")
-        df_davis.rename(columns={"X1": "Drug", "X2": "Target"}, inplace=True)
-    else:
-        from tdc.multi_pred import DTI
-        davis_tdc = DTI(name="DAVIS")
-        df_davis = davis_tdc.get_data().reset_index(drop=True)
+    df_davis = pd.read_csv(DATA_DIR / "davis.tab", sep="\t")
+    df_davis.rename(columns={"X1": "Drug", "X2": "Target"}, inplace=True)
     df_davis["y_binary"] = (df_davis["Y"] <= 100.0).astype(int)
 
     unique_smiles = df_davis["Drug"].unique()
     unique_seqs = df_davis["Target"].unique()
-    print(f"Featurizing {len(unique_smiles)} drugs and {len(unique_seqs)} targets...", flush=True)
 
+    print("Computing molecular fingerprints and protein descriptors...", flush=True)
     drug_fps = {s: compute_ecfp4(s) for s in unique_smiles}
     prot_aac = {seq: compute_aac(seq) for seq in unique_seqs}
     prot_dipep = {seq: compute_dipeptide(seq) for seq in unique_seqs}
     prot_ctd = {seq: compute_ctd(seq) for seq in unique_seqs}
 
-    X_drug = np.array([drug_fps[s] for s in df_davis["Drug"]])
-    X_aac = np.array([prot_aac[seq] for seq in df_davis["Target"]])
-    X_dipep = np.array([prot_dipep[seq] for seq in df_davis["Target"]])
-    X_ctd = np.array([prot_ctd[seq] for seq in df_davis["Target"]])
-    X_all = np.hstack([X_drug, X_aac, X_dipep, X_ctd])
+    X_tr_drug = np.array([drug_fps[s] for s in df_davis["Drug"]])
+    X_tr_prot = np.array([np.hstack([prot_aac[seq], prot_dipep[seq], prot_ctd[seq]]) for seq in df_davis["Target"]])
+    X_all = np.hstack([X_tr_drug, X_tr_prot])
     y_all = df_davis["y_binary"].values
 
-    # Item 12: Progressive Masking Faithfulness on Cold-Drug Split (5 seeds)
-    df_faith = run_cold_drug_masking_benchmark(df_davis, X_all, y_all, seeds=[0, 1, 2, 3, 4], k_values=[0, 5, 10, 20, 50])
+    # 1. Progressive Masking Benchmark on cold_drug and random split
+    df_faith = run_progressive_masking_benchmark(
+        df_davis, X_all, y_all,
+        splits=["cold_drug", "random"],
+        seeds=[0, 1, 2, 3, 4],
+        k_values=[0, 5, 10, 20, 50],
+        n_random_reps=20
+    )
 
-    # Item 13: Data Bootstrap Resampling Stability (B=5)
-    train_df_0, _, test_df_0 = generate_splits(df_davis, "cold_drug", 0)
-    X_tr_0, y_tr_0 = X_all[train_df_0.index.values], y_all[train_df_0.index.values]
-    X_te_0 = X_all[test_df_0.index.values]
-    df_stab, stab_stats = run_bootstrap_stability_benchmark(X_tr_0, y_tr_0, X_te_0, B=5)
+    # 2. Bootstrap Stability Benchmark
+    train_df, _, test_df = generate_splits(df_davis, "cold_drug", 0)
+    X_tr_stab = X_all[train_df.index.values]
+    y_tr_stab = y_all[train_df.index.values]
+    X_te_stab = X_all[test_df.index.values]
 
-    # Item 14: Substructure Mapping on Full Molecules with Programmatic SMARTS Verification
-    rf_base = RandomForestClassifier(n_estimators=100, class_weight="balanced", random_state=42, n_jobs=-1)
-    rf_base.fit(X_tr_0, y_tr_0)
-    kinase_drugs = {
-        "Imatinib": "CC1=C(C=C(C=C1)NC(=O)C2=CC=C(C=C2)CN3CCN(CC3)C)NC4=NC=CC(=N4)C5=CN=CC=C5",
-        "Gefitinib": "COC1=C(C=C2C(=C1)N=CN=C2NC3=CC(=C(C=C3)F)Cl)OCCCN4CCOCC4",
-        "Erlotinib": "COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC",
-        "Dasatinib": "CC1=C(C(=CC=C1)Cl)NC(=O)C2=CN=C(S2)NC3=CC(=NC(=N3)C)N4CCN(CC4)CCO"
-    }
-    map_chemical_substructures_audit(rf_base, kinase_drugs)
+    df_stab, stab_stats = run_bootstrap_stability_benchmark(
+        X_tr_stab, y_tr_stab, X_te_stab, B=5
+    )
 
-    # LaTeX Tables
+    # 3. LaTeX Tables
     generate_shap_latex_tables(df_faith, stab_stats)
 
-    # Publication Figures
+    # 4. Publication Figures
     generate_shap_figures(df_faith)
 
-    print("\n[Finished] SHAP Validity & Faithfulness Audit Fixes Completed Successfully!", flush=True)
+    # 5. Compute Paired Comparisons Summary
+    print("\n--- Paired Comparison Summary: SHAP vs. Random Baseline (20 reps) ---")
+    for split in ["cold_drug", "random"]:
+        for m_type in ["zero", "train_mean"]:
+            sub = df_faith[(df_faith["split"] == split) & (df_faith["masking_type"] == m_type)]
+            print(f"\n[{split} | {m_type}]")
+            for k in [5, 10, 20, 50]:
+                shap_sub = sub[(sub["k_masked"] == k) & (sub["method"] == "SHAP (MediGraph)")].set_index("seed")
+                rnd_sub = sub[(sub["k_masked"] == k) & (sub["method"] == "Random Baseline (20 reps avg)")].set_index("seed")
+                
+                # SHAP-minus-Random AUPR
+                diff_aupr = shap_sub["aupr"] - rnd_sub["aupr"]
+                # In faithfulness, higher prediction drop or lower remaining AUPR indicates greater effect
+                # Seeds where SHAP has greater prediction drop than random:
+                drop_beats = (shap_sub["mean_prediction_drop"] > rnd_sub["mean_prediction_drop"]).sum()
+                # Seeds where SHAP remaining AUPR is lower than random (more degradation):
+                aupr_degraded = (shap_sub["aupr"] < rnd_sub["aupr"]).sum()
+                
+                print(f"  k={k}: Mean SHAP-Random AUPR = {diff_aupr.mean():.4f} (SD={diff_aupr.std():.4f}) | "
+                      f"Seeds SHAP drop > Random drop: {drop_beats}/5 | "
+                      f"Seeds SHAP AUPR < Random AUPR: {aupr_degraded}/5")
+
+    print("\n[Finished] SHAP Benchmarks Completed Successfully!", flush=True)
 
 if __name__ == "__main__":
-    run_shap_benchmark()
+    run_all_shap_benchmarks()

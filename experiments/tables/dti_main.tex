@@ -1,8 +1,7 @@
-% IEEE Format DTI Benchmark Table
+% IEEE Format DTI Benchmark Table (Standardized Linear Models, Calibrated F1/MCC, MLP Baseline)
 \begin{table*}[t]
 \centering
-\caption{DTI Prediction Performance across Random, Cold-Drug, Cold-Target, and Cold-Both Splits (Mean $\pm$ SD over 5 Seeds)}
-\label{tab:dti_main}
+\caption{DTI Prediction Performance across Random, Cold-Drug, Cold-Target, and Cold-Both Splits (Mean $\pm$ SD over 5 Seeds, Validation-Tuned Decision Threshold)}\n\label{tab:dti_main}
 \small
 \begin{tabular}{llcccc}
 \hline
@@ -10,63 +9,63 @@
 \hline
 \multicolumn{6}{l}{\textit{\textbf{DAVIS Benchmark}}} \\
 \hline
-random & Calibrated LinearSVC & 0.845 $\pm$ 0.016 & 0.365 $\pm$ 0.045 & 0.203 $\pm$ 0.040 & 0.245 $\pm$ 0.039 \\
-random & DeepDTA (PyTorch) & 0.888 $\pm$ 0.011 & 0.473 $\pm$ 0.018 & 0.348 $\pm$ 0.020 & 0.352 $\pm$ 0.021 \\
-random & Logistic Regression & 0.835 $\pm$ 0.016 & 0.350 $\pm$ 0.039 & 0.312 $\pm$ 0.015 & 0.298 $\pm$ 0.022 \\
-random & \textbf{MediGraph Ensemble} & 0.897 $\pm$ 0.010 & 0.518 $\pm$ 0.034 & 0.515 $\pm$ 0.040 & 0.483 $\pm$ 0.041 \\
-random & Random Forest & 0.901 $\pm$ 0.013 & 0.531 $\pm$ 0.035 & 0.508 $\pm$ 0.037 & 0.485 $\pm$ 0.038 \\
-random & XGBoost & 0.882 $\pm$ 0.010 & 0.471 $\pm$ 0.022 & 0.416 $\pm$ 0.020 & 0.394 $\pm$ 0.024 \\
+random & Calibrated LinearSVC & 0.837 $\pm$ 0.008 & 0.382 $\pm$ 0.035 & 0.413 $\pm$ 0.036 & 0.370 $\pm$ 0.034 \\
+random & Logistic Regression & 0.701 $\pm$ 0.184 & 0.252 $\pm$ 0.166 & 0.299 $\pm$ 0.152 & 0.220 $\pm$ 0.202 \\
+random & MLP baseline & 0.888 $\pm$ 0.011 & 0.473 $\pm$ 0.018 & 0.348 $\pm$ 0.020 & 0.352 $\pm$ 0.021 \\
+random & \textbf{MediGraph Ensemble} & 0.896 $\pm$ 0.009 & 0.523 $\pm$ 0.029 & 0.513 $\pm$ 0.042 & 0.478 $\pm$ 0.040 \\
+random & Random Forest & 0.901 $\pm$ 0.013 & 0.531 $\pm$ 0.035 & 0.530 $\pm$ 0.045 & 0.497 $\pm$ 0.047 \\
+random & XGBoost & 0.882 $\pm$ 0.010 & 0.471 $\pm$ 0.022 & 0.482 $\pm$ 0.020 & 0.442 $\pm$ 0.021 \\
 \hline
-cold-drug & Calibrated LinearSVC & 0.468 $\pm$ 0.133 & 0.089 $\pm$ 0.082 & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 \\
-cold-drug & DeepDTA (PyTorch) & 0.698 $\pm$ 0.062 & 0.195 $\pm$ 0.059 & 0.210 $\pm$ 0.067 & 0.149 $\pm$ 0.082 \\
-cold-drug & Logistic Regression & 0.552 $\pm$ 0.095 & 0.087 $\pm$ 0.037 & 0.133 $\pm$ 0.080 & 0.036 $\pm$ 0.081 \\
-cold-drug & \textbf{MediGraph Ensemble} & 0.730 $\pm$ 0.034 & 0.240 $\pm$ 0.085 & 0.179 $\pm$ 0.080 & 0.175 $\pm$ 0.067 \\
-cold-drug & Random Forest & 0.726 $\pm$ 0.054 & 0.243 $\pm$ 0.083 & 0.216 $\pm$ 0.033 & 0.208 $\pm$ 0.053 \\
-cold-drug & XGBoost & 0.718 $\pm$ 0.012 & 0.215 $\pm$ 0.073 & 0.282 $\pm$ 0.063 & 0.220 $\pm$ 0.046 \\
+cold-drug & Calibrated LinearSVC & 0.669 $\pm$ 0.062 & 0.188 $\pm$ 0.082 & 0.191 $\pm$ 0.055 & 0.112 $\pm$ 0.073 \\
+cold-drug & Logistic Regression & 0.637 $\pm$ 0.093 & 0.171 $\pm$ 0.079 & 0.221 $\pm$ 0.067 & 0.144 $\pm$ 0.090 \\
+cold-drug & MLP baseline & 0.698 $\pm$ 0.062 & 0.195 $\pm$ 0.059 & 0.210 $\pm$ 0.067 & 0.149 $\pm$ 0.082 \\
+cold-drug & \textbf{MediGraph Ensemble} & 0.729 $\pm$ 0.033 & 0.240 $\pm$ 0.085 & 0.296 $\pm$ 0.056 & 0.240 $\pm$ 0.040 \\
+cold-drug & Random Forest & 0.726 $\pm$ 0.054 & 0.243 $\pm$ 0.083 & 0.272 $\pm$ 0.026 & 0.228 $\pm$ 0.029 \\
+cold-drug & XGBoost & 0.718 $\pm$ 0.012 & 0.215 $\pm$ 0.073 & 0.259 $\pm$ 0.073 & 0.201 $\pm$ 0.057 \\
 \hline
-cold-target & Calibrated LinearSVC & 0.236 $\pm$ 0.032 & 0.048 $\pm$ 0.008 & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 \\
-cold-target & DeepDTA (PyTorch) & 0.829 $\pm$ 0.029 & 0.351 $\pm$ 0.056 & 0.320 $\pm$ 0.051 & 0.293 $\pm$ 0.046 \\
-cold-target & Logistic Regression & 0.675 $\pm$ 0.161 & 0.221 $\pm$ 0.146 & 0.241 $\pm$ 0.109 & 0.162 $\pm$ 0.151 \\
-cold-target & \textbf{MediGraph Ensemble} & 0.856 $\pm$ 0.028 & 0.417 $\pm$ 0.067 & 0.433 $\pm$ 0.038 & 0.403 $\pm$ 0.045 \\
-cold-target & Random Forest & 0.862 $\pm$ 0.025 & 0.421 $\pm$ 0.064 & 0.361 $\pm$ 0.024 & 0.360 $\pm$ 0.033 \\
-cold-target & XGBoost & 0.841 $\pm$ 0.028 & 0.390 $\pm$ 0.060 & 0.396 $\pm$ 0.041 & 0.353 $\pm$ 0.040 \\
+cold-target & Calibrated LinearSVC & 0.532 $\pm$ 0.107 & 0.095 $\pm$ 0.022 & 0.144 $\pm$ 0.022 & 0.002 $\pm$ 0.005 \\
+cold-target & Logistic Regression & 0.636 $\pm$ 0.126 & 0.142 $\pm$ 0.061 & 0.207 $\pm$ 0.068 & 0.109 $\pm$ 0.109 \\
+cold-target & MLP baseline & 0.829 $\pm$ 0.029 & 0.351 $\pm$ 0.056 & 0.320 $\pm$ 0.051 & 0.293 $\pm$ 0.046 \\
+cold-target & \textbf{MediGraph Ensemble} & 0.856 $\pm$ 0.028 & 0.417 $\pm$ 0.067 & 0.437 $\pm$ 0.057 & 0.400 $\pm$ 0.055 \\
+cold-target & Random Forest & 0.862 $\pm$ 0.025 & 0.421 $\pm$ 0.064 & 0.455 $\pm$ 0.047 & 0.412 $\pm$ 0.051 \\
+cold-target & XGBoost & 0.841 $\pm$ 0.028 & 0.390 $\pm$ 0.060 & 0.414 $\pm$ 0.053 & 0.369 $\pm$ 0.054 \\
 \hline
-cold-both & Calibrated LinearSVC & 0.493 $\pm$ 0.123 & 0.091 $\pm$ 0.039 & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 \\
-cold-both & DeepDTA (PyTorch) & 0.626 $\pm$ 0.059 & 0.145 $\pm$ 0.119 & 0.171 $\pm$ 0.071 & 0.099 $\pm$ 0.038 \\
-cold-both & Logistic Regression & 0.530 $\pm$ 0.030 & 0.107 $\pm$ 0.058 & 0.106 $\pm$ 0.091 & 0.024 $\pm$ 0.065 \\
-cold-both & \textbf{MediGraph Ensemble} & 0.682 $\pm$ 0.029 & 0.137 $\pm$ 0.055 & 0.010 $\pm$ 0.021 & -0.004 $\pm$ 0.008 \\
-cold-both & Random Forest & 0.667 $\pm$ 0.052 & 0.165 $\pm$ 0.079 & 0.009 $\pm$ 0.019 & -0.006 $\pm$ 0.014 \\
-cold-both & XGBoost & 0.661 $\pm$ 0.048 & 0.126 $\pm$ 0.043 & 0.028 $\pm$ 0.038 & -0.028 $\pm$ 0.020 \\
+cold-both & Calibrated LinearSVC & 0.562 $\pm$ 0.129 & 0.127 $\pm$ 0.095 & 0.105 $\pm$ 0.055 & 0.010 $\pm$ 0.109 \\
+cold-both & Logistic Regression & 0.561 $\pm$ 0.084 & 0.117 $\pm$ 0.089 & 0.149 $\pm$ 0.083 & 0.041 $\pm$ 0.075 \\
+cold-both & MLP baseline & 0.626 $\pm$ 0.059 & 0.145 $\pm$ 0.119 & 0.171 $\pm$ 0.071 & 0.099 $\pm$ 0.038 \\
+cold-both & \textbf{MediGraph Ensemble} & 0.680 $\pm$ 0.020 & 0.140 $\pm$ 0.061 & 0.171 $\pm$ 0.136 & 0.119 $\pm$ 0.121 \\
+cold-both & Random Forest & 0.667 $\pm$ 0.052 & 0.165 $\pm$ 0.079 & 0.109 $\pm$ 0.073 & 0.046 $\pm$ 0.074 \\
+cold-both & XGBoost & 0.661 $\pm$ 0.048 & 0.126 $\pm$ 0.043 & 0.189 $\pm$ 0.064 & 0.134 $\pm$ 0.052 \\
 \hline
 \multicolumn{6}{l}{\textit{\textbf{KIBA Benchmark}}} \\
 \hline
-random & Calibrated LinearSVC & 0.795 $\pm$ 0.011 & 0.535 $\pm$ 0.018 & 0.291 $\pm$ 0.044 & 0.291 $\pm$ 0.031 \\
-random & DeepDTA (PyTorch) & 0.852 $\pm$ 0.010 & 0.631 $\pm$ 0.026 & 0.584 $\pm$ 0.012 & 0.464 $\pm$ 0.016 \\
-random & Logistic Regression & 0.786 $\pm$ 0.007 & 0.519 $\pm$ 0.017 & 0.520 $\pm$ 0.007 & 0.371 $\pm$ 0.010 \\
-random & \textbf{MediGraph Ensemble} & 0.860 $\pm$ 0.014 & 0.656 $\pm$ 0.019 & 0.591 $\pm$ 0.026 & 0.507 $\pm$ 0.028 \\
-random & Random Forest & 0.838 $\pm$ 0.015 & 0.617 $\pm$ 0.023 & 0.581 $\pm$ 0.020 & 0.477 $\pm$ 0.023 \\
-random & XGBoost & 0.830 $\pm$ 0.015 & 0.610 $\pm$ 0.011 & 0.583 $\pm$ 0.017 & 0.459 $\pm$ 0.023 \\
+random & Calibrated LinearSVC & 0.814 $\pm$ 0.009 & 0.572 $\pm$ 0.018 & 0.558 $\pm$ 0.013 & 0.428 $\pm$ 0.016 \\
+random & Logistic Regression & 0.815 $\pm$ 0.007 & 0.575 $\pm$ 0.017 & 0.558 $\pm$ 0.012 & 0.426 $\pm$ 0.014 \\
+random & MLP baseline & 0.852 $\pm$ 0.010 & 0.631 $\pm$ 0.026 & 0.584 $\pm$ 0.012 & 0.464 $\pm$ 0.016 \\
+random & \textbf{MediGraph Ensemble} & 0.861 $\pm$ 0.007 & 0.668 $\pm$ 0.020 & 0.619 $\pm$ 0.016 & 0.511 $\pm$ 0.026 \\
+random & Random Forest & 0.842 $\pm$ 0.005 & 0.635 $\pm$ 0.018 & 0.586 $\pm$ 0.014 & 0.466 $\pm$ 0.021 \\
+random & XGBoost & 0.832 $\pm$ 0.009 & 0.626 $\pm$ 0.024 & 0.584 $\pm$ 0.012 & 0.474 $\pm$ 0.018 \\
 \hline
-cold-drug & Calibrated LinearSVC & 0.673 $\pm$ 0.026 & 0.334 $\pm$ 0.034 & 0.302 $\pm$ 0.058 & 0.170 $\pm$ 0.054 \\
-cold-drug & DeepDTA (PyTorch) & 0.797 $\pm$ 0.023 & 0.554 $\pm$ 0.034 & 0.525 $\pm$ 0.018 & 0.381 $\pm$ 0.033 \\
-cold-drug & Logistic Regression & 0.682 $\pm$ 0.026 & 0.351 $\pm$ 0.031 & 0.437 $\pm$ 0.023 & 0.254 $\pm$ 0.032 \\
-cold-drug & \textbf{MediGraph Ensemble} & 0.830 $\pm$ 0.016 & 0.598 $\pm$ 0.029 & 0.541 $\pm$ 0.020 & 0.435 $\pm$ 0.026 \\
-cold-drug & Random Forest & 0.821 $\pm$ 0.011 & 0.589 $\pm$ 0.025 & 0.539 $\pm$ 0.013 & 0.434 $\pm$ 0.015 \\
-cold-drug & XGBoost & 0.796 $\pm$ 0.023 & 0.545 $\pm$ 0.041 & 0.526 $\pm$ 0.034 & 0.386 $\pm$ 0.046 \\
+cold-drug & Calibrated LinearSVC & 0.701 $\pm$ 0.011 & 0.365 $\pm$ 0.040 & 0.432 $\pm$ 0.033 & 0.249 $\pm$ 0.027 \\
+cold-drug & Logistic Regression & 0.694 $\pm$ 0.109 & 0.382 $\pm$ 0.085 & 0.445 $\pm$ 0.035 & 0.244 $\pm$ 0.137 \\
+cold-drug & MLP baseline & 0.797 $\pm$ 0.023 & 0.554 $\pm$ 0.034 & 0.525 $\pm$ 0.018 & 0.381 $\pm$ 0.033 \\
+cold-drug & \textbf{MediGraph Ensemble} & 0.842 $\pm$ 0.009 & 0.633 $\pm$ 0.037 & 0.585 $\pm$ 0.023 & 0.469 $\pm$ 0.017 \\
+cold-drug & Random Forest & 0.836 $\pm$ 0.010 & 0.616 $\pm$ 0.040 & 0.576 $\pm$ 0.036 & 0.467 $\pm$ 0.036 \\
+cold-drug & XGBoost & 0.812 $\pm$ 0.009 & 0.597 $\pm$ 0.034 & 0.552 $\pm$ 0.029 & 0.429 $\pm$ 0.032 \\
 \hline
-cold-target & Calibrated LinearSVC & 0.775 $\pm$ 0.025 & 0.509 $\pm$ 0.019 & 0.275 $\pm$ 0.050 & 0.268 $\pm$ 0.044 \\
-cold-target & DeepDTA (PyTorch) & 0.782 $\pm$ 0.028 & 0.540 $\pm$ 0.047 & 0.504 $\pm$ 0.043 & 0.344 $\pm$ 0.040 \\
-cold-target & Logistic Regression & 0.720 $\pm$ 0.125 & 0.453 $\pm$ 0.120 & 0.484 $\pm$ 0.057 & 0.282 $\pm$ 0.159 \\
-cold-target & \textbf{MediGraph Ensemble} & 0.790 $\pm$ 0.032 & 0.545 $\pm$ 0.035 & 0.411 $\pm$ 0.025 & 0.351 $\pm$ 0.033 \\
-cold-target & Random Forest & 0.768 $\pm$ 0.026 & 0.498 $\pm$ 0.024 & 0.308 $\pm$ 0.045 & 0.277 $\pm$ 0.039 \\
-cold-target & XGBoost & 0.754 $\pm$ 0.040 & 0.496 $\pm$ 0.047 & 0.501 $\pm$ 0.030 & 0.349 $\pm$ 0.052 \\
+cold-target & Calibrated LinearSVC & 0.732 $\pm$ 0.013 & 0.458 $\pm$ 0.055 & 0.453 $\pm$ 0.047 & 0.283 $\pm$ 0.030 \\
+cold-target & Logistic Regression & 0.661 $\pm$ 0.091 & 0.389 $\pm$ 0.119 & 0.404 $\pm$ 0.055 & 0.168 $\pm$ 0.126 \\
+cold-target & MLP baseline & 0.782 $\pm$ 0.028 & 0.540 $\pm$ 0.047 & 0.504 $\pm$ 0.043 & 0.344 $\pm$ 0.040 \\
+cold-target & \textbf{MediGraph Ensemble} & 0.783 $\pm$ 0.011 & 0.552 $\pm$ 0.057 & 0.498 $\pm$ 0.083 & 0.378 $\pm$ 0.043 \\
+cold-target & Random Forest & 0.767 $\pm$ 0.014 & 0.534 $\pm$ 0.063 & 0.507 $\pm$ 0.045 & 0.370 $\pm$ 0.030 \\
+cold-target & XGBoost & 0.749 $\pm$ 0.020 & 0.515 $\pm$ 0.082 & 0.478 $\pm$ 0.053 & 0.332 $\pm$ 0.022 \\
 \hline
-cold-both & Calibrated LinearSVC & 0.642 $\pm$ 0.036 & 0.339 $\pm$ 0.045 & 0.264 $\pm$ 0.102 & 0.150 $\pm$ 0.096 \\
-cold-both & DeepDTA (PyTorch) & 0.726 $\pm$ 0.044 & 0.493 $\pm$ 0.039 & 0.488 $\pm$ 0.044 & 0.314 $\pm$ 0.067 \\
-cold-both & Logistic Regression & 0.660 $\pm$ 0.039 & 0.378 $\pm$ 0.049 & 0.409 $\pm$ 0.062 & 0.201 $\pm$ 0.089 \\
-cold-both & \textbf{MediGraph Ensemble} & 0.706 $\pm$ 0.047 & 0.452 $\pm$ 0.058 & 0.326 $\pm$ 0.077 & 0.266 $\pm$ 0.083 \\
-cold-both & Random Forest & 0.709 $\pm$ 0.038 & 0.446 $\pm$ 0.035 & 0.187 $\pm$ 0.040 & 0.217 $\pm$ 0.053 \\
-cold-both & XGBoost & 0.683 $\pm$ 0.062 & 0.429 $\pm$ 0.067 & 0.394 $\pm$ 0.045 & 0.242 $\pm$ 0.063 \\
+cold-both & Calibrated LinearSVC & 0.632 $\pm$ 0.022 & 0.311 $\pm$ 0.089 & 0.364 $\pm$ 0.054 & 0.141 $\pm$ 0.043 \\
+cold-both & Logistic Regression & 0.571 $\pm$ 0.083 & 0.260 $\pm$ 0.079 & 0.355 $\pm$ 0.052 & 0.102 $\pm$ 0.098 \\
+cold-both & MLP baseline & 0.726 $\pm$ 0.044 & 0.493 $\pm$ 0.039 & 0.488 $\pm$ 0.044 & 0.314 $\pm$ 0.067 \\
+cold-both & \textbf{MediGraph Ensemble} & 0.739 $\pm$ 0.039 & 0.460 $\pm$ 0.060 & 0.390 $\pm$ 0.100 & 0.269 $\pm$ 0.055 \\
+cold-both & Random Forest & 0.722 $\pm$ 0.018 & 0.433 $\pm$ 0.063 & 0.387 $\pm$ 0.067 & 0.248 $\pm$ 0.064 \\
+cold-both & XGBoost & 0.731 $\pm$ 0.053 & 0.441 $\pm$ 0.075 & 0.372 $\pm$ 0.116 & 0.228 $\pm$ 0.092 \\
 \hline
 \end{tabular}
 \end{table*}

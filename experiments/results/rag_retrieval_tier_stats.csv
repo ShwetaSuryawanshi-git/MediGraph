@@ -1,6 +1,6 @@
-condition,tier,count,empty_rate
-C1_Strict_RAG,Total Queries,60,26.666666666666668
-C2_Staged_RAG,Tier 1: Drug+Target+Disease,44,0.0
-C2_Staged_RAG,Tier 2: Drug+Target,1,0.0
-C2_Staged_RAG,Tier 3: Secondary Disease,15,0.0
-C2_Staged_RAG,Abstention: Zero Literature,0,0.0
+condition,tier,count,empty_rate,audit_note
+C1_Strict_RAG,Total Queries,60,26.666666666666668,Strict Boolean AND queries result in 26.7% empty retrieval across 60 evaluated triples.
+C2_Staged_RAG,Tier 1: Drug+Target+Disease,44,0.0,Tier 1: Direct Drug+Target+Disease literature retrieved for established/plausible interactions.
+C2_Staged_RAG,Tier 2: Drug+Target,1,0.0,Tier 2: Relaxation to Drug+Target literature when tripartite disease term is unindexed.
+C2_Staged_RAG,Tier 3: Secondary Disease,15,0.0,Tier 3: Fallback retrieval on 15 negative controls; broad disease literature retrieved then model abstains.
+C2_Staged_RAG,Abstention: Zero Literature,0,0.0,Zero complete retrieval failures after multi-tier relaxation; negative controls proceed to abstention.

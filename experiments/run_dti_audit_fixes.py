@@ -177,11 +177,19 @@ def run_dti_standardization_and_audit():
                 X_va, y_va = X_all[val_idx], y_all[val_idx]
                 X_te, y_te = X_all[test_idx], y_all[test_idx]
 
-                # Standardize strictly on Train fold
+                # Standardize continuous protein descriptors strictly on Train fold (Morgan bits remain binary 0/1)
                 scaler = StandardScaler()
-                X_tr_scaled = scaler.fit_transform(X_tr)
-                X_va_scaled = scaler.transform(X_va)
-                X_te_scaled = scaler.transform(X_te)
+                X_tr_drug, X_tr_prot = X_tr[:, :1024], X_tr[:, 1024:]
+                X_va_drug, X_va_prot = X_va[:, :1024], X_va[:, 1024:]
+                X_te_drug, X_te_prot = X_te[:, :1024], X_te[:, 1024:]
+
+                X_tr_prot_s = scaler.fit_transform(X_tr_prot)
+                X_va_prot_s = scaler.transform(X_va_prot)
+                X_te_prot_s = scaler.transform(X_te_prot)
+
+                X_tr_scaled = np.hstack([X_tr_drug, X_tr_prot_s])
+                X_va_scaled = np.hstack([X_va_drug, X_va_prot_s])
+                X_te_scaled = np.hstack([X_te_drug, X_te_prot_s])
 
                 # 1. Standardized Logistic Regression
                 lr = LogisticRegression(max_iter=1000, class_weight="balanced", random_state=seed)
@@ -211,7 +219,7 @@ def run_dti_standardization_and_audit():
                 })
 
                 # 2. Standardized Calibrated LinearSVC
-                base_svc = LinearSVC(dual=False, class_weight="balanced", random_state=seed, max_iter=2000)
+                base_svc = LinearSVC(dual="auto", class_weight="balanced", random_state=seed, max_iter=1000, tol=1e-3)
                 lsvc = CalibratedClassifierCV(base_svc, cv=3)
                 lsvc.fit(X_tr_scaled, y_tr)
                 p_svm_va = lsvc.predict_proba(X_va_scaled)[:, 1]

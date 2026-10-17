@@ -1,45 +1,115 @@
 {
+  "evaluation_protocol": "Exploratory descriptive screening: Retrospective target prioritization (N=101 candidates per drug, unconfounded decoys)",
+  "sample_size": 10,
+  "pmids_verified_count": 2,
+  "pmids_mismatched_count": 8,
   "MediGraph Engine": {
-    "Mean_Rank": 27.9,
-    "Median_Rank": 27.5,
-    "Mean_Percentile_Rank": 73.1,
+    "Mean_Rank": 36.6,
+    "Mean_Rank_95CI": [
+      20.7975,
+      53.30499999999997
+    ],
+    "Median_Rank": 29.5,
+    "Median_Rank_95CI": [
+      10.0,
+      64.0
+    ],
+    "MRR": 0.05622310453024659,
+    "MRR_95CI": [
+      0.03021300209539687,
+      0.08513766595134317
+    ],
     "Hits@1": 0.0,
-    "Hits@3": 0.0,
+    "Hits@1_95CI": [
+      0.0,
+      0.0
+    ],
     "Hits@5": 0.0,
-    "Hits@10": 0.0
+    "Hits@5_95CI": [
+      0.0,
+      0.0
+    ],
+    "Hits@10": 30.0,
+    "Hits@10_95CI": [
+      10.0,
+      60.0
+    ],
+    "Permutation_p_value": 0.052947052947052944
   },
-  "Target Prior Baseline": {
-    "Mean_Rank": 1.0,
-    "Median_Rank": 1.0,
-    "Mean_Percentile_Rank": 100.0,
-    "Hits@1": 100.0,
-    "Hits@3": 100.0,
-    "Hits@5": 100.0,
-    "Hits@10": 100.0
+  "Sequence Length Heuristic Baseline": {
+    "Mean_Rank": 85.3,
+    "Mean_Rank_95CI": [
+      80.7,
+      89.9
+    ],
+    "Median_Rank": 85.5,
+    "Median_Rank_95CI": [
+      82.0,
+      88.5
+    ],
+    "MRR": 0.011812791088093235,
+    "MRR_95CI": [
+      0.011201626981649369,
+      0.012487138901570511
+    ],
+    "Hits@1": 0.0,
+    "Hits@1_95CI": [
+      0.0,
+      0.0
+    ],
+    "Hits@5": 0.0,
+    "Hits@5_95CI": [
+      0.0,
+      0.0
+    ],
+    "Hits@10": 0.0,
+    "Hits@10_95CI": [
+      0.0,
+      0.0
+    ],
+    "Permutation_p_value": 1.0
   },
-  "Random Baseline (Analytic Expectation)": {
-    "Mean_Rank": 51.0,
-    "Median_Rank": 51.0,
-    "Mean_Percentile_Rank": 50.0,
-    "Hits@1": 0.9900990099009901,
-    "Hits@3": 2.9702970297029703,
-    "Hits@5": 4.9504950495049505,
-    "Hits@10": 9.900990099009901
+  "Random Baseline (Empirical Draw)": {
+    "Mean_Rank": 58.0,
+    "Mean_Rank_95CI": [
+      45.6,
+      70.2
+    ],
+    "Median_Rank": 60.0,
+    "Median_Rank_95CI": [
+      39.0,
+      77.0
+    ],
+    "MRR": 0.02023989346923823,
+    "MRR_95CI": [
+      0.015223954781568067,
+      0.02635395239027498
+    ],
+    "Hits@1": 0.0,
+    "Hits@1_95CI": [
+      0.0,
+      0.0
+    ],
+    "Hits@5": 0.0,
+    "Hits@5_95CI": [
+      0.0,
+      0.0
+    ],
+    "Hits@10": 0.0,
+    "Hits@10_95CI": [
+      0.0,
+      0.0
+    ]
   },
   "Random Baseline (1000 Permutations Mean [95% CI])": {
     "Mean_Rank": 50.8988,
-    "Mean_Rank_CI": [
+    "Mean_Rank_95CI": [
       33.9975,
       67.3
     ],
     "Median_Rank": 51.0,
-    "Mean_Percentile_Rank": 50.1012,
-    "Percentile_CI": [
-      33.7,
-      67.0025
-    ],
+    "MRR": 0.05141609375981255,
     "Hits@1": 0.96,
-    "Hits@3": 3.04,
     "Hits@5": 4.92,
     "Hits@10": 9.63
   }

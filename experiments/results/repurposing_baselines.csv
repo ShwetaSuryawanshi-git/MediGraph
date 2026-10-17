@@ -1,0 +1,5 @@
+method,mean_rank,median_rank,mrr,hits_at_1,hits_at_5,hits_at_10,perm_p_value
+MediGraph Engine,36.6,29.5,0.05622310453024659,0.0,0.0,30.0,0.052947052947052944
+Sequence Length Heuristic Baseline,85.3,85.5,0.011812791088093235,0.0,0.0,0.0,1.0
+Random Baseline (Empirical Draw),58.0,60.0,0.02023989346923823,0.0,0.0,0.0,0.5
+Random Baseline (1000 Permutations),50.8988,51.0,0.05141609375981255,0.96,4.92,9.63,1.0

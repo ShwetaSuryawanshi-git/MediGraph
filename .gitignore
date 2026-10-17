@@ -9,8 +9,8 @@ experiments/venv/
 ml_pipeline/service-account.json
 
 # Duplicate files (macOS copies)
-**/\* 2.*
-* 2.*
+**/* 2*
+* 2*
 
 # OS files
 .DS_Store
@@ -28,6 +28,9 @@ build/
 *.tab
 *.zip
 
-# Python cache
+# Python and API caches
 __pycache__/
 *.pyc
+experiments/cache/
+experiments/rag_eval/pubmed_cache/
+.cache/

@@ -1,0 +1,121 @@
+condition,triple_id,claim_id,claim,verdict_judge1,verdict_judge2,agreement
+C0_LLM_Only,17,17_C0_LLM_Only_9,Dasatinib overcomes resistance caused by most BCR-ABL mutations.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,42,42_C0_LLM_Only_3,DHFR inhibition prevents the reduction of dihydrofolate to tetrahydrofolate.,UNVERIFIABLE,SUPPORTED,False
+C0_LLM_Only,11,11_C0_LLM_Only_6,Alectinib overcomes resistance mutations such as the gatekeeper L1196M mutation.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,23,23_C0_LLM_Only_4,JAK2V617F mutations or cytokine hypersensitivity drive the JAK-STAT pathway in Myelofibrosis.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,49,49_C0_LLM_Only_4,Mupirocin binds to the ATP-binding pocket of the KDR kinase domain via hydrogen bonding and hydrophobic interactions.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,54,54_C0_LLM_Only_4,Ciprofloxacin exhibits synergistic anti-leukemic effects by inducing apoptosis and inhibiting BCR-ABL1-mediated signaling pathways.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,34,34_C0_LLM_Only_7,Upregulation of LDL receptors increases the clearance of circulating LDL-cholesterol from the bloodstream.,UNVERIFIABLE,SUPPORTED,False
+C0_LLM_Only,50,50_C0_LLM_Only_3,BTK is a critical signaling node in the B-cell receptor pathway that is constitutively overactive in Mantle Cell Lymphoma (MCL).,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,28,28_C0_LLM_Only_5,"PGE2-mediated signaling promotes tumor cell proliferation, angiogenesis, and evasion of apoptosis.",UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,51,51_C0_LLM_Only_5,Nystatin suppresses the proliferation and survival of BRAF-mutant melanoma cells.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,9,9_C0_LLM_Only_6,Osimertinib suppresses downstream oncogenic signaling (PI3K/AKT/mTOR and MAPK pathways).,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,59,59_C0_LLM_Only_4,Bacitracin prevents the phosphorylation of the retinoblastoma (Rb) protein.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,43,43_C0_LLM_Only_5,Paclitaxel binding increases the affinity of tubulin dimers for microtubules.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,60,60_C0_LLM_Only_5,There is no clinical rationale for using permethrin in CML treatment.,SUPPORTED,SUPPORTED,True
+C0_LLM_Only,54,54_C0_LLM_Only_1,Ciprofloxacin acts as an off-target inhibitor of the ABL1 tyrosine kinase.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,35,35_C0_LLM_Only_2,AGTR1 is a G-protein-coupled receptor that mediates vasoconstrictive and aldosterone-secreting effects of Angiotensin II.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,22,22_C0_LLM_Only_1,"Acalabrutinib is a highly selective, second-generation covalent inhibitor that targets Bruton’s tyrosine kinase (BTK).",UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,12,12_C0_LLM_Only_5,Renal Cell Carcinoma (RCC) is characterized by the constitutive activation of the VHL-HIF pathway and subsequent overexpression of VEGF.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,20,20_C0_LLM_Only_6,Ponatinib fits into the ATP-binding pocket without requiring the hydroxyl group typically needed for hydrogen bonding.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,24,24_C0_LLM_Only_7,Tofacitinib suppresses the proliferation and activation of T-cells and B-cells in Rheumatoid Arthritis.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,49,49_C0_LLM_Only_3,KDR (VEGFR-2) is a critical driver of angiogenesis in Renal Cell Carcinoma (RCC).,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,23,23_C0_LLM_Only_2,Ruxolitinib blocks the phosphorylation of downstream STAT proteins.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,10,10_C0_LLM_Only_3,Crizotinib stabilizes the ALK kinase in an inactive conformation.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,57,57_C0_LLM_Only_4,Reducing intratumoral Angiotensin II levels attenuates downstream PI3K/Akt/mTOR signaling.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,46,46_C0_LLM_Only_2,Griseofulvin binds to the myristoyl-binding pocket of the ABL1 kinase domain.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,7,7_C0_LLM_Only_2,Trametinib functions by binding to a hydrophobic pocket adjacent to the ATP-binding site.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,55,55_C0_LLM_Only_3,Diazepam stabilizes MAP2K1 in an inactive conformation and prevents the phosphorylation of downstream ERK1/2.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,47,47_C0_LLM_Only_5,Bacitracin exhibits micromolar affinity for the BRAF kinase domain.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,20,20_C0_LLM_Only_3,The alkyne linker allows ponatinib to bypass steric hindrance caused by the T315I mutation in the ABL1 kinase domain.,UNVERIFIABLE,UNVERIFIABLE,True
+C0_LLM_Only,11,11_C0_LLM_Only_3,Alectinib locks ALK in an inactive conformation and prevents downstream signaling through the PI3K/AKT and RAS/MAPK pathways.,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,43,43_C0b_Neutral_Prompt_4,This leads to cell cycle arrest at the G2/M phase and subsequent apoptosis in ovarian cancer cells.,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,59,59_C0b_Neutral_Prompt_1,There is insufficient documented scientific evidence to support a direct biochemical interaction between Bacitracin and CDK4.,SUPPORTED,SUPPORTED,True
+C0b_Neutral_Prompt,40,40_C0b_Neutral_Prompt_4,Inhibiting reuptake increases the concentration of serotonin in the synaptic cleft.,UNVERIFIABLE,SUPPORTED,False
+C0b_Neutral_Prompt,33,33_C0b_Neutral_Prompt_3,Sildenafil prevents the degradation of cyclic guanosine monophosphate (cGMP) in the corpus cavernosum.,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,23,23_C0b_Neutral_Prompt_1,"Ruxolitinib is a potent, ATP-competitive inhibitor that binds to the kinase domain of JAK1.",UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,56,56_C0b_Neutral_Prompt_2,Penicillin G is a beta-lactam antibiotic.,UNVERIFIABLE,SUPPORTED,False
+C0b_Neutral_Prompt,13,13_C0b_Neutral_Prompt_5,Sunitinib blocks proliferative and survival pathways (PI3K/AKT and MAPK) driven by mutant KIT in GIST.,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,30,30_C0b_Neutral_Prompt_4,Inhibiting the mTORC1 signaling pathway blocks T-cell proliferation and cytokine-driven cell cycle progression.,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,25,25_C0b_Neutral_Prompt_2,Baricitinib has high affinity for the ATP-binding site of JAK1.,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,8,8_C0b_Neutral_Prompt_1,"Palbociclib is a highly selective, reversible inhibitor of cyclin-dependent kinases 4 and 6 (CDK4/6).",UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,26,26_C0b_Neutral_Prompt_3,Metformin inhibits mitochondrial Complex I.,UNVERIFIABLE,SUPPORTED,False
+C0b_Neutral_Prompt,3,3_C0b_Neutral_Prompt_3,Erlotinib prevents EGFR autophosphorylation by blocking ATP binding.,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,29,29_C0b_Neutral_Prompt_5,Depletion of IKZF1 and IKZF3 leads to the downregulation of IRF4 and c-Myc.,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,42,42_C0b_Neutral_Prompt_1,Methotrexate acts as a potent competitive inhibitor of dihydrofolate reductase (DHFR).,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,17,17_C0b_Neutral_Prompt_3,Dasatinib competitively inhibits ATP binding.,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,2,2_C0b_Neutral_Prompt_6,Gefitinib inhibits tumor growth and induces apoptosis in EGFR-mutant NSCLC cells by blocking survival signals.,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,48,48_C0b_Neutral_Prompt_4,Polymyxin B is not recognized as a pharmacological inhibitor or ligand for the ERBB2 receptor.,UNVERIFIABLE,SUPPORTED,False
+C0b_Neutral_Prompt,4,4_C0b_Neutral_Prompt_3,Lapatinib stabilizes the ERBB2 receptor in an inactive conformation.,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,32,32_C0b_Neutral_Prompt_3,Inhibition of Tyr705 phosphorylation prevents STAT3 dimerization.,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,54,54_C0b_Neutral_Prompt_2,Ciprofloxacin is a well-characterized fluoroquinolone antibiotic.,UNVERIFIABLE,SUPPORTED,False
+C0b_Neutral_Prompt,44,44_C0b_Neutral_Prompt_1,Colchicine binds with high affinity to the β-tubulin subunit of TUBA1A/TUBB heterodimers.,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,59,59_C0b_Neutral_Prompt_4,Bacitracin has no established role as a CDK4 inhibitor in the context of HR-positive breast cancer.,SUPPORTED,SUPPORTED,True
+C0b_Neutral_Prompt,37,37_C0b_Neutral_Prompt_7,Simvastatin lowers systemic LDL-cholesterol in patients with dyslipidemia.,UNVERIFIABLE,SUPPORTED,False
+C0b_Neutral_Prompt,51,51_C0b_Neutral_Prompt_4,Nystatin lacks a characterized role as a kinase inhibitor or modulator of the MAPK/ERK signaling pathway in the context of melanoma.,UNVERIFIABLE,SUPPORTED,False
+C0b_Neutral_Prompt,47,47_C0b_Neutral_Prompt_3,Bacitracin functions by inhibiting bacterial cell wall synthesis through the interference of undecaprenyl pyrophosphate dephosphorylation.,UNVERIFIABLE,SUPPORTED,False
+C0b_Neutral_Prompt,56,56_C0b_Neutral_Prompt_1,There is insufficient scientific evidence to support a direct biochemical interaction between Penicillin G and Bruton's tyrosine kinase (BTK).,SUPPORTED,SUPPORTED,True
+C0b_Neutral_Prompt,2,2_C0b_Neutral_Prompt_2,Gefitinib selectively binds to the intracellular catalytic domain of EGFR.,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,32,32_C0b_Neutral_Prompt_5,Inhibition of Tyr705 phosphorylation prevents transcriptional activation of oncogenic target genes involved in cell proliferation and survival.,UNVERIFIABLE,UNVERIFIABLE,True
+C0b_Neutral_Prompt,56,56_C0b_Neutral_Prompt_4,Penicillin G is not documented to act as a kinase inhibitor or therapeutic agent for Mantle Cell Lymphoma.,SUPPORTED,SUPPORTED,True
+C0b_Neutral_Prompt,30,30_C0b_Neutral_Prompt_3,The Rapamycin-FKBP12 complex binds to and allosterically inhibits the mTOR kinase.,UNVERIFIABLE,UNVERIFIABLE,True
+C1_Strict_RAG,1,1_C1_Strict_RAG_7,Resistance to imatinib can emerge via altered non-coding RNA pathways.,SUPPORTED,SUPPORTED,True
+C1_Strict_RAG,23,23_C1_Strict_RAG_2,"JAK1 and JAK2 are constitutively activated in myelofibrosis due to driver mutations (e.g., JAK2V617F) or cytokine-driven signaling.",UNVERIFIABLE,UNVERIFIABLE,True
+C1_Strict_RAG,49,49_C1_Strict_RAG_4,Mupirocin lacks the structural pharmacophore typically required for potent tyrosine kinase inhibition.,UNVERIFIABLE,UNVERIFIABLE,True
+C1_Strict_RAG,35,35_C1_Strict_RAG_3,"By inhibiting AGTR1, Losartan prevents downstream signaling cascades such as vasoconstriction, aldosterone secretion, and pro-fibrotic/inflammatory responses that drive hypertension.",UNVERIFIABLE,SUPPORTED,False
+C1_Strict_RAG,15,15_C1_Strict_RAG_6,"In renal clear cell carcinoma, FLT1 is recurrently deleted.",SUPPORTED,SUPPORTED,True
+C1_Strict_RAG,37,37_C1_Strict_RAG_2,HMGCR is the rate-limiting enzyme in the mevalonate pathway responsible for endogenous cholesterol biosynthesis.,UNVERIFIABLE,UNVERIFIABLE,True
+C1_Strict_RAG,19,19_C1_Strict_RAG_3,BCR::ABL1 is a constitutively active kinase resulting from the Philadelphia chromosome translocation in Chronic Myeloid Leukemia (CML).,UNVERIFIABLE,UNVERIFIABLE,True
+C1_Strict_RAG,10,10_C1_Strict_RAG_3,Envonalkib provides superior progression-free survival compared to crizotinib in treatment-naive ALK-positive NSCLC.,SUPPORTED,SUPPORTED,True
+C1_Strict_RAG,6,6_C1_Strict_RAG_6,TET2 downregulation alters the epigenetic and metabolic landscape of tumor cells to favor survival.,SUPPORTED,SUPPORTED,True
+C1_Strict_RAG,48,48_C1_Strict_RAG_4,Some cationic peptides have been investigated for secondary anti-tumor properties.,UNVERIFIABLE,SUPPORTED,False
+C1_Strict_RAG,5,5_C1_Strict_RAG_1,Vemurafenib acts as a selective ATP-competitive inhibitor that binds to the kinase domain of the mutated BRAF V600E protein.,UNVERIFIABLE,UNVERIFIABLE,True
+C1_Strict_RAG,46,46_C1_Strict_RAG_4,There is no evidence that Griseofulvin acts as a kinase inhibitor or a modulator of the BCR-ABL1 fusion protein.,SUPPORTED,SUPPORTED,True
+C1_Strict_RAG,38,38_C1_Strict_RAG_2,"Metoprolol competitively inhibits the binding of catecholamines to the receptor to reduce sympathetic nervous system-mediated increases in heart rate and cardiac contractility, thereby lowering blood pressure.",UNVERIFIABLE,UNVERIFIABLE,True
+C1_Strict_RAG,46,46_C1_Strict_RAG_5,Any proposed interaction between Griseofulvin and ABL1 in the context of CML remains speculative and lacks validation.,SUPPORTED,SUPPORTED,True
+C1_Strict_RAG,22,22_C1_Strict_RAG_4,Acalabrutinib leads to significant improvements in progression-free survival compared to traditional chemoimmunotherapy.,SUPPORTED,UNVERIFIABLE,False
+C1_Strict_RAG,34,34_C1_Strict_RAG_3,"Atorvastatin reduces intracellular cholesterol levels, triggering the upregulation of LDL receptors on hepatocytes to increase the clearance of circulating LDL-cholesterol.",UNVERIFIABLE,UNVERIFIABLE,True
+C1_Strict_RAG,22,22_C1_Strict_RAG_3,"By inhibiting BTK, acalabrutinib disrupts downstream signaling cascades (such as NF-κB and MAPK) that promote tumor cell migration and adhesion.",UNVERIFIABLE,UNVERIFIABLE,True
+C1_Strict_RAG,45,45_C1_Strict_RAG_7,Integrating pharmacogenetic data into clinical management improves the time in therapeutic range (TTR) compared to standard dosing protocols.,SUPPORTED,SUPPORTED,True
+C1_Strict_RAG,11,11_C1_Strict_RAG_3,Alectinib prevents the phosphorylation and subsequent activation of downstream oncogenic signaling pathways such as PI3K/AKT and MAPK/ERK.,UNVERIFIABLE,UNVERIFIABLE,True
+C1_Strict_RAG,27,27_C1_Strict_RAG_2,PTGS1 (COX-1) is responsible for the conversion of arachidonic acid into prostaglandin endoperoxide H2 (PGH2).,SUPPORTED,SUPPORTED,True
+C1_Strict_RAG,32,32_C1_Strict_RAG_2,"STAT3 is frequently hyperactivated in colorectal cancer (CRC) and drives tumor cell proliferation, stemness, and immune evasion.",SUPPORTED,UNVERIFIABLE,False
+C1_Strict_RAG,50,50_C1_Strict_RAG_1,There is no direct scientific literature establishing a functional interaction between Permethrin and BTK in the context of Mantle Cell Lymphoma.,SUPPORTED,SUPPORTED,True
+C1_Strict_RAG,8,8_C1_Strict_RAG_1,"Palbociclib acts as a selective, reversible inhibitor of cyclin-dependent kinases 4 and 6 (CDK4/6).",UNVERIFIABLE,UNVERIFIABLE,True
+C1_Strict_RAG,38,38_C1_Strict_RAG_3,GRK2 promotes ADRB1 internalization and desensitization.,SUPPORTED,SUPPORTED,True
+C1_Strict_RAG,38,38_C1_Strict_RAG_1,Metoprolol acts as a selective β1-adrenergic receptor (ADRB1) antagonist.,UNVERIFIABLE,SUPPORTED,False
+C1_Strict_RAG,28,28_C1_Strict_RAG_5,Aspirin modulates the Akt/NFκB/IκBα/COX-2 signaling axis to promote apoptosis and inhibit proliferation/invasion of colorectal cancer cells.,SUPPORTED,SUPPORTED,True
+C1_Strict_RAG,13,13_C1_Strict_RAG_3,"In GIST, activating mutations in KIT drive constitutive kinase activity and uncontrolled cell proliferation.",SUPPORTED,SUPPORTED,True
+C1_Strict_RAG,13,13_C1_Strict_RAG_5,"Sunitinib functions as a type II inhibitor, stabilizing the inactive conformation of the kinase.",UNVERIFIABLE,SUPPORTED,False
+C1_Strict_RAG,2,2_C1_Strict_RAG_7,"Combination strategies, such as microtubule disruption or nanocarrier-mediated redox/immunogenic stress induction, can overcome gefitinib resistance.",SUPPORTED,SUPPORTED,True
+C1_Strict_RAG,17,17_C1_Strict_RAG_2,Dasatinib treats CML by binding to the ATP-binding pocket of the BCR-ABL fusion protein.,UNVERIFIABLE,UNVERIFIABLE,True
+C2_Staged_RAG,43,43_C2_Staged_RAG_1,Paclitaxel acts on ovarian cancer cells by targeting tubulin.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,58,58_C2_Staged_RAG_3,The provided abstracts do not mention 'Bacitracin' as a therapeutic agent or a modulator of 'RET'.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,39,39_C2_Staged_RAG_4,Blocking ADRB2 on mast cells reduces the secretion of pro-angiogenic cytokines and mediators.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,32,32_C2_Staged_RAG_3,"By inhibiting STAT3 phosphorylation, niclosamide suppresses CSC enrichment.",SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,22,22_C2_Staged_RAG_5,"In rare instances, patients may achieve durable, treatment-free disease control even after the cessation of acalabrutinib therapy.",SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,55,55_C2_Staged_RAG_3,The literature identifies trametinib as a MEK1 inhibitor used for treating melanoma.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,13,13_C2_Staged_RAG_4,Sunitinib can be used in combination with the type I inhibitor bezuclastinib to improve clinical outcomes in advanced GIST.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,29,29_C2_Staged_RAG_5,The IMiD class has been evolved into next-generation cereblon E3 ligase modulators (CELMoDs) designed to deepen substrate degradation and overcome resistance.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,24,24_C2_Staged_RAG_5,The sparing of JAK2 activity by tofacitinib is clinically relevant in patients with comorbid conditions like polycythemia vera.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,9,9_C2_Staged_RAG_1,"Osimertinib is a third-generation, irreversible EGFR inhibitor designed to target common activating mutations (ex19del and L858R) and the acquired T790M resistance mutation.",SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,26,26_C2_Staged_RAG_2,PRKAA1 encodes the catalytic subunit alpha 1 of AMPK.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,3,3_C2_Staged_RAG_4,"Treatment with erlotinib has been associated with rare gastrointestinal toxicities, including the development of pneumatosis intestinalis.",SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,28,28_C2_Staged_RAG_4,Aspirin can regulate the Akt/NFκB/IκBα/COX2 signaling pathway to inhibit the proliferation and invasion of colorectal cancer cells.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,40,40_C2_Staged_RAG_6,"Clinical cases suggest that SLC6A4 polymorphisms may contribute to complex patient responses, including susceptibility to serotonin toxicity when combined with other serotonergic agents.",SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,18,18_C2_Staged_RAG_1,Bosutinib acts as a tyrosine kinase inhibitor that targets the BCR::ABL1 fusion protein.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,3,3_C2_Staged_RAG_1,Erlotinib functions as an epidermal growth factor receptor (EGFR) inhibitor used in the context of non-small cell lung cancer (NSCLC).,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,48,48_C2_Staged_RAG_2,PMID: 42854341 focuses on the prognostic value of HER2 in gastroesophageal adenocarcinoma.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,5,5_C2_Staged_RAG_1,Vemurafenib acts as a targeted therapy for BRAF V600E-mutated melanoma by inhibiting the oncogenic kinase.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,31,31_C2_Staged_RAG_3,Patients with a more TLR9-driven disease mechanism may derive greater therapeutic benefit from HCQ.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,54,54_C2_Staged_RAG_1,There is no evidence in the provided literature describing a biological interaction between Ciprofloxacin and ABL1 in the context of Chronic Myeloid Leukemia.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,43,43_C2_Staged_RAG_2,The specific role of TUBB is complex due to the influence of various β-tubulin isotypes.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,49,49_C2_Staged_RAG_3,KDR is a potential target for fumarine in the context of ccRCC.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,36,36_C2_Staged_RAG_3,The inhibition of ATP4A is the established mechanism by which omeprazole exerts its therapeutic effect on peptic ulcer disease.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,51,51_C2_Staged_RAG_2,The provided texts discuss the role of MEK1 inhibitors such as cobimetinib and trametinib in treating melanoma.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,46,46_C2_Staged_RAG_2,"The provided abstracts discuss BCR::ABL1 tyrosine kinase inhibitors, mechanisms of BCR::ABL1-independent resistance involving PLAG1 and ITGB3, and the use of TransFinder to identify enhancer hijacking of BCR::ABL1.",SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,55,55_C2_Staged_RAG_2,The literature identifies cobimetinib as a MEK1 inhibitor used for treating melanoma.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,2,2_C2_Staged_RAG_2,Acquired resistance to gefitinib monotherapy limits its long-term therapeutic efficacy in EGFR-mutant NSCLC.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,31,31_C2_Staged_RAG_5,TLR9 is specifically implicated in determining HCQ efficacy and dosage requirements in lupus patients.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,56,56_C2_Staged_RAG_1,There is no evidence in the provided literature to support a biological interaction between Penicillin G and BTK in the context of Mantle Cell Lymphoma.,SUPPORTED,SUPPORTED,True
+C2_Staged_RAG,29,29_C2_Staged_RAG_4,This interaction is critical for the clinical efficacy of the IMiD class.,SUPPORTED,UNVERIFIABLE,False

@@ -1,0 +1,5 @@
+drug,target,bit_id,radius,central_atom_idx,substructure_smiles,drug_smiles,train_molecules_on,total_train_molecules,train_prevalence_pct
+Imatinib,ABL1,207,1,33,CN(C)C,Cc1ccc(cc1Nc2nccc(n2)c3cccnc3)NC(=O)c4ccc(cc4)CN5CCN(C)CC5,12,68,17.6
+Gefitinib,EGFR,841,1,0,CO,COc1cc2c(ncnc2cc1OCCCN3CCOCC3)Nc4ccc(c(c4)Cl)F,15,68,22.1
+Erlotinib,EGFR,974,1,23,C#C,COCCOC1=C(C=C2C(=C1)C(=NC=N2)NC3=CC=CC(=C3)C#C)OCCOC,14,68,20.6
+Dasatinib,SRC/ABL,798,2,11,csc(cn)C(N)=O,Cc1cccc(c1Cl)NC(=O)c2cnc(s2)Nc3cc(nc(n3)C)N4CCN(CC4)CCO,2,68,2.9
