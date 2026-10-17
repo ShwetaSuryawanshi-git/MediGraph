@@ -1,6 +1,6 @@
 # MANIFEST.md: MediGraph External Audit Bundle v2
 
-**Date of Generation**: 2026-10-17 23:58:21  
+**Date of Generation**: 2026-10-18 01:04:33  
 **Bundle Archive**: `MediGraph_Audit_Bundle_v2.zip`  
 **Python Version**: Python 3.12.0  
 **Environment Requirements**: See `requirements.txt`  
@@ -37,6 +37,7 @@ All files listed below are placed directly at the top level (flat archive root) 
 | `claims_annotation_sample_blinded.csv` | 161 | Phase 3 (RAG) | 2026-10-17 16:36:53 |
 | `claims_annotation_sample_key.csv` | 161 | Phase 3 (RAG) | 2026-10-11 16:15:20 |
 | `rag_prompts.md` | 123 | Phase 3 (RAG) | 2026-10-17 14:46:20 |
+| `reproduce_dti_lr.py` | 305 | Code | 2026-10-18 01:02:34 |
 | `phase1_dti_benchmark.py` | 866 | Code | 2026-10-02 23:43:19 |
 | `run_dti_audit_fixes.py` | 475 | Code | 2026-10-17 14:12:10 |
 | `phase2_shap_benchmark.py` | 494 | Code | 2026-10-17 15:56:00 |
@@ -62,12 +63,11 @@ All files listed below are placed directly at the top level (flat archive root) 
 | `shap_faithfulness.tex` | 16 | Tables | 2026-10-17 16:07:30 |
 | `shap_stability.tex` | 16 | Tables | 2026-10-17 16:07:30 |
 | `repurposing_recovery.tex` | 17 | Tables | 2026-10-17 15:54:42 |
-| `CHANGES.md` | 33 | Documentation | 2026-10-17 23:58:09 |
+| `CHANGES.md` | 33 | Documentation | 2026-10-18 01:03:47 |
 | `REPORT.md` | 181 | Documentation | 2026-10-17 23:57:50 |
 | `AUDIT.md` | 153 | Documentation | 2026-10-10 00:32:32 |
 | `FIGURES_TABLES_INDEX.md` | 43 | Documentation | 2026-10-09 23:12:23 |
 | `PROGRESS.md` | 66 | Documentation | 2026-10-09 23:11:54 |
-| `MediGraph_IEEE_Draft_v3.docx` | N/A (Binary/Image) | Documentation | 2026-10-17 23:57:22 |
 
 ---
 

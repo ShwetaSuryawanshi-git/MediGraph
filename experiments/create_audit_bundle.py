@@ -61,7 +61,7 @@ bundle_entries = [
     ("claims_annotation_sample_key.csv", EXP_DIR / "annotation/claims_annotation_sample_key.csv", "Phase 3 (RAG)"),
     ("rag_prompts.md", EXP_DIR / "rag_prompts.md", "Phase 3 (RAG)"),
     
-    # Code Scripts
+    ("reproduce_dti_lr.py", EXP_DIR / "reproduce_dti_lr.py", "Code"),
     ("phase1_dti_benchmark.py", EXP_DIR / "phase1_dti_benchmark.py", "Code"),
     ("run_dti_audit_fixes.py", EXP_DIR / "run_dti_audit_fixes.py", "Code"),
     ("phase2_shap_benchmark.py", EXP_DIR / "phase2_shap_benchmark.py", "Code"),
@@ -99,8 +99,7 @@ bundle_entries = [
     ("REPORT.md", EXP_DIR / "REPORT.md", "Documentation"),
     ("AUDIT.md", EXP_DIR / "AUDIT.md", "Documentation"),
     ("FIGURES_TABLES_INDEX.md", EXP_DIR / "FIGURES_TABLES_INDEX.md", "Documentation"),
-    ("PROGRESS.md", EXP_DIR / "PROGRESS.md", "Documentation"),
-    ("MediGraph_IEEE_Draft_v3.docx", BASE_DIR / "MediGraph_IEEE_Draft_v3.docx", "Documentation")
+    ("PROGRESS.md", EXP_DIR / "PROGRESS.md", "Documentation")
 ]
 
 def get_row_count(path: Path) -> str:
