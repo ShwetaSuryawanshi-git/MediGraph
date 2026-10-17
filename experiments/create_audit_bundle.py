@@ -100,7 +100,7 @@ bundle_entries = [
     ("AUDIT.md", EXP_DIR / "AUDIT.md", "Documentation"),
     ("FIGURES_TABLES_INDEX.md", EXP_DIR / "FIGURES_TABLES_INDEX.md", "Documentation"),
     ("PROGRESS.md", EXP_DIR / "PROGRESS.md", "Documentation"),
-    ("MediGraph_IEEE_Draft_v2.docx", BASE_DIR / "MediGraph_IEEE_Draft_v2.docx", "Documentation")
+    ("MediGraph_IEEE_Draft_v3.docx", BASE_DIR / "MediGraph_IEEE_Draft_v3.docx", "Documentation")
 ]
 
 def get_row_count(path: Path) -> str:

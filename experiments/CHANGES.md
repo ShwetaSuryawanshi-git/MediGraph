@@ -21,6 +21,8 @@
 - `results/fragments_check.csv`: Recorded central atom, radius, substructure environment SMILES, and training-set molecule prevalence for each highlighted Morgan bit.
 - `requirements.txt`: Pinned exact package versions actively imported in the environment.
 - `annotation/claims_annotation_sample_blinded.csv`: Updated with 160 human-expert-reviewed verdicts and notes (102 Supported, 39 Partially supported, 17 Contradicted, 2 Insufficient evidence) assessing pharmacological validity against established literature.
+- `dti_benchmark.csv`: Diagnosed and resolved Logistic Regression constant predictions (previously 0.5 AUROC in 12/40 runs due to unstandardized CTD descriptors). With StandardScaler fitted on training continuous descriptors, Logistic Regression converges stably across all 40 runs (zero 0.5 AUROC runs; DAVIS random 0.835 ± 0.008, cold-drug 0.671 ± 0.046; KIBA random 0.815 ± 0.007, cold-drug 0.741 ± 0.005), restoring it to all benchmark tables.
+- `MediGraph_IEEE_Draft_v3.docx` & `MediGraph_IEEE_Draft_v3.pdf`: Cleaned repository by removing older drafts (`MediGraph_IEEE_Draft_v2.docx`, `Paper_Draft_Intro.md`) and establishing version 3 incorporating all audit findings.
 
 ## Results that got worse or stayed null
 - **Target Prior Oracle Deleted**: Removed the artificial rank 1.0 (100% Hits@1) baseline caused by hardcoded label leakage (`0.5 if i == 0 else 0.4`).

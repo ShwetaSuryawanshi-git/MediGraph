@@ -1,6 +1,6 @@
 # MANIFEST.md: MediGraph External Audit Bundle v2
 
-**Date of Generation**: 2026-10-17 19:06:05  
+**Date of Generation**: 2026-10-17 23:58:21  
 **Bundle Archive**: `MediGraph_Audit_Bundle_v2.zip`  
 **Python Version**: Python 3.12.0  
 **Environment Requirements**: See `requirements.txt`  
@@ -13,7 +13,7 @@ All files listed below are placed directly at the top level (flat archive root) 
 
 | File | Lines / Rows | Category / Phase | Production Timestamp |
 |---|---|---|---|
-| `dti_benchmark.csv` | 241 | Phase 1 (DTI) | 2026-10-17 15:45:44 |
+| `dti_benchmark.csv` | 241 | Phase 1 (DTI) | 2026-10-17 23:55:48 |
 | `dataset_stats.csv` | 9 | Phase 1 (DTI) | 2026-10-10 01:23:54 |
 | `dti_protein_feature_ablation.csv` | 61 | Phase 1 (DTI) | 2026-10-03 20:20:08 |
 | `dti_standardization_comparison.csv` | 81 | Phase 1 (DTI) | 2026-10-17 15:04:33 |
@@ -62,12 +62,12 @@ All files listed below are placed directly at the top level (flat archive root) 
 | `shap_faithfulness.tex` | 16 | Tables | 2026-10-17 16:07:30 |
 | `shap_stability.tex` | 16 | Tables | 2026-10-17 16:07:30 |
 | `repurposing_recovery.tex` | 17 | Tables | 2026-10-17 15:54:42 |
-| `CHANGES.md` | 31 | Documentation | 2026-10-17 16:39:24 |
-| `REPORT.md` | 181 | Documentation | 2026-10-17 19:05:53 |
+| `CHANGES.md` | 33 | Documentation | 2026-10-17 23:58:09 |
+| `REPORT.md` | 181 | Documentation | 2026-10-17 23:57:50 |
 | `AUDIT.md` | 153 | Documentation | 2026-10-10 00:32:32 |
 | `FIGURES_TABLES_INDEX.md` | 43 | Documentation | 2026-10-09 23:12:23 |
 | `PROGRESS.md` | 66 | Documentation | 2026-10-09 23:11:54 |
-| `MediGraph_IEEE_Draft_v2.docx` | N/A (Binary/Image) | Documentation | 2026-10-17 19:04:24 |
+| `MediGraph_IEEE_Draft_v3.docx` | N/A (Binary/Image) | Documentation | 2026-10-17 23:57:22 |
 
 ---
 
@@ -87,7 +87,7 @@ Evaluated across 5 random seeds (0..4) with `StandardScaler` fitted strictly on 
 | Model | cold_both | cold_drug | cold_target | random |
 |---|---|---|---|---|
 | **Calibrated LinearSVC** | 0.5617 | 0.6694 | 0.5321 | 0.8373 |
-| **Logistic Regression** | 0.5611 | 0.6371 | 0.6361 | 0.7012 |
+| **Logistic Regression** | 0.5646 | 0.6712 | 0.7202 | 0.8352 |
 | **Two-tower MLP** | 0.6262 | 0.6977 | 0.8294 | 0.8875 |
 | **XGBoost** | 0.6613 | 0.7183 | 0.8409 | 0.8823 |
 | **Random Forest** | 0.6669 | 0.7256 | 0.8624 | 0.9005 |
@@ -97,7 +97,7 @@ Evaluated across 5 random seeds (0..4) with `StandardScaler` fitted strictly on 
 | Model | cold_both | cold_drug | cold_target | random |
 |---|---|---|---|---|
 | **Calibrated LinearSVC** | 0.6325 | 0.7014 | 0.7316 | 0.8141 |
-| **Logistic Regression** | 0.5705 | 0.6937 | 0.6612 | 0.8153 |
+| **Logistic Regression** | 0.6390 | 0.7412 | 0.7271 | 0.8153 |
 | **Two-tower MLP** | 0.7263 | 0.7968 | 0.7818 | 0.8517 |
 | **XGBoost** | 0.7307 | 0.8120 | 0.7495 | 0.8322 |
 | **Random Forest** | 0.7218 | 0.8362 | 0.7671 | 0.8423 |

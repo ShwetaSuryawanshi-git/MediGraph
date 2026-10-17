@@ -47,7 +47,7 @@ Audited 5-seed Mean $\pm$ SD from `results/dti_benchmark.csv` (240 total rows):
 #### TDC DAVIS Dataset (Table I)
 | Model | Random AUROC | Random AUPR | Cold-Drug AUROC | Cold-Drug AUPR |
 |---|---|---|---|---|
-| Logistic Regression | 0.701 ± 0.184 | 0.252 ± 0.166 | 0.637 ± 0.093 | 0.171 ± 0.079 |
+| Logistic Regression | 0.835 ± 0.008 | 0.379 ± 0.031 | 0.671 ± 0.046 | 0.183 ± 0.060 |
 | Calibrated LinearSVC | 0.837 ± 0.008 | 0.382 ± 0.035 | 0.669 ± 0.062 | 0.188 ± 0.082 |
 | Random Forest | 0.901 ± 0.013 | 0.531 ± 0.035 | 0.726 ± 0.054 | 0.243 ± 0.083 |
 | XGBoost | 0.882 ± 0.010 | 0.471 ± 0.022 | 0.718 ± 0.012 | 0.215 ± 0.073 |
