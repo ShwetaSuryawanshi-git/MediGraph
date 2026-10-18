@@ -1,6 +1,6 @@
 # MANIFEST.md: MediGraph External Audit Bundle v2
 
-**Date of Generation**: 2026-10-18 01:18:08  
+**Date of Generation**: 2026-10-18 16:06:23  
 **Bundle Archive**: `MediGraph_Audit_Bundle_v2.zip`  
 **Python Version**: Python 3.12.0  
 **Environment Requirements**: See `requirements.txt`  
@@ -66,8 +66,8 @@ All files listed below are placed directly at the top level (flat archive root) 
 | `CHANGES.md` | 33 | Documentation | 2026-10-18 01:03:47 |
 | `REPORT.md` | 181 | Documentation | 2026-10-17 23:57:50 |
 | `AUDIT.md` | 153 | Documentation | 2026-10-10 00:32:32 |
-| `FIGURES_TABLES_INDEX.md` | 43 | Documentation | 2026-10-09 23:12:23 |
-| `PROGRESS.md` | 66 | Documentation | 2026-10-09 23:11:54 |
+| `FIGURES_TABLES_INDEX.md` | 43 | Documentation | 2026-10-18 16:05:06 |
+| `PROGRESS.md` | 67 | Documentation | 2026-10-18 16:05:33 |
 
 ---
 

@@ -36,7 +36,7 @@ All artifacts are publication-ready for IEEE-format papers.
 | [`dti_protein_feature_ablation.csv`](file:///Users/shweta/Desktop/vit%20chennai/major%20project%20fy/MediGraph/experiments/results/dti_protein_feature_ablation.csv) | 60 | Protein feature ablation |
 | [`rag_evaluation.csv`](file:///Users/shweta/Desktop/vit%20chennai/major%20project%20fy/MediGraph/experiments/results/rag_evaluation.csv) | 180 | RAG condition evaluation across 60 triples (C0, C1, C2) |
 | [`rag_claims_detailed.csv`](file:///Users/shweta/Desktop/vit%20chennai/major%20project%20fy/MediGraph/experiments/results/rag_claims_detailed.csv) | 1,138 | Decomposed atomic claims with verdicts and rationales |
-| [`sample_for_annotation.csv`](file:///Users/shweta/Desktop/vit%20chennai/major%20project%20fy/MediGraph/experiments/annotation/sample_for_annotation.csv) | 30 | Stratified sample for two-annotator blind verification |
+| [`claims_annotation_sample_blinded.csv`](file:///Users/shweta/Desktop/vit%20chennai/major%20project%20fy/MediGraph/experiments/annotation/claims_annotation_sample_blinded.csv) | 160 | Blinded claim sample with expert pharmacological verdicts |
 | [`shap_faithfulness.csv`](file:///Users/shweta/Desktop/vit%20chennai/major%20project%20fy/MediGraph/experiments/results/shap_faithfulness.csv) | 21 | Feature masking test |
 | [`shap_stability.csv`](file:///Users/shweta/Desktop/vit%20chennai/major%20project%20fy/MediGraph/experiments/results/shap_stability.csv) | 10 | Seed-pair stability metrics |
 | [`repurposing_benchmark.csv`](file:///Users/shweta/Desktop/vit%20chennai/major%20project%20fy/MediGraph/experiments/results/repurposing_benchmark.csv) | 10 | Per-drug repurposing rankings |

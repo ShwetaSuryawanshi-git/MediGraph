@@ -37,20 +37,21 @@
 | KIBA | Cold-Both | 0.706 ± 0.047 | DeepDTA 0.726 | -0.020 |
 
 ### Phase 2: SHAP Validity
-- **Faithfulness**: SHAP masking causes 4.3× more prediction drop than random at $k=100$.
-- **Stability**: Spearman $\rho = 0.942$ across independent model seeds; Jaccard top-20 overlap $= 0.452$.
-- **Chemical Authenticity**: 4/4 top SHAP fragments map directly to recognized functional pharmacophores (e.g. ATP-competitive heterocycles, kinase hinge-binding motifs).
+- **Faithfulness**: Faithfulness confirmed on random split (SHAP deletion degrades AUPR to 0.333 vs 0.512 for random at $k=50$); no measurable advantage on cold-drug split.
+- **Stability**: Top-20 Jaccard overlap 0.497, Top-50 Jaccard overlap 0.512, top-100 Spearman $\rho = 0.439$ across bootstrap resamples.
+- **Substructure Mapping**: Fingerprint bits mapped to atom environments of radius $\le 2$ with parent drug SMILES and training-set molecule prevalence documented in `results/fragments_check.csv`.
 
-### Phase 3: PubMed-Grounded RAG Evaluation (1,138 claims across 60 triples)
-- **C0 (Parametric LLM-Only)**: 441 claims, **8.8% ± 25.0%** literature support, **91.2% ± 25.0%** hallucination rate, **0.0%** abstention on negative controls.
-- **C1 (Strict Boolean AND RAG)**: 374 claims, **52.3% ± 23.1%** support, **47.4% ± 22.8%** hallucination rate, **53.3%** abstention.
-- **C2 (Staged RAG + Explicit Abstention)**: 323 claims, **100.0% ± 0.0%** literature support, **0.0% ± 0.0%** hallucination rate, **46.7%** negative control abstention.
-- **Stratified Human Blind Sample**: 30 claims formatted for two-annotator verification in [`annotation/sample_for_annotation.csv`](file:///Users/shweta/Desktop/vit%20chennai/major%20project%20fy/MediGraph/experiments/annotation/sample_for_annotation.csv).
+### Phase 3: PubMed-Grounded RAG Evaluation (60 triples)
+- **C0 (LLM-Only)**: 1.3% literature support (98.7% unverifiable claims), 2/15 control abstentions.
+- **C0b (Neutral Prompt)**: 7.5% literature support, 15/15 control abstentions.
+- **C1 (Strict Boolean AND RAG)**: 56.9% literature support, 15/15 control abstentions, 26.7% empty retrieval.
+- **C2 (Staged RAG + Explicit Abstention)**: 98.6% literature support, 15/15 control abstentions (Wilson 95% CI: [79.6%, 100.0%]), 0% empty retrieval.
+- **Independent Judge Agreement**: Automated second judge agreement 85.8% (Cohen's $\kappa = 0.72$) across 120 sampled claims.
+- **Human Annotation Sample**: 160 claims evaluated with expert pharmacological notes in [`annotation/claims_annotation_sample_blinded.csv`](file:///Users/shweta/Desktop/vit%20chennai/major%20project%20fy/MediGraph/experiments/annotation/claims_annotation_sample_blinded.csv).
 
-### Phase 4: Retrospective Repurposing
-- **MRR**: MediGraph 0.043 vs Random 0.018 (2.4× improvement over baseline).
-- **Hits@50**: 50.0% (10/20 true approved repositioned therapies identified in top candidates).
-- **Top Recoveries**: Aspirin for Colorectal Cancer (Rank 14), Metformin for Breast Cancer (Rank 15), Tamoxifen for Glioblastoma (Rank 16).
+### Phase 4: Retrospective Repurposing (Exploratory Screen)
+- **Design**: True target ranked against 100 length- and family-matched decoys ($N=101$ candidates, 10 drugs). Target Prior oracle eliminated.
+- **Metrics**: Mean rank 36.6 (95% CI: [20.8, 53.3]) vs 50.9 random null; MRR 0.056; Hits@10 30.0%; exact permutation $p = 0.053$. Labeled strictly as exploratory screen.
 
 ---
 
